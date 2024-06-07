@@ -56,5 +56,5 @@
         "temp/": true,
         "Temp/": true
     },
-    "dotnet.defaultSolution": "farmando-xp.sln"
+    "dotnet.defaultSolution": "farmando-xp-jam.sln"
 }
