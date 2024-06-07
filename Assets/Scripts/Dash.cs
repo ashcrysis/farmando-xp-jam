@@ -38,11 +38,11 @@ public class Dash : MonoBehaviour
         canDash = false;
         isDashing = true;
         rb.velocity = new Vector2(transform.localScale.x * (dashingPower * dir), 0f);
+        rb.velocity = new Vector2(rb.velocity.x-dashingPower/4,rb.velocity.y);
         yield return new WaitForSeconds(dashingTime);
         isDashing = false;
 
         yield return new WaitForSeconds(dashingCooldown);
         canDash = true;
-
     }
 }
