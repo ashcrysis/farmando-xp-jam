@@ -19,10 +19,16 @@ public class Dash : MonoBehaviour
     private PlayerMovement player;
     private int invincibleEndFrame;
     public Stamina stamina;
+    private CapsuleCollider2D playerCollider;
+    private float colliderHeight;
+    private float colliderY;
 
     void Start()
     {
         player = GetComponent<PlayerMovement>();
+        playerCollider = GetComponent<CapsuleCollider2D>();
+        colliderHeight = playerCollider.size.y;
+        colliderY = playerCollider.offset.y;
     }
 
     void Update()
@@ -33,10 +39,14 @@ public class Dash : MonoBehaviour
         if (isDashing)
         {
             gameObject.GetComponentInChildren<SpriteRenderer>().color = Color.yellow;
+            playerCollider.size = new Vector2(playerCollider.size.x,1f);
+            playerCollider.offset = new Vector2(playerCollider.offset.x, (float)-0.49);
         }
         else
         {
             gameObject.GetComponentInChildren<SpriteRenderer>().color = Color.white;
+            playerCollider.size = new Vector2(playerCollider.size.x,colliderHeight);
+            playerCollider.offset = new Vector2(playerCollider.offset.x, colliderY);
         }
         if (invincible)
         {
