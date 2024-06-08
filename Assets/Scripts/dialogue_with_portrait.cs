@@ -22,6 +22,13 @@ public class dialogue_with_portrait : MonoBehaviour
     private float oldnavmeshspeed;
     private static bool buttonclicked = false;
     List<char> listPause = new List<char> { ',', '.','?' };
+    public string playerName;
+   void Start(){
+    playerName = System.Environment.MachineName;
+    for(int i = 0; i < lines.Length; i++) {
+        lines[i] = lines[i].Replace("$playerName", playerName);
+    }
+}
     void OnEnable()
     {
         speakerNameComponent.text = speakers[index];
@@ -150,7 +157,10 @@ void ButtonClick(){
     if (index < lines.Length - 1)
     {
         index++;
-        speakerNameComponent.text = speakers[index]; // Update with the current speaker's name
+        if (index < speakers.Length)
+        {
+            speakerNameComponent.text = speakers[index];
+        }
         textComponent.text = string.Empty;
         StartCoroutine(TypeLine());
 

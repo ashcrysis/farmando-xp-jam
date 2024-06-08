@@ -17,6 +17,10 @@ public class dialogue : MonoBehaviour
     private float oldnavmeshspeed;
     private static bool buttonclicked = false;
     List<char> listPause = new List<char> { ',', '.','?' };
+    public string playerName;
+    void Start(){
+        playerName = System.Environment.MachineName;
+    }
     void OnEnable()
     {
         speakerNameComponent.text = speakers[index];
