@@ -20,6 +20,11 @@ public class Stamina : MonoBehaviour
         staminaRunValue = staminaLossBase;
         staminaJumpValue = staminaLossBase;
     }
+void Update(){
+    if (stamina > MaxStamina){
+        stamina = MaxStamina;
+    }
+}
     public void Actions(int actionID){
         switch (actionID){
 
