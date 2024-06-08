@@ -72,11 +72,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
-  jumpingPower: 11
+  jumpingPower: 12
   speedVeloc: 15
   isFacingRight: 1
   acceleration: 2.5
-  fallMultiplier: 1.5
+  fallMultiplier: 1.035
+  peakGravityMultiplier: 1.2
   JumpParticle: {fileID: 0}
   LandParticle: {fileID: 0}
   rb: {fileID: 4355434462940155012}

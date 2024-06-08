@@ -11,6 +11,7 @@ public class PlayerMovement : MonoBehaviour
     private float origSpeed;
     public float acceleration = 2f;
     public float fallMultiplier = 1.5f;
+    public float peakGravityMultiplier = 6f;
     public ParticleSystem JumpParticle;
     public ParticleSystem LandParticle;
     [SerializeField] private Rigidbody2D rb;
@@ -24,7 +25,8 @@ public class PlayerMovement : MonoBehaviour
     private bool isJumping = false;
     private bool hasLaunched = false;
     private bool justLanded = false;
-     public Stamina stamina;
+    private bool isAtPeak = false;
+    public Stamina stamina;
 
     private void Start()
     {
@@ -45,13 +47,15 @@ public class PlayerMovement : MonoBehaviour
         ApplyGravity();
         animatorHandler();
         UpdateLandingState();
+        DetectJumpPeak();
     }
 
     private void HandleInput()
     {
         horizontal = Input.GetAxisRaw("Horizontal");
         moving = Mathf.Abs(horizontal) > 0 ? 1 : 0;
-        if (IsGrounded()){
+        if (IsGrounded())
+        {
             stamina.Actions(2);
         }
         Jump();
@@ -67,6 +71,7 @@ public class PlayerMovement : MonoBehaviour
                 // LandParticle.Play();
                 justLanded = true;
             }
+            isAtPeak = false;
         }
     }
 
@@ -76,7 +81,8 @@ public class PlayerMovement : MonoBehaviour
         {
             if (IsGrounded() || canCoyoteJump)
             {
-                 if (stamina.stamina < stamina.staminaJumpValue  ){
+                if (stamina.stamina < stamina.staminaJumpValue)
+                {
                     return;
                 }
                 stamina.Actions(3);
@@ -91,16 +97,18 @@ public class PlayerMovement : MonoBehaviour
 
     private void AdjustSpeed()
     {
-        if (stamina.stamina < stamina.staminaRunValue && !Input.GetButton("Fire3")){
+        if (stamina.stamina < stamina.staminaRunValue && !Input.GetButton("Fire3"))
+        {
             speed = origSpeed;
         }
-        if (stamina.stamina > stamina.staminaRunValue && Input.GetButton("Fire3")){
+        if (stamina.stamina > stamina.staminaRunValue && Input.GetButton("Fire3"))
+        {
             speed = speedVeloc;
-            if(moving == 1){
+            if (moving == 1)
+            {
                 stamina.Actions(0);
             }
         }
-
     }
 
     private void UpdateAnimator()
@@ -114,7 +122,8 @@ public class PlayerMovement : MonoBehaviour
     {
         if (rb.velocity.y < 0)
         {
-            rb.velocity += Vector2.up * Physics2D.gravity.y * (fallMultiplier - 1) * Time.deltaTime;
+            float multiplier = isAtPeak ? peakGravityMultiplier : fallMultiplier;
+            rb.velocity += Vector2.up * Physics2D.gravity.y * (multiplier - 1);
         }
     }
 
@@ -202,7 +211,15 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    private bool IsGrounded()
+    private void DetectJumpPeak()
+    {
+        if (isJumping && rb.velocity.y <= 0 && !isAtPeak)
+        {
+            isAtPeak = true;
+        }
+    }
+
+    public bool IsGrounded()
     {
         return Physics2D.OverlapCircle(groundCheck.position, 0.1f, groundLayer);
     }
