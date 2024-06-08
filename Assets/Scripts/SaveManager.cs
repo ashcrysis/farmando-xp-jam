@@ -1,18 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using System.IO;
 
 public class SaveManager : MonoBehaviour
 {
     public int lastBonfireID;
     public Vector2 lastBonfirePosition;
     public bool endgame = false;
-    private string saveFilePath;
 
     void Start()
     {
-        saveFilePath = Path.Combine(Application.persistentDataPath, "saveData.json");
+        Read();
         StartCoroutine(SaveEveryFiveMinutes());
     }
 
@@ -26,28 +24,28 @@ public class SaveManager : MonoBehaviour
 
     public void Save()
     {
-        SaveData data = new SaveData();
-        data.lastBonfireID = lastBonfireID;
-        data.lastBonfirePosition = lastBonfirePosition;
-        data.endgame = endgame;
+        PlayerPrefs.SetInt("LastBonfireID", lastBonfireID);
+        PlayerPrefs.SetFloat("LastBonfirePositionX", lastBonfirePosition.x);
+        PlayerPrefs.SetFloat("LastBonfirePositionY", lastBonfirePosition.y);
+        PlayerPrefs.SetInt("Endgame", endgame ? 1 : 0);
 
-        string json = JsonUtility.ToJson(data);
-        File.WriteAllText(saveFilePath, json);
+        PlayerPrefs.Save();
     }
 
     public void Read()
     {
-        if (File.Exists(saveFilePath))
+        if (PlayerPrefs.HasKey("LastBonfireID"))
         {
-            string json = File.ReadAllText(saveFilePath);
-            SaveData data = JsonUtility.FromJson<SaveData>(json);
-            lastBonfireID = data.lastBonfireID;
-            lastBonfirePosition = data.lastBonfirePosition;
-            endgame = data.endgame;
+            lastBonfireID = PlayerPrefs.GetInt("LastBonfireID");
+            lastBonfirePosition = new Vector2(
+                PlayerPrefs.GetFloat("LastBonfirePositionX"),
+                PlayerPrefs.GetFloat("LastBonfirePositionY")
+            );
+            endgame = PlayerPrefs.GetInt("Endgame") == 1;
         }
         else
         {
-            Debug.LogWarning("Save file not found!");
+            Debug.LogWarning("No save data found in PlayerPrefs!");
         }
     }
 
