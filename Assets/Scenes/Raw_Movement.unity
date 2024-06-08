@@ -1148,9 +1148,7 @@ MonoBehaviour:
   - fds tudo sou o protagonista
   - fodase tudo porra eu sou maluo
   - tocar na fogueira te enche dedeterminasao da silva
-  - oi $playerName
   speakers:
-  - 'eu:'
   - 'eu:'
   - 'eu:'
   - 'eu:'
@@ -1441,7 +1439,7 @@ MonoBehaviour:
   speakerNameComponent: {fileID: 1425490796}
   textComponent: {fileID: 1786887155}
   lines:
-  - toca na fuguera ti enche de determinassaum da silva $playerName
+  - toca na fuguera ti enche de determinassaum da silva
   speakers:
   - 
   textSpeed: 0
