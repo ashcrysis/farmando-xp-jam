@@ -8,7 +8,7 @@ public class CameraFollow : MonoBehaviour
     public float smoothTime = 0.25f;
     public float yModifier = 0f;
     private Vector3 velocity = Vector3.zero;
-    public Transform target;
+    private Transform target;
     public bool followY = true; // Set this to false if you only want to track the x position
 
    /// <summary>
@@ -17,6 +17,7 @@ public class CameraFollow : MonoBehaviour
    /// </summary>
     private void Update()
     {
+        target = GameObject.FindGameObjectWithTag("Player").transform;
         // Calcula a posição desejada da câmera
         Vector3 targetPosition = target.position + offset;
         targetPosition.y = targetPosition.y - yModifier;
