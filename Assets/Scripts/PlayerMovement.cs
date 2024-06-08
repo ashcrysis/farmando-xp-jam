@@ -126,7 +126,6 @@ public class PlayerMovement : MonoBehaviour
             {
                 float slopeAngle = Vector2.Angle(hit.normal, Vector2.up);
 
-                Debug.Log(slopeAngle);
                 if (slopeAngle > 0 && slopeAngle < 90)
                 {
                     float direction = hit.normal.x > 0 ? 1 : -1;
