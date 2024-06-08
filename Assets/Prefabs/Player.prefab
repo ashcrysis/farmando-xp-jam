@@ -54,9 +54,9 @@ MonoBehaviour:
   stamina: 0
   MaxStamina: 100
   staminaLossBase: 10
-  staminaDashValue: 0
-  staminaRunValue: 0
-  staminaJumpValue: 0
+  staminaDashValue: 15
+  staminaRunValue: 3
+  staminaJumpValue: 10
   playerMovement: {fileID: 2472749940717260413}
   dash: {fileID: 8781178368600252521}
 --- !u!114 &2472749940717260413
@@ -87,6 +87,7 @@ MonoBehaviour:
     m_Bits: 8
   moving: 0
   stamina: {fileID: 6484435987616975539}
+  isRunning: 0
 --- !u!114 &8781178368600252521
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -99,7 +100,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 73b466c0c4b783a44b3cd8ec564c1a50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dashingPower: 20
+  dashingPower: 30
+  IFrames: 20
+  invincible: 0
   dashingCooldown: 1
   dashCheck: {fileID: 9178958245082271321}
   rb: {fileID: 4355434462940155012}

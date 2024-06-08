@@ -6,9 +6,9 @@ public class Dash : MonoBehaviour
 {
     private bool canDash = true;
     public float dashingPower = 10f;
-    private float dashingTime = 0.3f;
-    private int IFrames = 10;
-    private bool invincible = false;
+    private float dashingTime = 0.35f;
+    public int IFrames = 25;
+    public bool invincible = false;
     public float dashingCooldown = 1f;
     [SerializeField] private Transform dashCheck;
     [SerializeField] private Rigidbody2D rb;
@@ -19,6 +19,7 @@ public class Dash : MonoBehaviour
     private PlayerMovement player;
     private int invincibleEndFrame;
     public Stamina stamina;
+
     void Start()
     {
         player = GetComponent<PlayerMovement>();
@@ -26,7 +27,6 @@ public class Dash : MonoBehaviour
 
     void Update()
     {
-        Debug.Log(stamina.stamina);
         isFacingRight = player.isFacingRight;
         dir = isFacingRight ? 1f : -1f;
 
@@ -38,20 +38,23 @@ public class Dash : MonoBehaviour
         {
             gameObject.GetComponentInChildren<SpriteRenderer>().color = Color.white;
         }
-
-        if (stamina.stamina < stamina.staminaDashValue  ){
-            return;
-        }
-
-        if (Input.GetKeyDown(KeyCode.LeftControl) && ableDash() && canDash)
+        if (invincible)
         {
-            StartCoroutine(DashCoroutine());
+            gameObject.GetComponentInChildren<SpriteRenderer>().color = Color.red;
         }
-
         if (Time.frameCount >= invincibleEndFrame)
         {
             invincible = false;
         }
+        if (stamina.stamina < stamina.staminaDashValue  ){
+            return;
+        }
+
+        if (Input.GetKeyDown(KeyCode.LeftShift) && ableDash() && canDash )
+        {
+            StartCoroutine(DashCoroutine());
+        }
+
 
     }
 

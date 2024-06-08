@@ -7,23 +7,21 @@ public class Stamina : MonoBehaviour
     public float stamina;
     public float MaxStamina = 100;
     public float staminaLossBase = 10;
-    public float staminaDashValue;
-    public float staminaRunValue;
-    public float staminaJumpValue;
+    public float staminaDashValue = 20;
+    public float staminaRunValue = 10;
+    public float staminaJumpValue = 15;
     public PlayerMovement playerMovement;
 
     public Dash dash;
     void Start()
     {
         stamina = MaxStamina;
-        staminaDashValue = staminaLossBase*2;
-        staminaRunValue = staminaLossBase;
-        staminaJumpValue = staminaLossBase;
     }
 void Update(){
     if (stamina > MaxStamina){
         stamina = MaxStamina;
     }
+    Debug.Log(stamina);
 }
     public void Actions(int actionID){
         switch (actionID){

@@ -27,7 +27,7 @@ public class PlayerMovement : MonoBehaviour
     private bool justLanded = false;
     private bool isAtPeak = false;
     public Stamina stamina;
-
+    public bool isRunning = false;
     private void Start()
     {
         Initialize();
@@ -77,7 +77,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void Jump()
     {
-        if (Input.GetButtonDown("Jump"))
+        if (Input.GetKeyDown(KeyCode.F))
         {
             if (IsGrounded() || canCoyoteJump)
             {
@@ -97,13 +97,15 @@ public class PlayerMovement : MonoBehaviour
 
     private void AdjustSpeed()
     {
-        if (stamina.stamina < stamina.staminaRunValue && !Input.GetButton("Fire3"))
+        if (stamina.stamina < stamina.staminaRunValue && !Input.GetKey(KeyCode.Space))
         {
             speed = origSpeed;
+            isRunning = false;
         }
-        if (stamina.stamina > stamina.staminaRunValue && Input.GetButton("Fire3"))
+        if (stamina.stamina > stamina.staminaRunValue && Input.GetKey(KeyCode.Space))
         {
             speed = speedVeloc;
+            isRunning = true;
             if (moving == 1)
             {
                 stamina.Actions(0);
