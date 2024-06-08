@@ -708,7 +708,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   botao: {fileID: 1387199858}
-  minDistance: 10
+  minDistance: 3
   canInteract: 0
   neededItem: 
   neededItemAmount: 0
@@ -1874,7 +1874,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   botao: {fileID: 596442624}
-  minDistance: 10
+  minDistance: 3
   canInteract: 0
   neededItem: 
   neededItemAmount: 0
