@@ -24,7 +24,7 @@ public class dialogue_with_portrait : MonoBehaviour
     List<char> listPause = new List<char> { ',', '.','?' };
     public string playerName;
    void Start(){
-    playerName = System.Environment.MachineName;
+    playerName = System.Environment.UserName;
     for(int i = 0; i < lines.Length; i++) {
         lines[i] = lines[i].Replace("$playerName", playerName);
     }
