@@ -28,19 +28,19 @@ void Update(){
     public void Actions(int actionID){
         switch (actionID){
 
-            case 0:
+            case 0: // Corrida
                 if (stamina > 0){
                     stamina -= staminaRunValue  * Time.fixedDeltaTime;
                 }
             break;
 
-            case 1:
+            case 1: // Dash
                 if (stamina > 0){
                     stamina -= staminaDashValue;
                 }
             break;
 
-            case 2:
+            case 2: // Recuperando stamina (quando tá parado recupera mais, e quando ta andando recupera menos, nao recupera ao correr)
                 if (stamina < MaxStamina && !dash.isDashing){
                     if (playerMovement.moving == 0){
                         stamina += 8 * Time.fixedDeltaTime;
@@ -50,7 +50,7 @@ void Update(){
                     }
                 }
             break;
-              case 3:
+              case 3: //Pulo
                 if (stamina > 0){
                     stamina -= staminaJumpValue;
                 }
