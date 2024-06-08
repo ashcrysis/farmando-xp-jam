@@ -22,7 +22,7 @@ public class dialogue_with_portrait : MonoBehaviour
     private float oldnavmeshspeed;
     private static bool buttonclicked = false;
     List<char> listPause = new List<char> { ',', '.','?' };
-    void Start()
+    void OnEnable()
     {
         speakerNameComponent.text = speakers[index];
         textComponent.text = string.Empty;

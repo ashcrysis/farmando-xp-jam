@@ -12,11 +12,18 @@ public class DialoguePlayer : MonoBehaviour
          if (GetComponentInChildren<Interavel>().canInteract){
        if (Input.GetKeyDown(KeyCode.E))
             {
+              if (dialogo.GetComponent<dialogue>() != null){
                  if (dialogo.GetComponent<dialogue>().index ==  dialogo.GetComponent<dialogue>().lines.Length-1){
                       resetLineIndex = true;
                     }
                     dialogo.SetActive(true);
+                }else{
+                    if (dialogo.GetComponent<dialogue_with_portrait>().index ==  dialogo.GetComponent<dialogue_with_portrait>().lines.Length-1){
+                      resetLineIndex = true;
+                    }
+                    dialogo.SetActive(true);
                 }
+        }
         }
     }
 
