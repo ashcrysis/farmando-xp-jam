@@ -8,12 +8,13 @@ public class autoDialogue : MonoBehaviour
     [SerializeField] private GameObject dialogo;
     [SerializeField] private bool touching = false;
     [SerializeField] private bool touchedOnce = false;
+    public int dialogueID;
 
     private string playerPrefsKey; // Key to save the state for each dialogue
 
     void Start()
     {
-        playerPrefsKey = "hasPlayed_" + gameObject.GetInstanceID();
+        playerPrefsKey = "hasPlayed_" + dialogueID;
         touchedOnce = PlayerPrefs.GetInt(playerPrefsKey, 0) == 1;
     }
 

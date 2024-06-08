@@ -55,7 +55,7 @@ MonoBehaviour:
   MaxStamina: 100
   staminaLossBase: 10
   staminaDashValue: 15
-  staminaRunValue: 3
+  staminaRunValue: 5
   staminaJumpValue: 10
   playerMovement: {fileID: 2472749940717260413}
   dash: {fileID: 8781178368600252521}
@@ -73,7 +73,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 10
   jumpingPower: 12
-  speedVeloc: 15
+  speedVeloc: 18
   isFacingRight: 1
   acceleration: 2.5
   fallMultiplier: 1.035
