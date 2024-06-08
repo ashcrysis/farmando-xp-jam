@@ -16,7 +16,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private Transform groundCheck;
     [SerializeField] private LayerMask groundLayer;
-    private int moving;
+    public int moving;
     private Animator anim;
     private bool canCoyoteJump = false;
     private float coyoteTime = 0.15f;
@@ -24,6 +24,7 @@ public class PlayerMovement : MonoBehaviour
     private bool isJumping = false;
     private bool hasLaunched = false;
     private bool justLanded = false;
+     public Stamina stamina;
 
     private void Start()
     {
@@ -50,6 +51,9 @@ public class PlayerMovement : MonoBehaviour
     {
         horizontal = Input.GetAxisRaw("Horizontal");
         moving = Mathf.Abs(horizontal) > 0 ? 1 : 0;
+        if (IsGrounded()){
+            stamina.Actions(2);
+        }
         Jump();
         AdjustSpeed();
     }
@@ -72,6 +76,10 @@ public class PlayerMovement : MonoBehaviour
         {
             if (IsGrounded() || canCoyoteJump)
             {
+                 if (stamina.stamina < stamina.staminaJumpValue  ){
+                    return;
+                }
+                stamina.Actions(3);
                 justLanded = false;
                 rb.velocity = new Vector2(rb.velocity.x, jumpingPower);
                 isJumping = true;
@@ -83,7 +91,16 @@ public class PlayerMovement : MonoBehaviour
 
     private void AdjustSpeed()
     {
-        speed = Input.GetButton("Fire3") ? speedVeloc : origSpeed;
+        if (stamina.stamina < stamina.staminaRunValue && !Input.GetButton("Fire3")){
+            speed = origSpeed;
+        }
+        if (stamina.stamina > stamina.staminaRunValue && Input.GetButton("Fire3")){
+            speed = speedVeloc;
+            if(moving == 1){
+                stamina.Actions(0);
+            }
+        }
+
     }
 
     private void UpdateAnimator()

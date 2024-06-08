@@ -18,7 +18,7 @@ public class Dash : MonoBehaviour
     private float dir;
     private PlayerMovement player;
     private int invincibleEndFrame;
-
+    public Stamina stamina;
     void Start()
     {
         player = GetComponent<PlayerMovement>();
@@ -26,8 +26,22 @@ public class Dash : MonoBehaviour
 
     void Update()
     {
+        Debug.Log(stamina.stamina);
         isFacingRight = player.isFacingRight;
         dir = isFacingRight ? 1f : -1f;
+
+        if (isDashing)
+        {
+            gameObject.GetComponentInChildren<SpriteRenderer>().color = Color.yellow;
+        }
+        else
+        {
+            gameObject.GetComponentInChildren<SpriteRenderer>().color = Color.white;
+        }
+
+        if (stamina.stamina < stamina.staminaDashValue  ){
+            return;
+        }
 
         if (Input.GetKeyDown(KeyCode.LeftControl) && ableDash() && canDash)
         {
@@ -39,16 +53,6 @@ public class Dash : MonoBehaviour
             invincible = false;
         }
 
-        if (isDashing)
-        {
-            gameObject.GetComponentInChildren<SpriteRenderer>().color = Color.yellow;
-        }
-        else
-        {
-            gameObject.GetComponentInChildren<SpriteRenderer>().color = Color.white;
-        }
-
-        Debug.Log(invincible);
     }
 
     private bool ableDash()
@@ -60,6 +64,7 @@ public class Dash : MonoBehaviour
     {
         StartInvincibility();
         canDash = false;
+        stamina.Actions(1);
         isDashing = true;
         rb.velocity = new Vector2(transform.localScale.x * (dashingPower * dir), 0f);
         rb.velocity = new Vector2(rb.velocity.x - (dashingPower * (isFacingRight ? 1f : -1f)) / 4, rb.velocity.y);
