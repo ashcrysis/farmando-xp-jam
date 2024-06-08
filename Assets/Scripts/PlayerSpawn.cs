@@ -1,35 +1,31 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using System.IO;
 
 public class PlayerSpawn : MonoBehaviour
 {
     public GameObject playerPrefab;
-
-    private string saveFilePath;
     public GameObject starterPoint;
+
     void Start()
     {
-        saveFilePath = Path.Combine(Application.persistentDataPath, "saveData.json");
         SpawnPlayerAtLastBonfire();
     }
 
     void SpawnPlayerAtLastBonfire()
     {
-        if (File.Exists(saveFilePath))
+        if (PlayerPrefs.HasKey("LastBonfirePositionX") && PlayerPrefs.HasKey("LastBonfirePositionY"))
         {
-            string json = File.ReadAllText(saveFilePath);
-            SaveManager.SaveData data = JsonUtility.FromJson<SaveManager.SaveData>(json);
+            float spawnPositionX = PlayerPrefs.GetFloat("LastBonfirePositionX");
+            float spawnPositionY = PlayerPrefs.GetFloat("LastBonfirePositionY");
 
-            Vector2 spawnPosition = data.lastBonfirePosition;
+            Vector2 spawnPosition = new Vector2(spawnPositionX, spawnPositionY);
             Instantiate(playerPrefab, new Vector3(spawnPosition.x, spawnPosition.y, 0), Quaternion.identity);
         }
         else
         {
-            Debug.LogWarning("Save file not found! Spawning player at default position.");
+            Debug.LogWarning("No saved position found! Spawning player at default position.");
             Instantiate(playerPrefab, starterPoint.transform.position, Quaternion.identity);
         }
     }
-
 }
