@@ -1148,7 +1148,9 @@ MonoBehaviour:
   - fds tudo sou o protagonista
   - fodase tudo porra eu sou maluo
   - tocar na fogueira te enche dedeterminasao da silva
+  - oi $playerName
   speakers:
+  - 'eu:'
   - 'eu:'
   - 'eu:'
   - 'eu:'
@@ -1159,6 +1161,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 1c224036552ac154da7c93ebdbb2db74, type: 3}
   - {fileID: 21300000, guid: 1c224036552ac154da7c93ebdbb2db74, type: 3}
   imageComponent: {fileID: 198398397}
+  playerName: 
 --- !u!114 &482711750
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1437,11 +1440,12 @@ MonoBehaviour:
   speakerNameComponent: {fileID: 1425490796}
   textComponent: {fileID: 1786887155}
   lines:
-  - 'toca na fuguera ti enche de determinassaum da silva '
+  - toca na fuguera ti enche de determinassaum da silva $playerName
   speakers:
   - 
   textSpeed: 0
   index: 0
+  playerName: 
 --- !u!82 &559372514
 AudioSource:
   m_ObjectHideFlags: 0
@@ -3096,7 +3100,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   smoothTime: 0.8
   yModifier: -3
-  target: {fileID: 1500127866324037703, guid: 56063e45f5b16774ebdf36ceff8a8d11, type: 3}
   followY: 1
 --- !u!1 &1628711590
 GameObject:
@@ -4207,6 +4210,7 @@ MonoBehaviour:
   - Protagonista
   textSpeed: 0
   index: 0
+  playerName: 
 --- !u!114 &8408511217189865050
 MonoBehaviour:
   m_ObjectHideFlags: 0

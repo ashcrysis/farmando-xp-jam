@@ -157,10 +157,7 @@ void ButtonClick(){
     if (index < lines.Length - 1)
     {
         index++;
-        if (index < speakers.Length)
-        {
-            speakerNameComponent.text = speakers[index];
-        }
+        speakerNameComponent.text = speakers[index];
         textComponent.text = string.Empty;
         StartCoroutine(TypeLine());
 
