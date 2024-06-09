@@ -14,7 +14,7 @@ public class Interavel : MonoBehaviour
     void Update()
     {
 
-        canInteract = Vector2.Distance(transform.parent.position,GameObject.FindGameObjectWithTag("Player").transform.position) < minDistance;
+        canInteract = Vector2.Distance(transform.position,GameObject.FindGameObjectWithTag("Player").transform.position) < minDistance;
         try{
         if (neededItem == "")
         {

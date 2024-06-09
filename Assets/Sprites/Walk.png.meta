@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 14c1aed50249c094180f7cf97cd3894a
+guid: 5303fe5484f197240903e9d465e54d92
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -69,7 +69,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 2048
+    maxTextureSize: 16384
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 0
@@ -110,7 +110,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Protag_Roll_0
+      name: Walk_0
       rect:
         serializedVersion: 2
         x: 0
@@ -118,20 +118,20 @@ TextureImporter:
         width: 72
         height: 70
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bc0deb841e0b6a649986cb5eb03a98eb
-      internalID: -1452393208
+      spriteID: 7163b415e507dbe44bc173d45a39aa58
+      internalID: 652823716
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Protag_Roll_1
+      name: Walk_1
       rect:
         serializedVersion: 2
         x: 72
@@ -139,20 +139,20 @@ TextureImporter:
         width: 72
         height: 70
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 928879a80fa3d8449bee5792a68ee3ea
-      internalID: 1128598610
+      spriteID: 22e7ff5acecd4d04db2ae0788817b8b8
+      internalID: 31698063
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Protag_Roll_2
+      name: Walk_2
       rect:
         serializedVersion: 2
         x: 144
@@ -160,20 +160,20 @@ TextureImporter:
         width: 72
         height: 70
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 009cd95b6070dc74f950a31ee72723b6
-      internalID: 1841041507
+      spriteID: 3a48f227f31a2d345b1ddc8400bed709
+      internalID: 1064766153
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Protag_Roll_3
+      name: Walk_3
       rect:
         serializedVersion: 2
         x: 216
@@ -181,20 +181,20 @@ TextureImporter:
         width: 72
         height: 70
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d40ace3a0904cbf428ccf34843504aa6
-      internalID: 1330457295
+      spriteID: 0a9d0a2182c3f5e499516ef5bcfe8b28
+      internalID: 273759862
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Protag_Roll_4
+      name: Walk_4
       rect:
         serializedVersion: 2
         x: 288
@@ -202,20 +202,20 @@ TextureImporter:
         width: 72
         height: 70
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a3c8c6639f282d84d9bed3b81b06cbc4
-      internalID: 1644596699
+      spriteID: 00b6c005cc05a334b9bb806876be86ab
+      internalID: -1681845252
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Protag_Roll_5
+      name: Walk_5
       rect:
         serializedVersion: 2
         x: 360
@@ -223,20 +223,20 @@ TextureImporter:
         width: 72
         height: 70
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 03a12766046852448b14f06b9c61045a
-      internalID: -1392248351
+      spriteID: 8d93a5daf463d4648b40456e168143ed
+      internalID: 2070557238
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Protag_Roll_6
+      name: Walk_6
       rect:
         serializedVersion: 2
         x: 432
@@ -244,20 +244,20 @@ TextureImporter:
         width: 72
         height: 70
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9c9995c0b812a8347a4176c7adbbed34
-      internalID: -287585577
+      spriteID: 79222ce217746164d901b35a94c6fbfa
+      internalID: 1693506826
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Protag_Roll_7
+      name: Walk_7
       rect:
         serializedVersion: 2
         x: 504
@@ -265,20 +265,20 @@ TextureImporter:
         width: 72
         height: 70
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 76ba6fb2524a66545b7c74352b76705e
-      internalID: 741736997
+      spriteID: 0c446eb342ad23040a7169b189073ad3
+      internalID: 2082623292
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Protag_Roll_8
+      name: Walk_8
       rect:
         serializedVersion: 2
         x: 576
@@ -286,77 +286,14 @@ TextureImporter:
         width: 72
         height: 70
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 40cec8b5d389acb46a063e6f52f3b0e6
-      internalID: -1726313326
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Protag_Roll_9
-      rect:
-        serializedVersion: 2
-        x: 648
-        y: 0
-        width: 72
-        height: 70
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 95671a71da4c41e468e9ee9f2aa02ca6
-      internalID: -1607896812
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Protag_Roll_10
-      rect:
-        serializedVersion: 2
-        x: 721
-        y: 0
-        width: 72
-        height: 70
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c5892c788d919804a85d40e78b751444
-      internalID: -1811958226
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Protag_Roll_11
-      rect:
-        serializedVersion: 2
-        x: 792
-        y: 0
-        width: 72
-        height: 70
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 99d0f172e107721489e5573fb5a2c045
-      internalID: 1022089216
+      spriteID: e86ef56f1ebcd8047be39a41b7a79960
+      internalID: -1362734249
       vertices: []
       indices: 
       edges: []
@@ -372,18 +309,15 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Protag_Roll_0: -1452393208
-      Protag_Roll_1: 1128598610
-      Protag_Roll_10: -1811958226
-      Protag_Roll_11: 1022089216
-      Protag_Roll_2: 1841041507
-      Protag_Roll_3: 1330457295
-      Protag_Roll_4: 1644596699
-      Protag_Roll_5: -1392248351
-      Protag_Roll_6: -287585577
-      Protag_Roll_7: 741736997
-      Protag_Roll_8: -1726313326
-      Protag_Roll_9: -1607896812
+      Walk_0: 652823716
+      Walk_1: 31698063
+      Walk_2: 1064766153
+      Walk_3: 273759862
+      Walk_4: -1681845252
+      Walk_5: 2070557238
+      Walk_6: 1693506826
+      Walk_7: 2082623292
+      Walk_8: -1362734249
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

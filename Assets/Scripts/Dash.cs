@@ -38,20 +38,15 @@ public class Dash : MonoBehaviour
 
         if (isDashing)
         {
-            gameObject.GetComponentInChildren<SpriteRenderer>().color = Color.yellow;
             playerCollider.size = new Vector2(playerCollider.size.x,1f);
             playerCollider.offset = new Vector2(playerCollider.offset.x, (float)-0.49);
         }
         else
         {
-            gameObject.GetComponentInChildren<SpriteRenderer>().color = Color.white;
             playerCollider.size = new Vector2(playerCollider.size.x,colliderHeight);
             playerCollider.offset = new Vector2(playerCollider.offset.x, colliderY);
         }
-        if (invincible)
-        {
-            gameObject.GetComponentInChildren<SpriteRenderer>().color = Color.red;
-        }
+   
         if (stamina.stamina < stamina.staminaDashValue  ){
             return;
         }
