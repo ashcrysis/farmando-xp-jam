@@ -92,15 +92,19 @@ public class PlayerMovement : MonoBehaviour
 
     private void AdjustSpeed()
     {
+        if (Input.GetKey(KeyCode.Space)){
+            isRunning = true;
+        }
+        else{
+            isRunning = false;
+        }
         if (stamina.stamina < stamina.staminaRunValue && !Input.GetKey(KeyCode.Space))
         {
             speed = origSpeed;
-            isRunning = false;
         }
         if (stamina.stamina > stamina.staminaRunValue && Input.GetKey(KeyCode.Space))
         {
             speed = speedVeloc;
-            isRunning = true;
             if (moving == 1)
             {
                 stamina.Actions(0);
