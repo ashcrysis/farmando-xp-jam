@@ -71,7 +71,7 @@ public class Dash : MonoBehaviour
 
     private IEnumerator DashCoroutine()
     {
-        StartInvincibility();
+        StartCoroutine(StartInvincibility());
         canDash = false;
         stamina.Actions(1);
         isDashing = true;
@@ -87,7 +87,6 @@ public class Dash : MonoBehaviour
  private IEnumerator StartInvincibility()
     {
         invincible = true;
-        Debug.Log("ainnn");
         yield return new WaitForSeconds(IFrames);
         invincible = false;
     }
