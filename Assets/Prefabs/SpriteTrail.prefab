@@ -98,5 +98,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mRenderer: {fileID: 92986110321068433}
-  mStartColor: {r: 1, g: 1, b: 1, a: 0.07058824}
-  mEndColor: {r: 1, g: 1, b: 1, a: 0}
+  mStartColor: {r: 0, g: 0.6539326, b: 1, a: 0.08627451}
+  mEndColor: {r: 0, g: 0.654902, b: 1, a: 0.019607844}

@@ -53,8 +53,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mLeadingSprite: {fileID: 3582616043820511995}
-  mTrailSegments: 70
-  mTrailTime: 0.5
+  mTrailSegments: 60
+  mTrailTime: 0.25
   mTrailObject: {fileID: 4226855142518143278, guid: e5d4f182d919b1d4da8561c904bc5803, type: 3}
   mTrailObjectsInUse: []
 --- !u!114 &6484435987616975539
