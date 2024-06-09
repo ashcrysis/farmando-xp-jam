@@ -5,15 +5,17 @@ using UnityEngine;
 public class Teleport : MonoBehaviour
 {
     public GameObject teleportPoint;
+    public bool trigger = false;
 
-    void Update()
+    void LateUpdate()
     {
         if (GetComponent<Interavel>().canInteract && Input.GetKeyDown(KeyCode.E)){
-                GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>().enabled = false;
-                GameObject.FindGameObjectWithTag("Player").GetComponent<CapsuleCollider2D>().enabled = false;
                 GameObject.FindGameObjectWithTag("Player").gameObject.transform.position = teleportPoint.transform.position;
-                GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>().enabled = true;
-                GameObject.FindGameObjectWithTag("Player").GetComponent<CapsuleCollider2D>().enabled = true;
+        }
+
+        if (trigger){
+             GameObject.FindGameObjectWithTag("Player").gameObject.transform.position = teleportPoint.transform.position;
+             trigger = false;
         }
     }
 }
