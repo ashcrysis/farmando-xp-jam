@@ -237,6 +237,7 @@ public class PlayerMovement : MonoBehaviour
         if (isFacingRight && horizontal < 0f || !isFacingRight && horizontal > 0f)
         {
             isFacingRight = !isFacingRight;
+            GetComponentInChildren<SpriteRenderer>().flipX = !isFacingRight;
         }
     }
 
