@@ -1,3 +1,4 @@
+using System.Threading;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,7 +8,7 @@ public class Dash : MonoBehaviour
     private bool canDash = true;
     public float dashingPower = 10f;
     private float dashingTime = 0.35f;
-    public int IFrames = 25;
+    public float IFrames = 0.25f;
     public bool invincible = false;
     public float dashingCooldown = 1f;
     [SerializeField] private Transform dashCheck;
@@ -17,7 +18,6 @@ public class Dash : MonoBehaviour
     private bool isFacingRight;
     private float dir;
     private PlayerMovement player;
-    private int invincibleEndFrame;
     public Stamina stamina;
     private CapsuleCollider2D playerCollider;
     private float colliderHeight;
@@ -52,10 +52,6 @@ public class Dash : MonoBehaviour
         {
             gameObject.GetComponentInChildren<SpriteRenderer>().color = Color.red;
         }
-        if (Time.frameCount >= invincibleEndFrame)
-        {
-            invincible = false;
-        }
         if (stamina.stamina < stamina.staminaDashValue  ){
             return;
         }
@@ -88,9 +84,11 @@ public class Dash : MonoBehaviour
         canDash = true;
     }
 
-    private void StartInvincibility()
+ private IEnumerator StartInvincibility()
     {
         invincible = true;
-        invincibleEndFrame = Time.frameCount + IFrames;
+        Debug.Log("ainnn");
+        yield return new WaitForSeconds(IFrames);
+        invincible = false;
     }
 }

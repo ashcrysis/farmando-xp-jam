@@ -21,7 +21,6 @@ void Update(){
     if (stamina > MaxStamina){
         stamina = MaxStamina;
     }
-    Debug.Log(stamina);
 }
     public void Actions(int actionID){
         switch (actionID){
