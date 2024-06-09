@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1500127866324037703}
+  - component: {fileID: 5557617006488621933}
   - component: {fileID: 6484435987616975539}
   - component: {fileID: 2472749940717260413}
   - component: {fileID: 8781178368600252521}
@@ -39,6 +40,23 @@ Transform:
   - {fileID: 9178958245082271321}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5557617006488621933
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7639174015140093084}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47d8476edef603945943391ea6c0fbfd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mLeadingSprite: {fileID: 3582616043820511995}
+  mTrailSegments: 70
+  mTrailTime: 0.5
+  mTrailObject: {fileID: 4226855142518143278, guid: e5d4f182d919b1d4da8561c904bc5803, type: 3}
+  mTrailObjectsInUse: []
 --- !u!114 &6484435987616975539
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -77,7 +95,6 @@ MonoBehaviour:
   isFacingRight: 1
   acceleration: 2.5
   fallMultiplier: 1.035
-  peakGravityMultiplier: 1.2
   JumpParticle: {fileID: 0}
   LandParticle: {fileID: 0}
   rb: {fileID: 4355434462940155012}
@@ -100,7 +117,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 73b466c0c4b783a44b3cd8ec564c1a50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dashingPower: 30
+  dashingPower: 20
   IFrames: 0.2
   invincible: 0
   dashingCooldown: 1
@@ -287,8 +304,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 2081574057
+  m_SortingLayer: 2
   m_SortingOrder: 5
   m_Sprite: {fileID: -303272592, guid: 34f7f0a23d88bcb45becdc592b3b4f89, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

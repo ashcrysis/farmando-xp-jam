@@ -38,11 +38,13 @@ public class Dash : MonoBehaviour
 
         if (isDashing)
         {
+            GetComponent<DashTrail>().SetEnabled(true);
             playerCollider.size = new Vector2(playerCollider.size.x,1f);
             playerCollider.offset = new Vector2(playerCollider.offset.x, (float)-0.49);
         }
         else
         {
+            GetComponent<DashTrail>().SetEnabled(false);
             playerCollider.size = new Vector2(playerCollider.size.x,colliderHeight);
             playerCollider.offset = new Vector2(playerCollider.offset.x, colliderY);
         }
@@ -76,6 +78,9 @@ public class Dash : MonoBehaviour
         if (player.moving == 0)
         {
             rb.velocity = new Vector2(0f,rb.velocity.y);
+        }
+        else{
+            rb.velocity = new Vector2(rb.velocity.x-dashingPower/4,rb.velocity.y);
         }
         isDashing = false;
 
