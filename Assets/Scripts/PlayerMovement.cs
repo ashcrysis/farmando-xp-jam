@@ -11,7 +11,6 @@ public class PlayerMovement : MonoBehaviour
     private float origSpeed;
     public float acceleration = 2f;
     public float fallMultiplier = 1.5f;
-    public float peakGravityMultiplier = 6f;
     public ParticleSystem JumpParticle;
     public ParticleSystem LandParticle;
     [SerializeField] private Rigidbody2D rb;
@@ -25,7 +24,6 @@ public class PlayerMovement : MonoBehaviour
     private bool isJumping = false;
     private bool hasLaunched = false;
     private bool justLanded = false;
-    private bool isAtPeak = false;
     public Stamina stamina;
     public bool isRunning = false;
     private void Start()
@@ -44,10 +42,8 @@ public class PlayerMovement : MonoBehaviour
     {
         HandleInput();
         Flip();
-        ApplyGravity();
         animatorHandler();
         UpdateLandingState();
-        DetectJumpPeak();
     }
 
     private void HandleInput()
@@ -71,7 +67,6 @@ public class PlayerMovement : MonoBehaviour
                 // LandParticle.Play();
                 justLanded = true;
             }
-            isAtPeak = false;
         }
     }
 
@@ -118,15 +113,6 @@ public class PlayerMovement : MonoBehaviour
         anim.SetFloat("speed", speed);
         anim.SetFloat("isFacingRight", isFacingRight ? 1f : 0f);
         anim.SetInteger("isMoving", moving);
-    }
-
-    private void ApplyGravity()
-    {
-        if (rb.velocity.y < 0)
-        {
-            float multiplier = isAtPeak ? peakGravityMultiplier : fallMultiplier;
-            rb.velocity += Vector2.up * Physics2D.gravity.y * (multiplier - 1);
-        }
     }
 
     private void FixedUpdate()
@@ -210,14 +196,6 @@ public class PlayerMovement : MonoBehaviour
                 // JumpParticle.Play();
                 hasLaunched = true;
             }
-        }
-    }
-
-    private void DetectJumpPeak()
-    {
-        if (isJumping && rb.velocity.y <= 0 && !isAtPeak)
-        {
-            isAtPeak = true;
         }
     }
 
