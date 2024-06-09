@@ -71,8 +71,12 @@ public class Dash : MonoBehaviour
         stamina.Actions(1);
         isDashing = true;
         rb.velocity = new Vector2(transform.localScale.x * (dashingPower * dir), 0f);
-        rb.velocity = new Vector2(rb.velocity.x - (dashingPower * (isFacingRight ? 1f : -1f)) / 4, rb.velocity.y);
+        //rb.velocity = new Vector2(rb.velocity.x - dashingPower * (isFacingRight ? 1f : -1f) / 4, rb.velocity.y);
         yield return new WaitForSeconds(dashingTime);
+        if (player.moving == 0)
+        {
+            rb.velocity = new Vector2(0f,rb.velocity.y);
+        }
         isDashing = false;
 
         yield return new WaitForSeconds(dashingCooldown);
