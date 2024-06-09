@@ -42,7 +42,7 @@ public class dialogue_with_portrait : MonoBehaviour
         if (gameObject.activeSelf)
         {
             GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>().enabled = false;
-             GameObject.FindGameObjectWithTag("Player").GetComponent<Animator>().SetBool("isMoving",false);
+             GameObject.FindGameObjectWithTag("Player").GetComponentInChildren<Animator>().SetBool("moving",false);
             GameObject.FindGameObjectWithTag("Player").GetComponent<Rigidbody2D>().velocity = new Vector2(0,0);
             var enemies = GameObject.FindGameObjectsWithTag("enemy");
             for (int i = 0; i < enemies.Length; i++)

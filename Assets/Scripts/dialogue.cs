@@ -40,7 +40,7 @@ public class dialogue : MonoBehaviour
             GameObject.FindGameObjectWithTag("Player").GetComponent<Rigidbody2D>().velocity = new Vector2(0,0);
             }
             GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>().enabled = false;
-             GameObject.FindGameObjectWithTag("Player").GetComponent<Animator>().SetBool("isMoving",false);
+             GameObject.FindGameObjectWithTag("Player").GetComponentInChildren<Animator>().SetBool("moving",false);
             var enemies = GameObject.FindGameObjectsWithTag("enemy");
             for (int i = 0; i < enemies.Length; i++)
             {
