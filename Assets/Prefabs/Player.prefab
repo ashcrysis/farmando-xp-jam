@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 4355434462940155012}
   - component: {fileID: 8601769655555533063}
   - component: {fileID: 146555990516520447}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -174,10 +174,10 @@ CapsuleCollider2D:
   m_LayerOverridePriority: 0
   m_ForceSendLayers:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 191
   m_ForceReceiveLayers:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 191
   m_ContactCaptureLayers:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -211,7 +211,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9178958245082271321}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: groundCheck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -244,7 +244,7 @@ GameObject:
   - component: {fileID: 6957222609496331817}
   - component: {fileID: 3582616043820511995}
   - component: {fileID: 5987690614981044191}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}

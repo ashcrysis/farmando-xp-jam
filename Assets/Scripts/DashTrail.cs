@@ -1,6 +1,8 @@
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.PackageManager;
+using System;
 
 public class DashTrail : MonoBehaviour
 {
@@ -43,6 +45,7 @@ public class DashTrail : MonoBehaviour
 
             if (mSpawnTimer >= mSpawnInterval)
             {
+                try{
                 if (mTrailObjectsNotInUse.Count > 0){
                 GameObject trail = mTrailObjectsNotInUse.Dequeue ();
                 if (trail != null)
@@ -55,6 +58,7 @@ public class DashTrail : MonoBehaviour
                     mSpawnTimer = 0;
                     }
                 }
+            }catch(Exception e){}
             }
         }
     }
