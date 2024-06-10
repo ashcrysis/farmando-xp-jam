@@ -15,6 +15,7 @@ public class CameraFollow : MonoBehaviour
    /// The Update function calculates the desired position of the camera, optionally only tracking the x
    /// position if followY is false, and smoothly moves the camera towards the target position.
    /// </summary>
+
     private void Update()
     {
         target = GameObject.FindGameObjectWithTag("Player").transform;

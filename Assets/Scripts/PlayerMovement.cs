@@ -36,6 +36,7 @@ public class PlayerMovement : MonoBehaviour
         origSpeed = speed;
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
+        GameObject.FindGameObjectWithTag("MainCamera").transform.position = gameObject.transform.position;
     }
 
     private void Update()
