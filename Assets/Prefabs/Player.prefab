@@ -120,7 +120,7 @@ MonoBehaviour:
   dashingPower: 20
   IFrames: 0.2
   invincible: 0
-  dashingCooldown: 1
+  dashingCooldown: 0.7
   dashCheck: {fileID: 9178958245082271321}
   rb: {fileID: 4355434462940155012}
   groundLayer:

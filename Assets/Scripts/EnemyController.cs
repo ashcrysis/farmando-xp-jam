@@ -6,7 +6,8 @@ public class EnemyController : MonoBehaviour
 {
     private GameObject player;
     public bool foundPlayer = false;
-    public float enemySpeed;
+    public float enemyPatrolSpeed;
+    public float enemyFollowSpeed;
     public Transform pointA;
     public Transform pointB;    
     private Rigidbody2D rb;
@@ -66,9 +67,11 @@ public class EnemyController : MonoBehaviour
     {
         float direction = target.x - rb.position.x;
         direction = Mathf.Sign(direction); 
-
-        rb.velocity = new Vector2(direction * enemySpeed, rb.velocity.y);
-
+        if (!foundPlayer){
+        rb.velocity = new Vector2(direction * enemyPatrolSpeed, rb.velocity.y);
+}else{
+     rb.velocity = new Vector2(direction * enemyFollowSpeed, rb.velocity.y);
+}
         if (direction != 0)
         {
             transform.localScale = new Vector3(Mathf.Abs(transform.localScale.x) * direction, transform.localScale.y, transform.localScale.z);
