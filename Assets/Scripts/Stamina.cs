@@ -39,12 +39,16 @@ void Update(){
 
             case 2: // Recuperando stamina (quando tá parado recupera mais, e quando ta andando recupera menos, nao recupera ao correr)
                 if (stamina < MaxStamina && !dash.isDashing){
+                    if (!playerMovement.isRunning){
                     if (playerMovement.moving == 0){
+                    Debug.Log("Recuperando stamina");
                         stamina += 8 * Time.fixedDeltaTime;
                     }
                      if (playerMovement.moving == 1){
+                         Debug.Log("Recuperando stamina");
                         stamina += 2 * Time.fixedDeltaTime;
                     }
+                }
                 }
             break;
               case 3: //Pulo

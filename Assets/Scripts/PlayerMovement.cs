@@ -52,7 +52,9 @@ public class PlayerMovement : MonoBehaviour
         moving = Mathf.Abs(horizontal) > 0 ? 1 : 0;
         if (IsGrounded())
         {
+            if (!isRunning && !Input.GetKey(KeyCode.Space)){
             stamina.Actions(2);
+            }
         }
         Jump();
         AdjustSpeed();
@@ -92,24 +94,17 @@ public class PlayerMovement : MonoBehaviour
 
     private void AdjustSpeed()
     {
-        if (Input.GetKey(KeyCode.Space)){
+        if (Input.GetKey(KeyCode.Space) && moving != 0 && stamina.stamina > ( stamina.staminaRunValue)){
             isRunning = true;
+            speed = speedVeloc;
+            stamina.Actions(0);
         }
         else{
             isRunning = false;
-        }
-        if (stamina.stamina < stamina.staminaRunValue && !Input.GetKey(KeyCode.Space))
-        {
             speed = origSpeed;
         }
-        if (stamina.stamina > stamina.staminaRunValue && Input.GetKey(KeyCode.Space))
-        {
-            speed = speedVeloc;
-            if (moving == 1)
-            {
-                stamina.Actions(0);
-            }
-        }
+         
+        
     }
 
     private void UpdateAnimator()
