@@ -18,11 +18,14 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private LayerMask groundLayer;
     public int moving;
     private Animator anim;
-    private bool canCoyoteJump = false;
+    public bool canCoyoteJump = false;
     private float coyoteTime = 0.15f;
     private float coyoteTimer = 0f;
     private bool isJumping = false;
+    private bool canJump = true;
+    public float jumpDelay = 0.2f;
     private bool hasLaunched = false;
+
     private bool justLanded = false;
     public Stamina stamina;
     public bool isRunning = false;
@@ -77,7 +80,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void Jump()
     {
-        if (Input.GetKeyDown(KeyCode.UpArrow) && !GetComponent<Dash>().isDashing)
+        if (Input.GetKeyDown(KeyCode.UpArrow) && !GetComponent<Dash>().isDashing && canJump)
         {
             if (IsGrounded() || canCoyoteJump)
             {
@@ -91,6 +94,8 @@ public class PlayerMovement : MonoBehaviour
                 isJumping = true;
                 canCoyoteJump = false;
                 StartCoroutine(ResetCoyoteJumpAfterDelay(coyoteTime));
+                canJump = false;
+                StartCoroutine(JumpDelay(jumpDelay));
             }
         }
     }
@@ -120,8 +125,8 @@ public class PlayerMovement : MonoBehaviour
         if (moving == 0 && !GetComponent<Dash>().isDashing){
             rb.velocity = new Vector2(0,rb.velocity.y);
         }
-         
-        
+
+
     }
 
     private void UpdateAnimator()
@@ -222,6 +227,11 @@ public class PlayerMovement : MonoBehaviour
     {
         yield return new WaitForSeconds(delay);
         canCoyoteJump = false;
+    }
+     private IEnumerator JumpDelay(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        canJump = true;
     }
 
     private void Flip()

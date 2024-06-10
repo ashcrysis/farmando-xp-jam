@@ -90,7 +90,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
-  jumpingPower: 15
+  jumpingPower: 16
   speedVeloc: 18
   isFacingRight: 1
   acceleration: 2.5
