@@ -12,6 +12,14 @@ public class Teleport : MonoBehaviour
     {
         if (GetComponent<Interavel>().canInteract && Input.GetKeyDown(KeyCode.E))
         {
+            GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>().enabled = false;
+            GameObject.FindGameObjectWithTag("Player").GetComponent<Rigidbody2D>().velocity = new Vector2(0,GameObject.FindGameObjectWithTag("Player").GetComponent<Rigidbody2D>().velocity.y);
+            GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerAnimation>().enabled = false;
+            GameObject.FindGameObjectWithTag("Player").GetComponent<Dash>().enabled = false;
+            GameObject.FindGameObjectWithTag("Player").GetComponentInChildren<Animator>().SetInteger("moving",0);
+            GameObject.FindGameObjectWithTag("Player").GetComponentInChildren<Animator>().SetBool("isDashing",false);
+            GameObject.FindGameObjectWithTag("Player").GetComponentInChildren<Animator>().SetBool("isRunning",false);
+            
             StartCoroutine(FadeAndTeleport());
         }
     }
@@ -38,6 +46,9 @@ public class Teleport : MonoBehaviour
         GameObject.FindGameObjectWithTag("Player").transform.position = teleportPoint.transform.position;
         yield return new WaitForSeconds(1f);
         StartCoroutine(FadeImage(0f));
+        GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>().enabled = true;
+        GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerAnimation>().enabled = true;
+        GameObject.FindGameObjectWithTag("Player").GetComponent<Dash>().enabled = true;
     }
       IEnumerator FadeImage(float targetAlpha)
     {
