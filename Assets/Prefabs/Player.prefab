@@ -94,7 +94,7 @@ MonoBehaviour:
   speedVeloc: 18
   isFacingRight: 1
   acceleration: 2.5
-  fallMultiplier: 1.035
+  fallMultiplier: 1.5
   JumpParticle: {fileID: 0}
   LandParticle: {fileID: 0}
   rb: {fileID: 4355434462940155012}
@@ -105,6 +105,8 @@ MonoBehaviour:
   moving: 0
   stamina: {fileID: 6484435987616975539}
   isRunning: 0
+  onSlope: 0
+  slopeAngle: 0
 --- !u!114 &8781178368600252521
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -120,7 +122,7 @@ MonoBehaviour:
   dashingPower: 20
   IFrames: 0.2
   invincible: 0
-  dashingCooldown: 0.7
+  dashingCooldown: 0.5
   dashCheck: {fileID: 9178958245082271321}
   rb: {fileID: 4355434462940155012}
   groundLayer:

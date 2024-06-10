@@ -26,6 +26,8 @@ public class PlayerMovement : MonoBehaviour
     private bool justLanded = false;
     public Stamina stamina;
     public bool isRunning = false;
+    public bool onSlope;
+    public float slopeAngle;
     private void Start()
     {
         Initialize();
@@ -95,14 +97,25 @@ public class PlayerMovement : MonoBehaviour
 
     private void AdjustSpeed()
     {
+
         if (Input.GetKey(KeyCode.Z) && moving != 0 && stamina.stamina > ( stamina.staminaRunValue)){
             isRunning = true;
-            speed = speedVeloc;
+            if (onSlope && IsGrounded())
+            {
+            speed = speedVeloc + (4f + slopeAngle/35f);
+            }
+            else
+            {
+                speed = speedVeloc;
+            }
             stamina.Actions(0);
         }
         else{
             isRunning = false;
-            speed = origSpeed;
+            if (!onSlope)
+            {
+                speed = origSpeed;
+            }
         }
         if (moving == 0 && !GetComponent<Dash>().isDashing){
             rb.velocity = new Vector2(0,rb.velocity.y);
@@ -132,43 +145,41 @@ public class PlayerMovement : MonoBehaviour
 
         HandleGroundedState();
         HandleSlopeAdjustment();
-    }
-
-    private void HandleSlopeAdjustment()
+    }private void HandleSlopeAdjustment()
+{
+    if (IsGrounded())
     {
-        if (IsGrounded())
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, -Vector2.up, Mathf.Infinity, groundLayer);
+        if (hit.collider != null)
         {
-            RaycastHit2D hit = Physics2D.Raycast(groundCheck.position, Vector2.down, 0.2f, groundLayer);
-            if (hit.collider != null)
+            slopeAngle = Vector2.Angle(hit.normal, Vector2.up);
+
+            if (slopeAngle > 0 && slopeAngle < 90)
             {
-                float slopeAngle = Vector2.Angle(hit.normal, Vector2.up);
+                float direction = hit.normal.x > 0 ? 1 : -1;
+                float rotationSpeed = 0.8f; // Adjust the rotation speed factor as needed
+                float targetRotation = direction * -slopeAngle;
+                float smoothRotation = Mathf.LerpAngle(transform.rotation.eulerAngles.z, targetRotation, Time.deltaTime * rotationSpeed);
+                transform.rotation = Quaternion.Euler(0, 0, smoothRotation);
+                onSlope = true;
+                speed = origSpeed * (1f + slopeAngle / 35f);
 
-                if (slopeAngle > 0 && slopeAngle < 90)
-                {
-                    float direction = hit.normal.x > 0 ? 1 : -1;
-                    float rotationSpeed = 0.8f;
-                    float targetRotation = direction * -slopeAngle;
-                    float smoothRotation = Mathf.LerpAngle(transform.rotation.eulerAngles.z, targetRotation, Time.deltaTime * rotationSpeed);
-                    transform.rotation = Quaternion.Euler(0, 0, smoothRotation);
-
-                    speed = origSpeed * (1f + slopeAngle / 45f);
-                }
-                else
-                {
-
-                    float resetRotationSpeed = 3f;
-                    transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.identity, Time.deltaTime * resetRotationSpeed);
-                    speed = origSpeed;
-                }
+            }
+            else
+            {
+                onSlope = false;
+                float resetRotationSpeed = 3f;
+                transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.identity, Time.deltaTime * resetRotationSpeed);
             }
         }
-        else
-        {
-            float resetRotationSpeed = 3f;
-            transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.identity, Time.deltaTime * resetRotationSpeed);
-            speed = origSpeed;
-        }
     }
+    else
+    {
+        // Smoothly reset rotation if not grounded
+        float resetRotationSpeed = 3f; // Adjust the reset rotation speed factor as needed
+        transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.identity, Time.deltaTime * resetRotationSpeed);
+    }
+}
 
     private void HandleGroundedState()
     {
