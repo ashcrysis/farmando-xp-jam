@@ -2,10 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
-using UnityEngine.AI;
-using System.Linq;
 using UnityEngine.UI;
-using UnityEditor.Callbacks;
 
 public class dialogue_with_portrait : MonoBehaviour
 {
