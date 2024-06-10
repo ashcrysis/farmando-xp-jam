@@ -53,7 +53,7 @@ public class Dash : MonoBehaviour
             return;
         }
 
-        if (Input.GetKeyDown(KeyCode.LeftShift) && ableDash() && canDash )
+        if (Input.GetKeyDown(KeyCode.X) && ableDash() && canDash )
         {
             StartCoroutine(DashCoroutine());
         }
@@ -80,7 +80,7 @@ public class Dash : MonoBehaviour
             rb.velocity = new Vector2(0f,rb.velocity.y);
         }
         else{
-            rb.velocity = new Vector2(rb.velocity.x-dashingPower/4,rb.velocity.y);
+            rb.velocity = new Vector2(rb.velocity.x-dashingPower/2,rb.velocity.y);
         }
         isDashing = false;
 

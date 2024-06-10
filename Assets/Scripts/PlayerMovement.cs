@@ -53,7 +53,7 @@ public class PlayerMovement : MonoBehaviour
         moving = Mathf.Abs(horizontal) > 0 ? 1 : 0;
         if (IsGrounded())
         {
-            if (!isRunning && !Input.GetKey(KeyCode.Space)){
+            if (!isRunning && !Input.GetKey(KeyCode.Z)){
             stamina.Actions(2);
             }
         }
@@ -75,7 +75,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void Jump()
     {
-        if (Input.GetKeyDown(KeyCode.F) && !GetComponent<Dash>().isDashing)
+        if (Input.GetKeyDown(KeyCode.UpArrow) && !GetComponent<Dash>().isDashing)
         {
             if (IsGrounded() || canCoyoteJump)
             {
@@ -95,7 +95,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void AdjustSpeed()
     {
-        if (Input.GetKey(KeyCode.Space) && moving != 0 && stamina.stamina > ( stamina.staminaRunValue)){
+        if (Input.GetKey(KeyCode.Z) && moving != 0 && stamina.stamina > ( stamina.staminaRunValue)){
             isRunning = true;
             speed = speedVeloc;
             stamina.Actions(0);
@@ -103,6 +103,9 @@ public class PlayerMovement : MonoBehaviour
         else{
             isRunning = false;
             speed = origSpeed;
+        }
+        if (moving == 0 && !GetComponent<Dash>().isDashing){
+            rb.velocity = new Vector2(0,rb.velocity.y);
         }
          
         

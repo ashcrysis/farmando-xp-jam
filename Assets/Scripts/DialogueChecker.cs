@@ -6,7 +6,7 @@ public class DialogueChecker : MonoBehaviour
 {
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E))
+        if (Input.GetKeyDown(KeyCode.C))
         {
             if(GetComponent<dialogue>()){
             GetComponent<dialogue>().OnButtonClick();

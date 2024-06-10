@@ -10,7 +10,7 @@ public class DialoguePlayer : MonoBehaviour
     void Update()
     {
          if (GetComponentInChildren<Interavel>().canInteract){
-       if (Input.GetKeyDown(KeyCode.E))
+       if (Input.GetKeyDown(KeyCode.C))
             {
               if (dialogo.GetComponent<dialogue>() != null){
                  if (dialogo.GetComponent<dialogue>().index ==  dialogo.GetComponent<dialogue>().lines.Length-1){

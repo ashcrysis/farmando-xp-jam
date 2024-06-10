@@ -10,7 +10,7 @@ public class Teleport : MonoBehaviour
 
     void LateUpdate()
     {
-        if (GetComponent<Interavel>().canInteract && Input.GetKeyDown(KeyCode.E))
+        if (GetComponent<Interavel>().canInteract && Input.GetKeyDown(KeyCode.C))
         {
             GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>().enabled = false;
             GameObject.FindGameObjectWithTag("Player").GetComponent<Rigidbody2D>().velocity = new Vector2(0,GameObject.FindGameObjectWithTag("Player").GetComponent<Rigidbody2D>().velocity.y);
