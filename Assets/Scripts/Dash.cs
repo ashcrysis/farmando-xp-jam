@@ -22,6 +22,11 @@ public class Dash : MonoBehaviour
     private CapsuleCollider2D playerCollider;
     private float colliderHeight;
     private float colliderY;
+    public Transform wallBottomLeft;
+    public Transform wallBottomRight;
+    public Transform wallTopLeft;
+    public Transform wallTopRight;
+    public bool isWalled = false;
 
     void Start()
     {
@@ -36,6 +41,7 @@ public class Dash : MonoBehaviour
         isFacingRight = player.isFacingRight;
         dir = isFacingRight ? 1f : -1f;
 
+        isWalled = checkIsWalled();
         if (isDashing)
         {
             GetComponent<DashTrail>().SetEnabled(true);
@@ -53,11 +59,10 @@ public class Dash : MonoBehaviour
             return;
         }
 
-        if (Input.GetKeyDown(KeyCode.X) && ableDash() && canDash )
+        if (Input.GetKeyDown(KeyCode.X) && ableDash() && canDash && !isWalled)
         {
             StartCoroutine(DashCoroutine());
         }
-
 
     }
 
@@ -65,7 +70,9 @@ public class Dash : MonoBehaviour
     {
         return Physics2D.OverlapCircle(dashCheck.position, 0.2f, groundLayer);
     }
-
+    bool checkIsWalled(){
+        return Physics2D.OverlapCircle(wallBottomLeft.position, 0.5f, groundLayer) || Physics2D.OverlapCircle(wallBottomRight.position, 0.5f, groundLayer) || Physics2D.OverlapCircle(wallTopRight.position, 0.5f, groundLayer) || Physics2D.OverlapCircle(wallTopLeft.position, 0.5f, groundLayer);
+    }
     private IEnumerator DashCoroutine()
     {
         StartCoroutine(StartInvincibility());
