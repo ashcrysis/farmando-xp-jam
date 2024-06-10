@@ -14,23 +14,32 @@ public class EnemyController : MonoBehaviour
     private float distanceToPlayer;
     private bool movingToPointA = true;
     private bool followingPlayer = false;
-
+    private bool playerSpawned = false;
+    private bool hasRun = false;
 
     void Start()
     {
-        player = GameObject.FindGameObjectWithTag("Player");
         rb = GetComponent<Rigidbody2D>();
     }
 
     void Update()
     {
-        player = GameObject.FindGameObjectWithTag("Player");
+        if (GameObject.FindGameObjectWithTag("Player") != null && !hasRun){
+            playerSpawned = true;
+            player = GameObject.FindGameObjectWithTag("Player");
+            hasRun = true;
+        }
+        
+         if (playerSpawned){
         foundPlayer = GetComponentInChildren<EnemyVision>().foundPlayer;
         distanceToPlayer = Vector2.Distance(rb.position, player.transform.position);
+        
+        }
     }
 
     void FixedUpdate()
     {
+        if (playerSpawned){
         if (foundPlayer || distanceToPlayer < 1)
         {
             MoveTowards(player.transform.position);
@@ -40,6 +49,7 @@ public class EnemyController : MonoBehaviour
         {
             Patrol();
             followingPlayer = false;
+        }
         }
     }
 
@@ -72,10 +82,11 @@ public class EnemyController : MonoBehaviour
         float direction = target.x - rb.position.x;
         direction = Mathf.Sign(direction); 
         if (!foundPlayer){
-        rb.velocity = new Vector2(direction * enemyPatrolSpeed, rb.velocity.y);
-}else{
-     rb.velocity = new Vector2(direction * enemyFollowSpeed, rb.velocity.y);
-}
+            rb.velocity = new Vector2(direction * enemyPatrolSpeed, rb.velocity.y);
+        }
+        else{
+                rb.velocity = new Vector2(direction * enemyFollowSpeed, rb.velocity.y);
+            }
         if (direction != 0)
         {
             transform.localScale = new Vector3(Mathf.Abs(transform.localScale.x) * direction, transform.localScale.y, transform.localScale.z);

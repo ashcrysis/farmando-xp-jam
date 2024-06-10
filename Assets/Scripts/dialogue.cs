@@ -14,7 +14,6 @@ public class dialogue : MonoBehaviour
     public float textSpeed;
     public int index;
     private AudioSource audio;
-    private float oldnavmeshspeed;
     private static bool buttonclicked = false;
     List<char> listPause = new List<char> { ',', '.','?' };
     public string playerName;
@@ -40,12 +39,17 @@ public class dialogue : MonoBehaviour
             GameObject.FindGameObjectWithTag("Player").GetComponent<Rigidbody2D>().velocity = new Vector2(0,0);
             }
             GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>().enabled = false;
-             GameObject.FindGameObjectWithTag("Player").GetComponentInChildren<Animator>().SetBool("moving",false);
+            GameObject.FindGameObjectWithTag("Player").GetComponent<Rigidbody2D>().velocity = new Vector2(0,GameObject.FindGameObjectWithTag("Player").GetComponent<Rigidbody2D>().velocity.y);
+            GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerAnimation>().enabled = false;
+            GameObject.FindGameObjectWithTag("Player").GetComponent<Dash>().enabled = false;
+            GameObject.FindGameObjectWithTag("Player").GetComponentInChildren<Animator>().SetInteger("moving",0);
+            GameObject.FindGameObjectWithTag("Player").GetComponentInChildren<Animator>().SetBool("isDashing",false);
+            GameObject.FindGameObjectWithTag("Player").GetComponentInChildren<Animator>().SetBool("isRunning",false);
             var enemies = GameObject.FindGameObjectsWithTag("enemy");
             for (int i = 0; i < enemies.Length; i++)
             {
-                oldnavmeshspeed = enemies[i].GetComponent<NavMeshAgent>().speed;
-                enemies[i].GetComponent<NavMeshAgent>().speed = 0;
+                enemies[i].GetComponent<EnemyController>().enabled =  false;
+
             }
 
         }
@@ -165,10 +169,12 @@ void ButtonClick(){
         speakerNameComponent.text = speakers[index]; // Resetando o falante para o primeiro da lista
         textComponent.text = lines[index];
         GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>().enabled = true;
+         GameObject.FindGameObjectWithTag("Player").GetComponent<Dash>().enabled = true;
+         GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerAnimation>().enabled = true;
         var enemies = GameObject.FindGameObjectsWithTag("enemy");
             for (int i = 0; i < enemies.Length; i++)
             {
-                enemies[i].GetComponent<NavMeshAgent>().speed = oldnavmeshspeed;
+                enemies[i].GetComponent<EnemyController>().enabled =  true;
             }
     }
 }
