@@ -48,7 +48,7 @@ public class Dash : MonoBehaviour
             playerCollider.size = new Vector2(playerCollider.size.x,colliderHeight);
             playerCollider.offset = new Vector2(playerCollider.offset.x, colliderY);
         }
-   
+
         if (stamina.stamina < stamina.staminaDashValue  ){
             return;
         }
@@ -90,7 +90,7 @@ public class Dash : MonoBehaviour
    private IEnumerator IncreaseJumpPower()
     {
         float originalJumpPower = player.jumpingPower; // Assume the PlayerMovement class has a jumpPower field
-        player.jumpingPower += 5f;
+        player.jumpingPower += 6f;
         yield return new WaitForSeconds(0.4f);
         player.jumpingPower = originalJumpPower;
     }
