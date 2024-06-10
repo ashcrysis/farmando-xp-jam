@@ -72,9 +72,9 @@ MonoBehaviour:
   stamina: 0
   MaxStamina: 100
   staminaLossBase: 10
-  staminaDashValue: 15
-  staminaRunValue: 2.5
-  staminaJumpValue: 10
+  staminaDashValue: 5
+  staminaRunValue: 0.5
+  staminaJumpValue: 5
   playerMovement: {fileID: 2472749940717260413}
   dash: {fileID: 8781178368600252521}
 --- !u!114 &2472749940717260413

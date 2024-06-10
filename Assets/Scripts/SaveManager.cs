@@ -11,7 +11,6 @@ public class SaveManager : MonoBehaviour
     void Start()
     {
         Read();
-        StartCoroutine(SaveEveryFiveMinutes());
     }
 
     [System.Serializable]
