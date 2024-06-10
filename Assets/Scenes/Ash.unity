@@ -12465,7 +12465,6 @@ GameObject:
   - component: {fileID: 1633234280}
   - component: {fileID: 1633234279}
   - component: {fileID: 1633234284}
-  - component: {fileID: 1633234285}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -12630,22 +12629,6 @@ MonoBehaviour:
   m_CropFrameX: 0
   m_CropFrameY: 0
   m_StretchFill: 0
---- !u!114 &1633234285
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1633234278}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a5b3457ccd8012744909e224e5c23ddf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isDashing: 0
-  normalZoom: 16
-  dashZoom: 13
-  zoomSpeed: 1
 --- !u!1 &1672288160
 GameObject:
   m_ObjectHideFlags: 0
