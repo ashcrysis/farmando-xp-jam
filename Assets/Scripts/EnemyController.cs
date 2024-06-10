@@ -13,6 +13,8 @@ public class EnemyController : MonoBehaviour
     private Rigidbody2D rb;
     private float distanceToPlayer;
     private bool movingToPointA = true;
+    private bool followingPlayer = false;
+
 
     void Start()
     {
@@ -32,10 +34,12 @@ public class EnemyController : MonoBehaviour
         if (foundPlayer || distanceToPlayer < 1)
         {
             MoveTowards(player.transform.position);
+            followingPlayer = true;
         }
         else
         {
             Patrol();
+            followingPlayer = false;
         }
     }
 
