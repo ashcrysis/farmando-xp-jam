@@ -7,10 +7,11 @@ public class IdleWatcher : MonoBehaviour
     private PlayerMovement playerMovement;
     private bool idling = false;
     public float idleTimer = 0f;
-    public GameObject[] idleDialogos;
     public float idleThreshold = 15f;
+    public GameObject[] idleDialogos;
     [SerializeField] private GameObject[] timeDialogos;
     private float tolerance = 1f;
+      private int lastIdleIndex = -1;
     void Start()
     {
         playerMovement = GetComponentInParent<PlayerMovement>();
@@ -34,20 +35,29 @@ void Update()
         idling = false; 
     }
     else
-    {
-        idleTimer += Time.deltaTime; 
-        if (idleTimer >= idleThreshold && !idling)
         {
-            idling = true;
-            if (idleDialogos.Length > 0)
+            idleTimer += Time.deltaTime;
+            if (idleTimer >= idleThreshold && !idling)
             {
-                int randomIndex = Random.Range(0, idleDialogos.Length);
-                if (!idleDialogos[randomIndex].activeSelf)
+                idling = true;
+                if (idleDialogos.Length > 0)
                 {
-                    idleDialogos[randomIndex].SetActive(true);
+                    int randomIndex;
+                    do
+                    {
+                        randomIndex = Random.Range(0, idleDialogos.Length);
+                    } while (randomIndex == lastIdleIndex);
+
+                    if (!idleDialogos[randomIndex].activeSelf)
+                    {
+                        idleDialogos[randomIndex].SetActive(true);
+                        lastIdleIndex = randomIndex; 
+                        idleTimer = 0f;
+                        idling = false; 
+                    }
                 }
             }
         }
-    }
+    
     }
 }

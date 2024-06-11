@@ -1,11 +1,11 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class DealDamage : MonoBehaviour
 {
-   private bool isColliding = false;
+    private bool isColliding = false;
     private Collider2D collidingObject;
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -30,8 +30,8 @@ public class DealDamage : MonoBehaviour
     {
         if (isColliding && collidingObject != null && !collidingObject.gameObject.GetComponent<Dash>().invincible)
         {
-            collidingObject.GetComponent<DeathCounter>().Died();
-            SceneManager.LoadScene(0);
+           GameObject.FindGameObjectWithTag("Player").GetComponent<DeathCounter>().Die();
         }
     }
+
 }
