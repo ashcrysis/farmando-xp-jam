@@ -37,9 +37,10 @@ void Start()
         if (!PlayerPrefs.HasKey("Dialogue_" + index))
         {
             dialogos[index].SetActive(true);
-                GameObject.FindGameObjectWithTag("Player").GetComponentInChildren<Animator>().SetInteger("moving",0);
-                GameObject.FindGameObjectWithTag("Player").GetComponentInChildren<Animator>().SetBool("isDashing",false);
-                GameObject.FindGameObjectWithTag("Player").GetComponentInChildren<Animator>().SetBool("isRunning",false);
+            GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerAnimation>().enabled = false;
+            GameObject.FindGameObjectWithTag("Player").GetComponentInChildren<Animator>().SetInteger("moving",0);
+            GameObject.FindGameObjectWithTag("Player").GetComponentInChildren<Animator>().SetBool("isDashing",false);
+            GameObject.FindGameObjectWithTag("Player").GetComponentInChildren<Animator>().SetBool("isRunning",false);
             PlayerPrefs.SetInt("Dialogue_" + index, 1);
         }
     }
