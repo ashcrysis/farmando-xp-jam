@@ -24,7 +24,7 @@ public class callElevator : MonoBehaviour
         botao.SetActive(canInteract);
 
        
-        if (Input.GetKeyDown(KeyCode.C) && !GameObject.FindGameObjectWithTag("Player").GetComponent<DeathCounter>().isDying && !IsDialogueActive())
+        if (Input.GetKeyDown(KeyCode.C) && canInteract && !GameObject.FindGameObjectWithTag("Player").GetComponent<DeathCounter>().isDying && !IsDialogueActive())
         {
             float threshold = 1f;
             if (Vector2.Distance(elevator.transform.position, elevatorStartPosition.position) < threshold)
@@ -50,16 +50,23 @@ public class callElevator : MonoBehaviour
         this.botao.SetActive(situation);
     }
 
-    bool IsDialogueActive()
+  bool IsDialogueActive()
+{
+    GameObject[] dialogueObjects = GameObject.FindGameObjectsWithTag("dialogue");
+    GameObject[] starterDialogueObjects = GameObject.FindGameObjectsWithTag("starterdialogue");
+
+    GameObject[] allDialogueObjects = new GameObject[dialogueObjects.Length + starterDialogueObjects.Length];
+
+    dialogueObjects.CopyTo(allDialogueObjects, 0);
+    starterDialogueObjects.CopyTo(allDialogueObjects, dialogueObjects.Length);
+
+    foreach (GameObject obj in allDialogueObjects)
     {
-        GameObject[] dialogueObjects = GameObject.FindGameObjectsWithTag("dialogue");
-        foreach (GameObject obj in dialogueObjects)
+        if (obj.activeInHierarchy)
         {
-            if (obj.activeInHierarchy)
-            {
-                return true;
-            }
+            return true;
         }
-        return false;
     }
+    return false;
+}
 }
