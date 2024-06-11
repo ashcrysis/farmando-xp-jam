@@ -11642,7 +11642,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1018277705}
   - component: {fileID: 1018277706}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -21351,7 +21351,7 @@ GameObject:
   - component: {fileID: 2108106736}
   - component: {fileID: 2108106735}
   - component: {fileID: 2108106740}
-  m_Layer: 3
+  m_Layer: 0
   m_Name: elevator
   m_TagString: Untagged
   m_Icon: {fileID: 0}
