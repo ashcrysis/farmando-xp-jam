@@ -22,9 +22,6 @@ public class Teleport : MonoBehaviour
     IEnumerator RecognizeKeyWithDelay()
     {
         canRecognizeKey = false; 
-        yield return new WaitForSeconds(recognitionDelay);
-        canRecognizeKey = true; 
-
         GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>().enabled = false;
         GameObject.FindGameObjectWithTag("Player").GetComponent<Rigidbody2D>().velocity = new Vector2(0, 0);
         GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerAnimation>().enabled = false;
@@ -34,6 +31,9 @@ public class Teleport : MonoBehaviour
         GameObject.FindGameObjectWithTag("Player").GetComponentInChildren<Animator>().SetBool("isRunning", false);
 
         StartCoroutine(FadeAndTeleport());
+        yield return new WaitForSeconds(recognitionDelay);
+        canRecognizeKey = true; 
+
     }
 
     IEnumerator FadeAndTeleport()
