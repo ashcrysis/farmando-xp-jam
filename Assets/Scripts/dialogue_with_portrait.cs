@@ -39,6 +39,10 @@ public class dialogue_with_portrait : MonoBehaviour
     {
         if (gameObject.activeSelf)
         {
+              if (GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>().IsGrounded()){
+            GameObject.FindGameObjectWithTag("Player").GetComponent<Rigidbody2D>().velocity = new Vector2(0,0);
+            }
+            GameObject.FindGameObjectWithTag("Player").GetComponent<DashTrail>().SetEnabled(false);
             GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>().enabled = false;
             GameObject.FindGameObjectWithTag("Player").GetComponent<Rigidbody2D>().velocity = new Vector2(0,GameObject.FindGameObjectWithTag("Player").GetComponent<Rigidbody2D>().velocity.y);
             GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerAnimation>().enabled = false;
