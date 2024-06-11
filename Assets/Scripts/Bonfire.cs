@@ -8,6 +8,7 @@ public class Bonfire : MonoBehaviour
     public Vector2 position;
 
     private SaveManager saveManager;
+    public Transform bonfirePoint;
 
     void Start()
     {
@@ -41,7 +42,7 @@ public class Bonfire : MonoBehaviour
             }
 
             saveManager.lastBonfireID = ID;
-            saveManager.lastBonfirePosition = position;
+            saveManager.lastBonfirePosition = bonfirePoint.position;
             saveManager.remainingTime = GameObject.FindGameObjectWithTag("Timer").GetComponent<CountdownTimer>().timeRemaining;
             GameObject.FindGameObjectWithTag("Player").GetComponent<Stamina>().stamina = GameObject.FindGameObjectWithTag("Player").GetComponent<Stamina>().MaxStamina;
             saveManager.Save();
