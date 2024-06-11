@@ -26,7 +26,6 @@ public class autoDialogue : MonoBehaviour
             dialogo.SetActive(true);
 
             PlayerPrefs.SetInt(playerPrefsKey, 1);
-            PlayerPrefs.Save();
         }
     }
 

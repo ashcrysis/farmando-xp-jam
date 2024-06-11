@@ -18,6 +18,7 @@ public class Bonfire : MonoBehaviour
 
     void Update()
     {
+       
         if (GetComponent<Interavel>().canInteract && Input.GetKeyDown(KeyCode.C) && GetComponentInParent<DialoguePlayer>().isPlaying)
         {
             if (!PlayerPrefs.HasKey("BonfireIDs"))
@@ -40,11 +41,14 @@ public class Bonfire : MonoBehaviour
                     GameObject.FindGameObjectWithTag("Timer").GetComponent<CountdownTimer>().timeRemaining += 30f;
                 }
             }
-
             saveManager.lastBonfireID = ID;
             saveManager.lastBonfirePosition = bonfirePoint.position;
             saveManager.remainingTime = GameObject.FindGameObjectWithTag("Timer").GetComponent<CountdownTimer>().timeRemaining;
             GameObject.FindGameObjectWithTag("Player").GetComponent<Stamina>().stamina = GameObject.FindGameObjectWithTag("Player").GetComponent<Stamina>().MaxStamina;
+            if (ID == 2)
+            {
+                PlayerPrefs.SetInt("hasRest",1);
+            }
             saveManager.Save();
         }
     }
