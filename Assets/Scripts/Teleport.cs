@@ -7,21 +7,33 @@ public class Teleport : MonoBehaviour
     public GameObject teleportPoint;
     public Image fadeImage;
     public float fadeDuration = 1.0f;
+    public float recognitionDelay = 2.5f;
+
+    private bool canRecognizeKey = true;
 
     void LateUpdate()
     {
-        if (GetComponent<Interavel>().canInteract && Input.GetKeyDown(KeyCode.C))
+        if (GetComponent<Interavel>().canInteract && Input.GetKeyDown(KeyCode.C) && canRecognizeKey)
         {
-            GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>().enabled = false;
-            GameObject.FindGameObjectWithTag("Player").GetComponent<Rigidbody2D>().velocity = new Vector2(0,GameObject.FindGameObjectWithTag("Player").GetComponent<Rigidbody2D>().velocity.y);
-            GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerAnimation>().enabled = false;
-            GameObject.FindGameObjectWithTag("Player").GetComponent<Dash>().enabled = false;
-            GameObject.FindGameObjectWithTag("Player").GetComponentInChildren<Animator>().SetInteger("moving",0);
-            GameObject.FindGameObjectWithTag("Player").GetComponentInChildren<Animator>().SetBool("isDashing",false);
-            GameObject.FindGameObjectWithTag("Player").GetComponentInChildren<Animator>().SetBool("isRunning",false);
-            
-            StartCoroutine(FadeAndTeleport());
+            StartCoroutine(RecognizeKeyWithDelay());
         }
+    }
+
+    IEnumerator RecognizeKeyWithDelay()
+    {
+        canRecognizeKey = false; 
+        yield return new WaitForSeconds(recognitionDelay);
+        canRecognizeKey = true; 
+
+        GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>().enabled = false;
+        GameObject.FindGameObjectWithTag("Player").GetComponent<Rigidbody2D>().velocity = new Vector2(0, 0);
+        GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerAnimation>().enabled = false;
+        GameObject.FindGameObjectWithTag("Player").GetComponent<Dash>().enabled = false;
+        GameObject.FindGameObjectWithTag("Player").GetComponentInChildren<Animator>().SetInteger("moving", 0);
+        GameObject.FindGameObjectWithTag("Player").GetComponentInChildren<Animator>().SetBool("isDashing", false);
+        GameObject.FindGameObjectWithTag("Player").GetComponentInChildren<Animator>().SetBool("isRunning", false);
+
+        StartCoroutine(FadeAndTeleport());
     }
 
     IEnumerator FadeAndTeleport()
@@ -41,8 +53,6 @@ public class Teleport : MonoBehaviour
         color.a = 1f;
         fadeImage.color = color;
 
-        //yield return new WaitForSeconds(2f);
-
         GameObject.FindGameObjectWithTag("Player").transform.position = teleportPoint.transform.position;
         yield return new WaitForSeconds(1f);
         StartCoroutine(FadeImage(0f));
@@ -50,7 +60,8 @@ public class Teleport : MonoBehaviour
         GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerAnimation>().enabled = true;
         GameObject.FindGameObjectWithTag("Player").GetComponent<Dash>().enabled = true;
     }
-      IEnumerator FadeImage(float targetAlpha)
+
+    IEnumerator FadeImage(float targetAlpha)
     {
         float startAlpha = fadeImage.color.a;
         float elapsedTime = 0f;
@@ -68,5 +79,4 @@ public class Teleport : MonoBehaviour
         finalColor.a = targetAlpha;
         fadeImage.color = finalColor;
     }
-
 }

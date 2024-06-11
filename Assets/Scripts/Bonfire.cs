@@ -17,11 +17,33 @@ public class Bonfire : MonoBehaviour
 
     void Update()
     {
-        if (GetComponent<Interavel>().canInteract && Input.GetKeyDown(KeyCode.C) &&  GetComponentInParent<DialoguePlayer>().isPlaying)
+        if (GetComponent<Interavel>().canInteract && Input.GetKeyDown(KeyCode.C) && GetComponentInParent<DialoguePlayer>().isPlaying)
         {
+            if (!PlayerPrefs.HasKey("BonfireIDs"))
+            {
+                List<int> bonfireIDs = new List<int>();
+                bonfireIDs.Add(ID);
+                PlayerPrefs.SetString("BonfireIDs", string.Join(",", bonfireIDs));
+            }
+            else
+            {
+                string bonfireIDsString = PlayerPrefs.GetString("BonfireIDs");
+                List<int> bonfireIDs = new List<int>(System.Array.ConvertAll(bonfireIDsString.Split(','), int.Parse));
+                Debug.Log(bonfireIDs);
+                if (!bonfireIDs.Contains(ID))
+                {
+                    bonfireIDs.Add(ID);
+                    PlayerPrefs.SetString("BonfireIDs", string.Join(",", bonfireIDs));
+
+                    // Increment timeRemaining by 30 seconds
+                    GameObject.FindGameObjectWithTag("Timer").GetComponent<CountdownTimer>().timeRemaining += 30f;
+                }
+            }
+
             saveManager.lastBonfireID = ID;
             saveManager.lastBonfirePosition = position;
-            GameObject.FindGameObjectWithTag("Player").GetComponent<Stamina>().stamina =  GameObject.FindGameObjectWithTag("Player").GetComponent<Stamina>().MaxStamina;
+            saveManager.remainingTime = GameObject.FindGameObjectWithTag("Timer").GetComponent<CountdownTimer>().timeRemaining;
+            GameObject.FindGameObjectWithTag("Player").GetComponent<Stamina>().stamina = GameObject.FindGameObjectWithTag("Player").GetComponent<Stamina>().MaxStamina;
             saveManager.Save();
         }
     }

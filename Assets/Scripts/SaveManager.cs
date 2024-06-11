@@ -7,6 +7,7 @@ public class SaveManager : MonoBehaviour
     public int lastBonfireID;
     public Vector2 lastBonfirePosition;
     public bool endgame = false;
+    public float remainingTime;
 
     void Start()
     {
@@ -26,6 +27,7 @@ public class SaveManager : MonoBehaviour
         PlayerPrefs.SetInt("LastBonfireID", lastBonfireID);
         PlayerPrefs.SetFloat("LastBonfirePositionX", lastBonfirePosition.x);
         PlayerPrefs.SetFloat("LastBonfirePositionY", lastBonfirePosition.y);
+        PlayerPrefs.SetFloat("remainingTime", remainingTime);
         PlayerPrefs.SetInt("Endgame", endgame ? 1 : 0);
 
         PlayerPrefs.Save();
