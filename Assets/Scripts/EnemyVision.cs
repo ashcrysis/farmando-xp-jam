@@ -8,7 +8,9 @@ public class EnemyVision : MonoBehaviour
   void OnTriggerEnter2D(Collider2D other)
   {
     if (other.gameObject.CompareTag("Player")){
+      if (!other.GetComponent<DeathCounter>().isDying){
         foundPlayer = true;
+        }
     }
   }
   void OnTriggerExit2D(Collider2D other)
