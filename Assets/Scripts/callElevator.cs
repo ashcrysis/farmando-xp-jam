@@ -37,7 +37,6 @@ public class callElevator : MonoBehaviour
                 StartCoroutine(elevatorChange(1f,elevatorStartPosition));
                 return;
             }
-            Debug.Log(elevator.transform.position);
         }
         
     }
