@@ -315,7 +315,7 @@ MonoBehaviour:
   speakerNameComponent: {fileID: 2696082556286447198}
   textComponent: {fileID: 7002955962628714113}
   lines:
-  - "Voc\xEA sabe que eu sinto toda vez que vc morre, n\xE9?"
+  - "Voc\xEA sabe que eu sinto toda vez que voc\xEA morre, n\xE9?"
   speakers:
   - Ifrit
   textSpeed: 0.01
@@ -1098,7 +1098,7 @@ MonoBehaviour:
   speakerNameComponent: {fileID: 5187714786358287674}
   textComponent: {fileID: 763908782673622109}
   lines:
-  - "Isso do\xED"
+  - "Isso do\xED..."
   speakers:
   - Ifrit
   textSpeed: 0.01
