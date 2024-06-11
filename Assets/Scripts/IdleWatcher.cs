@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using TMPro;
 public class IdleWatcher : MonoBehaviour
 {    
     private PlayerMovement playerMovement;
@@ -17,6 +17,11 @@ public class IdleWatcher : MonoBehaviour
     {
         playerMovement = GetComponentInParent<PlayerMovement>();
         gameStarted = PlayerPrefs.GetInt("gameStarted") == 1 ? true:false;
+        if (gameStarted)
+        {
+            GameObject.FindGameObjectWithTag("Timer").GetComponent<TMP_Text>().enabled = true;
+            GameObject.FindGameObjectWithTag("Timer").GetComponent<CountdownTimer>().enabled = true;
+        }
     }
 
 void Update()

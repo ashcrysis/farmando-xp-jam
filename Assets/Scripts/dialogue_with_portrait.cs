@@ -174,7 +174,7 @@ void ButtonClick(){
         {
             GameObject.FindGameObjectWithTag("Player").GetComponentInChildren<IdleWatcher>().gameStarted = true;
             PlayerPrefs.SetInt("gameStarted",1);
-             GameObject.FindGameObjectWithTag("Timer").GetComponent<TMP_Text>().enabled = true;
+            GameObject.FindGameObjectWithTag("Timer").GetComponent<TMP_Text>().enabled = true;
             GameObject.FindGameObjectWithTag("Timer").GetComponent<CountdownTimer>().enabled = true;
         }
         index = 0;
