@@ -41,8 +41,9 @@ public class dialogue_with_portrait : MonoBehaviour
         {
             GameObject.FindGameObjectWithTag("Timer").GetComponent<CountdownTimer>().enabled = false;
 
-              if (GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>().IsGrounded()){
-            GameObject.FindGameObjectWithTag("Player").GetComponent<Rigidbody2D>().velocity = new Vector2(0,0);
+            if (GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>().IsGrounded())
+            {
+                GameObject.FindGameObjectWithTag("Player").GetComponent<Rigidbody2D>().velocity = new Vector2(0,0);
             }
             GameObject.FindGameObjectWithTag("Player").GetComponent<DashTrail>().SetEnabled(false);
             GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>().enabled = false;

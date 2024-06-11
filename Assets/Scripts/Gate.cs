@@ -16,7 +16,6 @@ public class Gate : MonoBehaviour
     void Update()
     {
         hasRest = PlayerPrefs.GetInt("hasRest") == 1 ? true : false;
-        Debug.Log(hasRest);
         if (hasRest){
             isOpen = true;
         }

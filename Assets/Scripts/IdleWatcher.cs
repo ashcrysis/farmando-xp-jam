@@ -10,9 +10,10 @@ public class IdleWatcher : MonoBehaviour
     public float idleThreshold = 15f;
     public GameObject[] idleDialogos;
     [SerializeField] private GameObject[] timeDialogos;
-    private float tolerance = 1f;
+    private float tolerance = 0.01f;
       private int lastIdleIndex = -1;
       public  bool gameStarted = false;
+       private bool dialogShown = false;
     void Start()
     {
         playerMovement = GetComponentInParent<PlayerMovement>();
@@ -37,12 +38,18 @@ void Update()
         
         if (Mathf.Approximately(timeRemaining, 90) || Mathf.Abs(timeRemaining - 90) <= tolerance)
         {
-            if (!timeDialogos[0].activeSelf)
+            if (!timeDialogos[0].activeSelf && !dialogShown)
             {
-                timeDialogos[0].SetActive(true);
+                GameObject.FindGameObjectWithTag("Player").GetComponent<DashTrail>().SetEnabled(false);
+                GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>().enabled = false;
+                GameObject.FindGameObjectWithTag("Player").GetComponent<Rigidbody2D>().velocity = new Vector2(0,GameObject.FindGameObjectWithTag("Player").GetComponent<Rigidbody2D>().velocity.y);
+                GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerAnimation>().enabled = false;
+                GameObject.FindGameObjectWithTag("Player").GetComponent<Dash>().enabled = false;
                 GameObject.FindGameObjectWithTag("Player").GetComponentInChildren<Animator>().SetInteger("moving",0);
                 GameObject.FindGameObjectWithTag("Player").GetComponentInChildren<Animator>().SetBool("isDashing",false);
                 GameObject.FindGameObjectWithTag("Player").GetComponentInChildren<Animator>().SetBool("isRunning",false);
+                timeDialogos[0].SetActive(true);
+                dialogShown = true;
             }
         }
     }
