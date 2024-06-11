@@ -40,6 +40,9 @@ void Update()
             if (!timeDialogos[0].activeSelf)
             {
                 timeDialogos[0].SetActive(true);
+                GameObject.FindGameObjectWithTag("Player").GetComponentInChildren<Animator>().SetInteger("moving",0);
+                GameObject.FindGameObjectWithTag("Player").GetComponentInChildren<Animator>().SetBool("isDashing",false);
+                GameObject.FindGameObjectWithTag("Player").GetComponentInChildren<Animator>().SetBool("isRunning",false);
             }
         }
     }

@@ -39,6 +39,8 @@ public class dialogue_with_portrait : MonoBehaviour
     {
         if (gameObject.activeSelf)
         {
+            GameObject.FindGameObjectWithTag("Timer").GetComponent<CountdownTimer>().enabled = false;
+
               if (GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>().IsGrounded()){
             GameObject.FindGameObjectWithTag("Player").GetComponent<Rigidbody2D>().velocity = new Vector2(0,0);
             }
@@ -177,6 +179,8 @@ void ButtonClick(){
             GameObject.FindGameObjectWithTag("Timer").GetComponent<TMP_Text>().enabled = true;
             GameObject.FindGameObjectWithTag("Timer").GetComponent<CountdownTimer>().enabled = true;
         }
+        GameObject.FindGameObjectWithTag("Timer").GetComponent<CountdownTimer>().enabled = true;
+
         index = 0;
         speakerNameComponent.text = speakers[index]; // Resetando o falante para o primeiro da lista
         textComponent.text = lines[index];
