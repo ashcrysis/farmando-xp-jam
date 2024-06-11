@@ -9,6 +9,7 @@ TagManager:
   - dialogue
   - Timer
   - deathcanva
+  - starterdialogue
   layers:
   - Default
   - TransparentFX

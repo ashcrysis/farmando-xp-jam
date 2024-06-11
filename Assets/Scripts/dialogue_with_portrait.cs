@@ -170,6 +170,12 @@ void ButtonClick(){
     else
     {
         gameObject.SetActive(false);
+        if (gameObject.CompareTag("starterdialogue"))
+        {
+            GameObject.FindGameObjectWithTag("Player").GetComponentInChildren<IdleWatcher>().gameStarted = true;
+            PlayerPrefs.SetInt("gameStarted",1);
+            GameObject.FindGameObjectWithTag("Timer").SetActive(true);
+        }
         index = 0;
         speakerNameComponent.text = speakers[index]; // Resetando o falante para o primeiro da lista
         textComponent.text = lines[index];

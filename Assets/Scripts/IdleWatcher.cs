@@ -12,13 +12,22 @@ public class IdleWatcher : MonoBehaviour
     [SerializeField] private GameObject[] timeDialogos;
     private float tolerance = 1f;
       private int lastIdleIndex = -1;
+      public  bool gameStarted = false;
     void Start()
     {
         playerMovement = GetComponentInParent<PlayerMovement>();
+        gameStarted = PlayerPrefs.GetInt("gameStarted") == 1 ? true:false;
     }
 
 void Update()
     {
+
+        if (!gameStarted)
+            {            
+                return;
+            }
+        if (GameObject.FindGameObjectWithTag("Timer") != null){
+       
         float timeRemaining = GameObject.FindGameObjectWithTag("Timer").GetComponent<CountdownTimer>().timeRemaining;
         
         if (Mathf.Approximately(timeRemaining, 90) || Mathf.Abs(timeRemaining - 90) <= tolerance)
@@ -28,6 +37,7 @@ void Update()
                 timeDialogos[0].SetActive(true);
             }
         }
+    }
 
            if (playerMovement.moving == 1)
     {
@@ -61,3 +71,4 @@ void Update()
     
     }
 }
+
