@@ -10,6 +10,7 @@ public class DeathCounter : MonoBehaviour
     public Image fadeImage;
     public float fadeDuration = 1.0f;
     private bool isFading = false;
+    public bool isDying = false;
     void Start()
     {
         deathCounter = PlayerPrefs.GetInt("deathCounter");
@@ -26,11 +27,13 @@ public class DeathCounter : MonoBehaviour
     }
       IEnumerator FadeAndKill()
     {
-        gameObject.transform.eulerAngles = new Vector3(gameObject.transform.eulerAngles.x, gameObject.transform.eulerAngles.y, 90f);
+        isDying = true;
         gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(gameObject.GetComponent<Rigidbody2D>().velocity.x, -10f);
         GetComponent<PlayerMovement>().enabled = false;
         GetComponent<PlayerAnimation>().enabled = false;
         GetComponent<Dash>().enabled = false;
+        GameObject.FindGameObjectWithTag("Player").GetComponentInChildren<Animator>().SetBool("dead",true);
+        GameObject.FindGameObjectWithTag("Player").GetComponentInChildren<CapsuleCollider2D>().size = new Vector2(GameObject.FindGameObjectWithTag("Player").GetComponentInChildren<CapsuleCollider2D>().size.x,1.390677f);
         GameObject.FindGameObjectWithTag("Player").GetComponentInChildren<Animator>().SetInteger("moving",0);
         GameObject.FindGameObjectWithTag("Player").GetComponentInChildren<Animator>().SetBool("isDashing",false);
         GameObject.FindGameObjectWithTag("Player").GetComponentInChildren<Animator>().SetBool("isRunning",false);

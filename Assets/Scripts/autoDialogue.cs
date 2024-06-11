@@ -20,7 +20,7 @@ public class autoDialogue : MonoBehaviour
 
     void Update()
     {
-        if (touching && !touchedOnce)
+        if (touching && !touchedOnce && !GameObject.FindGameObjectWithTag("Player").GetComponent<DeathCounter>().isDying)
         {
             touchedOnce = true;
             dialogo.SetActive(true);

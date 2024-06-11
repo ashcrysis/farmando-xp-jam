@@ -12,7 +12,7 @@ public class DialoguePlayer : MonoBehaviour
     {
       isPlaying = IsDialogueActive();
          if (GetComponentInChildren<Interavel>().canInteract){
-       if (Input.GetKeyDown(KeyCode.C) && !isPlaying)
+       if (Input.GetKeyDown(KeyCode.C) && !isPlaying && !GameObject.FindGameObjectWithTag("Player").GetComponent<DeathCounter>().isDying)
             {
               
               if (dialogo.GetComponent<dialogue>() != null){

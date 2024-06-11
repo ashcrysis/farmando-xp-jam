@@ -109,6 +109,7 @@ MonoBehaviour:
   - {fileID: 8738663391181779865}
   timeDialogos:
   - {fileID: 218937187762579507}
+  gameStarted: 0
 --- !u!1 &89606451183777032
 GameObject:
   m_ObjectHideFlags: 0
@@ -5235,6 +5236,7 @@ MonoBehaviour:
   deathCounter: 0
   fadeImage: {fileID: 0}
   fadeDuration: 1
+  isDying: 0
 --- !u!114 &5557617006488621933
 MonoBehaviour:
   m_ObjectHideFlags: 0
