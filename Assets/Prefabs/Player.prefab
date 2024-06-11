@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 3043828855315355833}
   - component: {fileID: 7903277567338139336}
   - component: {fileID: 7883863131102299399}
+  - component: {fileID: 8650197514790167501}
   m_Layer: 0
   m_Name: IfritSpeaking
   m_TagString: Untagged
@@ -84,14 +85,27 @@ MonoBehaviour:
   dialogos:
   - {fileID: 89606451183777032}
   - {fileID: 1198393801672395422}
-  timeDialogos:
-  - {fileID: 218937187762579507}
   deathNeeded: 0100000004000000
+--- !u!114 &8650197514790167501
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 44049569469787904}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2b523d148b43d04087f56d9e7f24a74, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  idleTimer: 0
   idleDialogos:
   - {fileID: 3173857502102014132}
   - {fileID: 6322862401500434783}
   - {fileID: 4288382548496615801}
   idleThreshold: 15
+  timeDialogos:
+  - {fileID: 218937187762579507}
 --- !u!1 &89606451183777032
 GameObject:
   m_ObjectHideFlags: 0
