@@ -30,6 +30,8 @@ public class PlayerMovement : MonoBehaviour
     public Stamina stamina;
     public bool isRunning = false;
     public bool onSlope;
+    [SerializeField] private Transform wallCheckRight;
+    [SerializeField] private Transform wallCheckLeft;
     public float slopeAngle;
     private void Start()
     {
@@ -66,6 +68,10 @@ public class PlayerMovement : MonoBehaviour
         AdjustSpeed();
     }
 
+    public bool IsWalled()
+    {
+        return Physics2D.OverlapCircle(wallCheckLeft.position, 0.1f, groundLayer) || Physics2D.OverlapCircle(wallCheckRight.position, 0.1f, groundLayer);
+    }
     private void UpdateLandingState()
     {
         if (IsGrounded() && rb.velocity.y <= 0)

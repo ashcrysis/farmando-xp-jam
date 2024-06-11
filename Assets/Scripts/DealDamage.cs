@@ -30,6 +30,7 @@ public class DealDamage : MonoBehaviour
     {
         if (isColliding && collidingObject != null && !collidingObject.gameObject.GetComponent<Dash>().invincible)
         {
+            collidingObject.GetComponent<DeathCounter>().Died();
             SceneManager.LoadScene(0);
         }
     }

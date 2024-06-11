@@ -17,7 +17,7 @@ public class Bonfire : MonoBehaviour
 
     void Update()
     {
-        if (GetComponent<Interavel>().canInteract && Input.GetKeyDown(KeyCode.C))
+        if (GetComponent<Interavel>().canInteract && Input.GetKeyDown(KeyCode.C) &&  GetComponentInParent<DialoguePlayer>().isPlaying)
         {
             saveManager.lastBonfireID = ID;
             saveManager.lastBonfirePosition = position;

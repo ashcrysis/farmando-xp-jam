@@ -1279,6 +1279,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogo: {fileID: 1067097995}
   resetLineIndex: 0
+  isPlaying: 0
 --- !u!114 &101129653
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1637,6 +1638,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogo: {fileID: 1375843052}
   resetLineIndex: 0
+  isPlaying: 0
 --- !u!1 &156084597
 GameObject:
   m_ObjectHideFlags: 0
@@ -2682,6 +2684,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogo: {fileID: 1375843052}
   resetLineIndex: 0
+  isPlaying: 0
 --- !u!1 &248787645
 GameObject:
   m_ObjectHideFlags: 0
@@ -10218,6 +10221,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogo: {fileID: 240388537}
   resetLineIndex: 0
+  isPlaying: 0
 --- !u!1 &891593514
 GameObject:
   m_ObjectHideFlags: 0
@@ -19663,6 +19667,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogo: {fileID: 543577577}
   resetLineIndex: 0
+  isPlaying: 0
 --- !u!1 &1957046769
 GameObject:
   m_ObjectHideFlags: 0
@@ -20788,6 +20793,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogo: {fileID: 893332187}
   resetLineIndex: 0
+  isPlaying: 0
 --- !u!1 &2091091501
 GameObject:
   m_ObjectHideFlags: 0

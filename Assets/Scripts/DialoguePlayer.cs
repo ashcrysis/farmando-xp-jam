@@ -7,11 +7,14 @@ public class DialoguePlayer : MonoBehaviour
     [SerializeField] public GameObject dialogo;
     private bool touching = false;
     public bool resetLineIndex = false;
+    public bool isPlaying;
     void Update()
     {
+      isPlaying = IsDialogueActive();
          if (GetComponentInChildren<Interavel>().canInteract){
-       if (Input.GetKeyDown(KeyCode.C))
+       if (Input.GetKeyDown(KeyCode.C) && !isPlaying)
             {
+              
               if (dialogo.GetComponent<dialogue>() != null){
                  if (dialogo.GetComponent<dialogue>().index ==  dialogo.GetComponent<dialogue>().lines.Length-1){
                       resetLineIndex = true;
@@ -46,4 +49,17 @@ public class DialoguePlayer : MonoBehaviour
         }
 
 }
+
+  bool IsDialogueActive()
+    {
+        GameObject[] dialogueObjects = GameObject.FindGameObjectsWithTag("dialogue");
+        foreach (GameObject obj in dialogueObjects)
+        {
+            if (obj.activeInHierarchy)
+            {
+                return true;
+            }
+        }
+        return false;
+    }
 }
