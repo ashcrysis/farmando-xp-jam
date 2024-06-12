@@ -27,6 +27,8 @@ public class Dash : MonoBehaviour
     public Transform wallTopLeft;
     public Transform wallTopRight;
     public bool isWalled = false;
+    public AudioSource dashAudio;
+    private bool canPlayDashAudio = true;
 
     void Start()
     {
@@ -61,6 +63,11 @@ public class Dash : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.X) && ableDash() && canDash && !isWalled)
         {
+            if (canPlayDashAudio)
+            {
+                dashAudio.Play();
+                canPlayDashAudio = false;
+            }
             StartCoroutine(DashCoroutine());
         }
 
@@ -92,6 +99,7 @@ public class Dash : MonoBehaviour
         isDashing = false;
         StartCoroutine(IncreaseJumpPower());
         yield return new WaitForSeconds(dashingCooldown);
+        canPlayDashAudio = true;
         canDash = true;
     }
    private IEnumerator IncreaseJumpPower()
