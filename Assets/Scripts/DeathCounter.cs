@@ -56,6 +56,6 @@ public class DeathCounter : MonoBehaviour
 
         yield return new WaitForSeconds(1f);
         Died();
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(1);
     }
 }

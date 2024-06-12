@@ -15,6 +15,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Ash.unity
     guid: c80d85cc1b294bd44a98d9ae0647c1eb
   - enabled: 1
+    path: Assets/Scenes/Menu.unity
+    guid: dc5b23c8a4080c745a933a7be4426e87
+  - enabled: 1
     path: Assets/Scenes/Mapa.unity
     guid: 0b59c3fb63c68bc49965c901fceb404e
   m_configObjects: {}

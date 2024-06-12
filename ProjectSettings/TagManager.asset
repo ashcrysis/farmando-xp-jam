@@ -10,6 +10,7 @@ TagManager:
   - Timer
   - deathcanva
   - starterdialogue
+  - menuButtons
   layers:
   - Default
   - TransparentFX
