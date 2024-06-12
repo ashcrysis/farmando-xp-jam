@@ -22,10 +22,11 @@ public class Teleport : MonoBehaviour
     IEnumerator RecognizeKeyWithDelay()
     {
         canRecognizeKey = false; 
+        GameObject.FindGameObjectWithTag("Player").GetComponent<Dash>().enabled = false;
         GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>().enabled = false;
         GameObject.FindGameObjectWithTag("Player").GetComponent<Rigidbody2D>().velocity = new Vector2(0, 0);
         GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerAnimation>().enabled = false;
-        GameObject.FindGameObjectWithTag("Player").GetComponent<Dash>().enabled = false;
+        GameObject.FindGameObjectWithTag("Player").GetComponent<DashTrail>().SetEnabled(false);
         GameObject.FindGameObjectWithTag("Player").GetComponentInChildren<Animator>().SetInteger("moving", 0);
         GameObject.FindGameObjectWithTag("Player").GetComponentInChildren<Animator>().SetBool("isDashing", false);
         GameObject.FindGameObjectWithTag("Player").GetComponentInChildren<Animator>().SetBool("isRunning", false);
@@ -59,6 +60,7 @@ public class Teleport : MonoBehaviour
         GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>().enabled = true;
         GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerAnimation>().enabled = true;
         GameObject.FindGameObjectWithTag("Player").GetComponent<Dash>().enabled = true;
+        
     }
 
     IEnumerator FadeImage(float targetAlpha)

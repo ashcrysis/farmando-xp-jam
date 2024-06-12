@@ -25815,7 +25815,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   smoothTime: 0.3
-  yModifier: -3
+  yModifier: -0.79
   followY: 1
 --- !u!114 &1633234280
 MonoBehaviour:
