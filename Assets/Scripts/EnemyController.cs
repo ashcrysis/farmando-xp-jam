@@ -40,7 +40,7 @@ public class EnemyController : MonoBehaviour
     void FixedUpdate()
     {
         if (playerSpawned){
-        if (foundPlayer || distanceToPlayer < 1)
+        if ((foundPlayer || distanceToPlayer < 1 ) && !GameObject.FindGameObjectWithTag("Player").GetComponent<DeathCounter>().isDying)
         {
             MoveTowards(player.transform.position);
             followingPlayer = true;
