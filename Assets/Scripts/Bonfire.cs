@@ -9,47 +9,55 @@ public class Bonfire : MonoBehaviour
 
     private SaveManager saveManager;
     public Transform bonfirePoint;
-
+    public AudioSource bonfireSound;
+    private float cooldownTime = 5f;
+    private float nextInteractTime = 0f;
     void Start()
     {
         position = transform.position;
         saveManager = GameObject.FindGameObjectWithTag("GameController").GetComponent<SaveManager>();
     }
-
-    void Update()
+ void Update()
     {
        
-        if (GetComponent<Interavel>().canInteract && Input.GetKeyDown(KeyCode.C) && GetComponentInParent<DialoguePlayer>().isPlaying)
-        {
-            if (!PlayerPrefs.HasKey("BonfireIDs"))
+            if (GetComponent<Interavel>().canInteract && Input.GetKeyDown(KeyCode.C) && GetComponentInParent<DialoguePlayer>().isPlaying)
             {
-                List<int> bonfireIDs = new List<int>();
-                bonfireIDs.Add(ID);
-                PlayerPrefs.SetString("BonfireIDs", string.Join(",", bonfireIDs));
-            }
-            else
-            {
-                string bonfireIDsString = PlayerPrefs.GetString("BonfireIDs");
-                List<int> bonfireIDs = new List<int>(System.Array.ConvertAll(bonfireIDsString.Split(','), int.Parse));
-                Debug.Log(bonfireIDs);
-                if (!bonfireIDs.Contains(ID))
+                if (!PlayerPrefs.HasKey("BonfireIDs"))
                 {
+                    List<int> bonfireIDs = new List<int>();
                     bonfireIDs.Add(ID);
                     PlayerPrefs.SetString("BonfireIDs", string.Join(",", bonfireIDs));
-
-                    // Increment timeRemaining by 30 seconds
-                    GameObject.FindGameObjectWithTag("Timer").GetComponent<CountdownTimer>().timeRemaining += 30f;
                 }
+                else
+                {
+                    string bonfireIDsString = PlayerPrefs.GetString("BonfireIDs");
+                    List<int> bonfireIDs = new List<int>(System.Array.ConvertAll(bonfireIDsString.Split(','), int.Parse));
+                    Debug.Log(bonfireIDs);
+                    if (!bonfireIDs.Contains(ID))
+                    {
+                        bonfireIDs.Add(ID);
+                        PlayerPrefs.SetString("BonfireIDs", string.Join(",", bonfireIDs));
+
+                        // Increment timeRemaining by 30 seconds
+                        GameObject.FindGameObjectWithTag("Timer").GetComponent<CountdownTimer>().timeRemaining += 30f;
+                    }
+                }
+                
+                saveManager.lastBonfireID = ID;
+                saveManager.lastBonfirePosition = bonfirePoint.position;
+                saveManager.remainingTime = GameObject.FindGameObjectWithTag("Timer").GetComponent<CountdownTimer>().timeRemaining;
+                GameObject.FindGameObjectWithTag("Player").GetComponent<Stamina>().stamina = GameObject.FindGameObjectWithTag("Player").GetComponent<Stamina>().MaxStamina;
+                if (ID == 2)
+                {
+                    PlayerPrefs.SetInt("hasRest", 1);
+                }
+                saveManager.Save();
+                 if (Time.time >= nextInteractTime)
+                 {
+                    bonfireSound.Play();
+                }
+                nextInteractTime = Time.time + cooldownTime;
             }
-            saveManager.lastBonfireID = ID;
-            saveManager.lastBonfirePosition = bonfirePoint.position;
-            saveManager.remainingTime = GameObject.FindGameObjectWithTag("Timer").GetComponent<CountdownTimer>().timeRemaining;
-            GameObject.FindGameObjectWithTag("Player").GetComponent<Stamina>().stamina = GameObject.FindGameObjectWithTag("Player").GetComponent<Stamina>().MaxStamina;
-            if (ID == 2)
-            {
-                PlayerPrefs.SetInt("hasRest",1);
-            }
-            saveManager.Save();
-        }
+        
     }
 }
