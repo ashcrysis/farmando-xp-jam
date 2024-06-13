@@ -184,9 +184,9 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 0}
-    m_HighlightedColor: {r: 1, g: 0.3766535, b: 0, a: 1}
-    m_PressedColor: {r: 0.7735849, g: 0, b: 0, a: 1}
-    m_SelectedColor: {r: 1, g: 0, b: 0, a: 1}
+    m_HighlightedColor: {r: 0.5471698, g: 0.5471698, b: 0.5471698, a: 1}
+    m_PressedColor: {r: 0.3490566, g: 0.3490566, b: 0.3490566, a: 1}
+    m_SelectedColor: {r: 0.4433962, g: 0.4433962, b: 0.4433962, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
@@ -290,7 +290,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 50.70001, y: 1.0000172}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &267049904
@@ -317,8 +317,8 @@ MonoBehaviour:
 
 '
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 77049bacf6a9c784b87f184f2e2db8a4, type: 2}
-  m_sharedMaterial: {fileID: -7894251362077209807, guid: 77049bacf6a9c784b87f184f2e2db8a4, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: db4350f64d044c04b80900a790e59de0, type: 2}
+  m_sharedMaterial: {fileID: -1494817636252258155, guid: db4350f64d044c04b80900a790e59de0, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -342,8 +342,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 24
-  m_fontSizeBase: 24
+  m_fontSize: 20.76
+  m_fontSizeBase: 20.76
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -426,7 +426,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 50.7, y: 1}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &292959439
@@ -451,8 +451,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Novo jogo
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 77049bacf6a9c784b87f184f2e2db8a4, type: 2}
-  m_sharedMaterial: {fileID: -7894251362077209807, guid: 77049bacf6a9c784b87f184f2e2db8a4, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: db4350f64d044c04b80900a790e59de0, type: 2}
+  m_sharedMaterial: {fileID: -1494817636252258155, guid: db4350f64d044c04b80900a790e59de0, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -476,8 +476,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 24
-  m_fontSizeBase: 24
+  m_fontSize: 20.76
+  m_fontSizeBase: 20.76
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -536,6 +536,7 @@ GameObject:
   m_Component:
   - component: {fileID: 385518139}
   - component: {fileID: 385518138}
+  - component: {fileID: 385518140}
   m_Layer: 0
   m_Name: MenuManager
   m_TagString: Untagged
@@ -572,6 +573,102 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &385518140
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 385518137}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 5e1e44062f5dea5428ff6efbff4f2fe3, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 0.093
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &429814920
 GameObject:
   m_ObjectHideFlags: 0
@@ -712,7 +809,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 50.70001, y: 1.0000172}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &969919305
@@ -739,8 +836,8 @@ MonoBehaviour:
 
 '
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 77049bacf6a9c784b87f184f2e2db8a4, type: 2}
-  m_sharedMaterial: {fileID: -7894251362077209807, guid: 77049bacf6a9c784b87f184f2e2db8a4, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: db4350f64d044c04b80900a790e59de0, type: 2}
+  m_sharedMaterial: {fileID: -1494817636252258155, guid: db4350f64d044c04b80900a790e59de0, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -764,8 +861,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 24
-  m_fontSizeBase: 24
+  m_fontSize: 20.76
+  m_fontSizeBase: 20.76
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -977,10 +1074,10 @@ MonoBehaviour:
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 0}
-    m_HighlightedColor: {r: 1, g: 0.3766535, b: 0, a: 1}
-    m_PressedColor: {r: 0.7735849, g: 0, b: 0, a: 1}
-    m_SelectedColor: {r: 1, g: 0, b: 0, a: 1}
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.5849056, g: 0.5849056, b: 0.5849056, a: 1}
+    m_PressedColor: {r: 0.3207547, g: 0.3207547, b: 0.3207547, a: 1}
+    m_SelectedColor: {r: 0.49056602, g: 0.49056602, b: 0.49056602, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
@@ -1032,8 +1129,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: a005926e420ae584ba233edcc9368186, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -1110,10 +1207,10 @@ MonoBehaviour:
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 0}
-    m_HighlightedColor: {r: 1, g: 0.3766535, b: 0, a: 1}
-    m_PressedColor: {r: 0.7735849, g: 0, b: 0, a: 1}
-    m_SelectedColor: {r: 1, g: 0, b: 0, a: 1}
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.5849056, g: 0.5849056, b: 0.5849056, a: 1}
+    m_PressedColor: {r: 0.3207547, g: 0.3207547, b: 0.3207547, a: 1}
+    m_SelectedColor: {r: 0.49056602, g: 0.49056602, b: 0.49056602, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
@@ -1165,8 +1262,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: a005926e420ae584ba233edcc9368186, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -1377,7 +1474,7 @@ MonoBehaviour:
   m_text: "Musicas e efeitos Sonoros:\nFelipe Almino\n\nProgramacao: \nAshen Martins\nLucas
     Franca\n\nArte: \nDave de Oliveira\nLucas Franca\nJulia Vitoria"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 77049bacf6a9c784b87f184f2e2db8a4, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: db4350f64d044c04b80900a790e59de0, type: 2}
   m_sharedMaterial: {fileID: -7894251362077209807, guid: 77049bacf6a9c784b87f184f2e2db8a4, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -1441,7 +1538,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: -32.15165, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &1483434476
@@ -1686,10 +1783,10 @@ MonoBehaviour:
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 0}
-    m_HighlightedColor: {r: 1, g: 0.3766535, b: 0, a: 1}
-    m_PressedColor: {r: 0.7735849, g: 0, b: 0, a: 1}
-    m_SelectedColor: {r: 1, g: 0, b: 0, a: 1}
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.5849056, g: 0.5849056, b: 0.5849056, a: 1}
+    m_PressedColor: {r: 0.3207547, g: 0.3207547, b: 0.3207547, a: 1}
+    m_SelectedColor: {r: 0.49056602, g: 0.49056602, b: 0.49056602, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
@@ -1741,8 +1838,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: a005926e420ae584ba233edcc9368186, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4

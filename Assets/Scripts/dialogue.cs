@@ -44,6 +44,7 @@ public class dialogue : MonoBehaviour
             GameObject.FindGameObjectWithTag("Player").GetComponentInChildren<Animator>().SetInteger("moving",0);
             GameObject.FindGameObjectWithTag("Player").GetComponentInChildren<Animator>().SetBool("isDashing",false);
             GameObject.FindGameObjectWithTag("Player").GetComponentInChildren<Animator>().SetBool("isRunning",false);
+            GameObject.FindGameObjectWithTag("Player").GetComponent<AudioController>().DisableAllAudio();
             var enemies = GameObject.FindGameObjectsWithTag("enemy");
             for (int i = 0; i < enemies.Length; i++)
             {

@@ -202,9 +202,9 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 1529680f00443b248b9ddee33e7f3aa5, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 70f1e2f10d819474ba0e338e74dc5f04, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.091
+  m_Volume: 0.06
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -318,6 +318,7 @@ MonoBehaviour:
   - "Voc\xEA sabe que eu sinto toda vez que voc\xEA morre, n\xE9?"
   speakers:
   - Ifrit
+  oneSoundInXchars: 7
   textSpeed: 0.01
   index: 0
   portraits:
@@ -491,9 +492,9 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 1529680f00443b248b9ddee33e7f3aa5, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 70f1e2f10d819474ba0e338e74dc5f04, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.091
+  m_Volume: 0.06
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -608,6 +609,7 @@ MonoBehaviour:
     do sol acorda..."
   speakers:
   - Ifrit
+  oneSoundInXchars: 7
   textSpeed: 0.01
   index: 0
   portraits:
@@ -971,9 +973,9 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 1529680f00443b248b9ddee33e7f3aa5, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 70f1e2f10d819474ba0e338e74dc5f04, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.091
+  m_Volume: 0.06
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -1087,6 +1089,7 @@ MonoBehaviour:
   - "Isso do\xED..."
   speakers:
   - Ifrit
+  oneSoundInXchars: 7
   textSpeed: 0.01
   index: 0
   portraits:
@@ -2046,9 +2049,9 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 1529680f00443b248b9ddee33e7f3aa5, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 70f1e2f10d819474ba0e338e74dc5f04, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.091
+  m_Volume: 0.06
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -2162,6 +2165,7 @@ MonoBehaviour:
   - Ow, a gente tem que <color=red>agilizar</color>!!!
   speakers:
   - Ifrit
+  oneSoundInXchars: 7
   textSpeed: 0.01
   index: 0
   portraits:
@@ -2349,9 +2353,9 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 1529680f00443b248b9ddee33e7f3aa5, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 70f1e2f10d819474ba0e338e74dc5f04, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.091
+  m_Volume: 0.06
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -2467,6 +2471,7 @@ MonoBehaviour:
   speakers:
   - Ifrit
   - Ifrit
+  oneSoundInXchars: 7
   textSpeed: 0.01
   index: 0
   portraits:
@@ -2677,9 +2682,9 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 1529680f00443b248b9ddee33e7f3aa5, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 70f1e2f10d819474ba0e338e74dc5f04, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.091
+  m_Volume: 0.06
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -2793,6 +2798,7 @@ MonoBehaviour:
   - "Eu acho, s\xF3 acho, que voc\xEA n\xE3o tem tempo pra gastar atoa"
   speakers:
   - Ifrit
+  oneSoundInXchars: 7
   textSpeed: 0.01
   index: 0
   portraits:
@@ -3077,9 +3083,9 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 1529680f00443b248b9ddee33e7f3aa5, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 70f1e2f10d819474ba0e338e74dc5f04, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.091
+  m_Volume: 0.06
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -3193,6 +3199,7 @@ MonoBehaviour:
   - Desistiu de me ajudar, foi?
   speakers:
   - Ifrit
+  oneSoundInXchars: 7
   textSpeed: 0.01
   index: 0
   portraits:
@@ -4453,9 +4460,9 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 1529680f00443b248b9ddee33e7f3aa5, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 70f1e2f10d819474ba0e338e74dc5f04, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.091
+  m_Volume: 0.06
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -4569,6 +4576,7 @@ MonoBehaviour:
   - "Voc\xEA t\xE1 ai?"
   speakers:
   - Ifrit
+  oneSoundInXchars: 7
   textSpeed: 0.01
   index: 0
   portraits:
@@ -5183,6 +5191,7 @@ GameObject:
   - component: {fileID: 8210337958401261513}
   - component: {fileID: 4416198185599813417}
   - component: {fileID: 1759827324098867261}
+  - component: {fileID: 4422178502408691416}
   m_Layer: 7
   m_Name: Player
   m_TagString: Player
@@ -5622,7 +5631,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 6283c734fd302a040ae5c9bed8c6493d, type: 3}
+  m_audioClip: {fileID: 8300000, guid: bc4c10422f739584584c0568f6820121, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 0.42
   m_Pitch: 1
@@ -5819,6 +5828,102 @@ AudioSource:
   m_Volume: 0.158
   m_Pitch: 1
   Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!82 &4422178502408691416
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7639174015140093084}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 1071e2ddf5c5653408c61bb5c37917f4, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 0.034
+  m_Pitch: 1
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -6793,9 +6898,9 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 1529680f00443b248b9ddee33e7f3aa5, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 70f1e2f10d819474ba0e338e74dc5f04, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.091
+  m_Volume: 0.06
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -6909,6 +7014,7 @@ MonoBehaviour:
   - "Qual foi, t\xE1 moscando?"
   speakers:
   - Ifrit
+  oneSoundInXchars: 7
   textSpeed: 0.01
   index: 0
   portraits:

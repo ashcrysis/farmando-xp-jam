@@ -73,4 +73,15 @@ public class AudioController : MonoBehaviour
             isRunningAudioPlaying = false;
         }
     }
+      public void DisableAllAudio()
+    {
+        deathSound.Stop();
+        runAudio.Stop();
+        walkAudio.Stop();
+        idleBreathingAudio.Stop();
+        
+        isWalkingAudioPlaying = false;
+        isRunningAudioPlaying = false;
+        isIdleBreathingPlaying = false;
+    }
 }

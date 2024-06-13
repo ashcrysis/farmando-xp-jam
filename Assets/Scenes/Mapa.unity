@@ -3151,6 +3151,7 @@ GameObject:
   m_Component:
   - component: {fileID: 160997992}
   - component: {fileID: 160997993}
+  - component: {fileID: 160997994}
   m_Layer: 0
   m_Name: sprite
   m_TagString: Untagged
@@ -3225,6 +3226,27 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &160997994
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 160997991}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: affc09abce5574d4282bd42d2f0e3549, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &174950955
 GameObject:
   m_ObjectHideFlags: 0
@@ -4019,6 +4041,7 @@ MonoBehaviour:
   speakers:
   - Ifrit
   - Ifrit
+  oneSoundInXchars: 7
   textSpeed: 0.01
   index: 0
   portraits:
@@ -4048,9 +4071,9 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 1529680f00443b248b9ddee33e7f3aa5, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 70f1e2f10d819474ba0e338e74dc5f04, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.091
+  m_Volume: 0.06
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -4861,6 +4884,7 @@ MonoBehaviour:
   - Ifrit
   - Ifrit
   - 
+  oneSoundInXchars: 7
   textSpeed: 0.01
   index: 0
   portraits:
@@ -4891,9 +4915,9 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 1529680f00443b248b9ddee33e7f3aa5, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 70f1e2f10d819474ba0e338e74dc5f04, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.091
+  m_Volume: 0.06
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -6879,6 +6903,7 @@ GameObject:
   m_Component:
   - component: {fileID: 443888169}
   - component: {fileID: 443888170}
+  - component: {fileID: 443888171}
   m_Layer: 0
   m_Name: sprite
   m_TagString: Untagged
@@ -6953,6 +6978,27 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &443888171
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 443888168}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: affc09abce5574d4282bd42d2f0e3549, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &462221248
 GameObject:
   m_ObjectHideFlags: 0
@@ -7130,6 +7176,7 @@ GameObject:
   m_Component:
   - component: {fileID: 477020460}
   - component: {fileID: 477020461}
+  - component: {fileID: 477020462}
   m_Layer: 0
   m_Name: sprite
   m_TagString: Untagged
@@ -7204,6 +7251,27 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &477020462
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 477020459}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: affc09abce5574d4282bd42d2f0e3549, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &485943404
 GameObject:
   m_ObjectHideFlags: 0
@@ -7429,6 +7497,7 @@ GameObject:
   m_Component:
   - component: {fileID: 494049657}
   - component: {fileID: 494049658}
+  - component: {fileID: 494049659}
   m_Layer: 0
   m_Name: sprite
   m_TagString: Untagged
@@ -7503,6 +7572,27 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &494049659
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 494049656}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: affc09abce5574d4282bd42d2f0e3549, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &496998544
 GameObject:
   m_ObjectHideFlags: 0
@@ -8008,6 +8098,7 @@ MonoBehaviour:
   - Ifrit
   - Ifrit
   - Ifrit
+  oneSoundInXchars: 7
   textSpeed: 0.01
   index: 0
   portraits:
@@ -8038,9 +8129,9 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 1529680f00443b248b9ddee33e7f3aa5, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 70f1e2f10d819474ba0e338e74dc5f04, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.091
+  m_Volume: 0.06
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -10007,6 +10098,7 @@ MonoBehaviour:
   - Ifrit
   - Ifrit
   - Ifrit
+  oneSoundInXchars: 7
   textSpeed: 0.01
   index: 0
   portraits:
@@ -10037,9 +10129,9 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 1529680f00443b248b9ddee33e7f3aa5, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 70f1e2f10d819474ba0e338e74dc5f04, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.091
+  m_Volume: 0.06
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -10947,6 +11039,7 @@ MonoBehaviour:
     minha mem\xF3ria</color> quando eu desmaio."
   speakers:
   - Ifrit
+  oneSoundInXchars: 7
   textSpeed: 0.01
   index: 0
   portraits:
@@ -10975,9 +11068,9 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 1529680f00443b248b9ddee33e7f3aa5, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 70f1e2f10d819474ba0e338e74dc5f04, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.091
+  m_Volume: 0.06
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -11581,6 +11674,7 @@ GameObject:
   m_Component:
   - component: {fileID: 712069021}
   - component: {fileID: 712069022}
+  - component: {fileID: 712069023}
   m_Layer: 0
   m_Name: sprite
   m_TagString: Untagged
@@ -11655,6 +11749,27 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &712069023
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 712069020}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: affc09abce5574d4282bd42d2f0e3549, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &727339009
 GameObject:
   m_ObjectHideFlags: 0
@@ -15095,6 +15210,7 @@ MonoBehaviour:
   - "Descansar na fogueira, te enche de <color=yellow>determina\xE7\xE3o</color>"
   speakers:
   - Ifrit
+  oneSoundInXchars: 7
   textSpeed: 0.01
   index: 0
   portraits:
@@ -15123,9 +15239,9 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 1529680f00443b248b9ddee33e7f3aa5, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 70f1e2f10d819474ba0e338e74dc5f04, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.091
+  m_Volume: 0.06
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -15665,6 +15781,7 @@ MonoBehaviour:
   - Ifrit
   - Ifrit
   - Ifrit
+  oneSoundInXchars: 7
   textSpeed: 0.01
   index: 0
   portraits:
@@ -15701,9 +15818,9 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 1529680f00443b248b9ddee33e7f3aa5, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 70f1e2f10d819474ba0e338e74dc5f04, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.091
+  m_Volume: 0.06
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -15913,7 +16030,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 1529680f00443b248b9ddee33e7f3aa5, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 70f1e2f10d819474ba0e338e74dc5f04, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 0.091
   m_Pitch: 1
@@ -18316,6 +18433,7 @@ MonoBehaviour:
   speakers:
   - Ifrit
   - Ifrit
+  oneSoundInXchars: 7
   textSpeed: 0.01
   index: 0
   portraits:
@@ -18345,9 +18463,9 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 1529680f00443b248b9ddee33e7f3aa5, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 70f1e2f10d819474ba0e338e74dc5f04, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.091
+  m_Volume: 0.06
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -19325,6 +19443,7 @@ MonoBehaviour:
   - Ifrit
   - Ifrit
   - Ifrit
+  oneSoundInXchars: 7
   textSpeed: 0.01
   index: 0
   portraits:
@@ -19356,9 +19475,9 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 1529680f00443b248b9ddee33e7f3aa5, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 70f1e2f10d819474ba0e338e74dc5f04, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.091
+  m_Volume: 0.06
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -20298,6 +20417,7 @@ MonoBehaviour:
   speakers:
   - Ifrit
   - Ifrit
+  oneSoundInXchars: 7
   textSpeed: 0.01
   index: 0
   portraits:
@@ -20327,9 +20447,9 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 1529680f00443b248b9ddee33e7f3aa5, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 70f1e2f10d819474ba0e338e74dc5f04, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.091
+  m_Volume: 0.06
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -23319,6 +23439,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1486937137}
   - component: {fileID: 1486937138}
+  - component: {fileID: 1486937139}
   m_Layer: 0
   m_Name: sprite
   m_TagString: Untagged
@@ -23393,6 +23514,27 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &1486937139
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1486937136}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: affc09abce5574d4282bd42d2f0e3549, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1491367262
 GameObject:
   m_ObjectHideFlags: 0
@@ -25412,6 +25554,7 @@ MonoBehaviour:
   - Ifrit
   - Ifrit
   - Ifrit
+  oneSoundInXchars: 7
   textSpeed: 0.01
   index: 0
   portraits:
@@ -25442,9 +25585,9 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 1529680f00443b248b9ddee33e7f3aa5, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 70f1e2f10d819474ba0e338e74dc5f04, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.091
+  m_Volume: 0.06
   m_Pitch: 1
   Loop: 0
   Mute: 0

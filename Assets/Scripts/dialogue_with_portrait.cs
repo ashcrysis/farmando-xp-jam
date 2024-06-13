@@ -11,6 +11,7 @@ public class dialogue_with_portrait : MonoBehaviour
     public string[] lines;
     public string[] speakers;
 
+    public int oneSoundInXchars;
     public float textSpeed;
     public int index;
     [SerializeField] public Sprite[] portraits;
@@ -53,6 +54,7 @@ public class dialogue_with_portrait : MonoBehaviour
             GameObject.FindGameObjectWithTag("Player").GetComponentInChildren<Animator>().SetInteger("moving",0);
             GameObject.FindGameObjectWithTag("Player").GetComponentInChildren<Animator>().SetBool("isDashing",false);
             GameObject.FindGameObjectWithTag("Player").GetComponentInChildren<Animator>().SetBool("isRunning",false);
+            GameObject.FindGameObjectWithTag("Player").GetComponent<AudioController>().DisableAllAudio();
             var enemies = GameObject.FindGameObjectsWithTag("enemy");
             for (int i = 0; i < enemies.Length; i++)
             {
@@ -95,7 +97,7 @@ IEnumerator TypeLine()
 
     for (int i = 0; i < line.Length; i++)
     {
-        if (i % 2 == 0 && !listPause.Contains(line[i])){
+        if (i % oneSoundInXchars == 0 && !listPause.Contains(line[i])){
 
         audio.Play();
         }
