@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using UnityEngine;
 
@@ -18,10 +19,10 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private LayerMask groundLayer;
     public int moving;
     private Animator anim;
-    public bool canCoyoteJump = false;
     private float coyoteTime = 0.15f;
     private float coyoteTimer = 0f;
     private bool isJumping = false;
+    public bool jump = false;
     private bool canJump = true;
     public float jumpDelay = 0.2f;
     private bool hasLaunched = false;
@@ -36,6 +37,7 @@ public class PlayerMovement : MonoBehaviour
     private void Start()
     {
         Initialize();
+        Application.targetFrameRate = 30;
     }
 
     private void Initialize()
@@ -52,6 +54,13 @@ public class PlayerMovement : MonoBehaviour
         Flip();
         animatorHandler();
         UpdateLandingState();
+        if (Input.GetKeyDown(KeyCode.UpArrow) && canJump)
+        {
+            if (IsGrounded())
+            {
+             jump = true;   
+            }
+        }
     }
 
     private void HandleInput()
@@ -64,7 +73,6 @@ public class PlayerMovement : MonoBehaviour
             stamina.Actions(2);
             }
         }
-        Jump();
         AdjustSpeed();
     }
 
@@ -86,10 +94,8 @@ public class PlayerMovement : MonoBehaviour
 
     private void Jump()
     {
-        if (Input.GetKeyDown(KeyCode.UpArrow) && canJump)
-        {
-            if (IsGrounded() || canCoyoteJump)
-            {
+      
+      if (jump){
                 if (stamina.stamina < stamina.staminaJumpValue)
                 {
                     return;
@@ -98,18 +104,19 @@ public class PlayerMovement : MonoBehaviour
                 justLanded = false;
                 rb.velocity = new Vector2(rb.velocity.x, jumpingPower);
                 isJumping = true;
-                canCoyoteJump = false;
                 StartCoroutine(ResetCoyoteJumpAfterDelay(coyoteTime));
                 canJump = false;
                 StartCoroutine(JumpDelay(jumpDelay));
-            }
-        }
+                isJumping = false;
+                jump = false;
+           } 
+        
     }
 
     private void AdjustSpeed()
     {
 
-        if (Input.GetKey(KeyCode.Z) && moving != 0 && stamina.stamina > ( stamina.staminaRunValue)){
+        if (Input.GetKey(KeyCode.Z) && moving != 0 && stamina.stamina > ( stamina.staminaRunValue) && IsGrounded()){
             isRunning = true;
             if (onSlope && IsGrounded())
             {
@@ -145,6 +152,8 @@ public class PlayerMovement : MonoBehaviour
     private void FixedUpdate()
     {
         MovePlayer();
+        Jump();
+
     }
 
     private void MovePlayer()
@@ -156,8 +165,9 @@ public class PlayerMovement : MonoBehaviour
 
         HandleGroundedState();
         HandleSlopeAdjustment();
-    }private void HandleSlopeAdjustment()
-{
+    }
+    private void HandleSlopeAdjustment()
+    {
     if (IsGrounded())
     {
         RaycastHit2D hit = Physics2D.Raycast(transform.position, -Vector2.up, Mathf.Infinity, groundLayer);
@@ -197,19 +207,14 @@ public class PlayerMovement : MonoBehaviour
         if (IsGrounded())
         {
             coyoteTimer = coyoteTime;
-            canCoyoteJump = true;
             isJumping = false;
             hasLaunched = false;
         }
         else if (coyoteTimer > 0)
         {
             coyoteTimer -= Time.fixedDeltaTime;
-            canCoyoteJump = true;
         }
-        else
-        {
-            canCoyoteJump = false;
-        }
+  
     }
 
     private void animatorHandler()
@@ -232,7 +237,6 @@ public class PlayerMovement : MonoBehaviour
     private IEnumerator ResetCoyoteJumpAfterDelay(float delay)
     {
         yield return new WaitForSeconds(delay);
-        canCoyoteJump = false;
     }
      private IEnumerator JumpDelay(float delay)
     {
