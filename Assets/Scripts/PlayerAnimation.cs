@@ -6,11 +6,12 @@ public class PlayerAnimation : MonoBehaviour
 {
     private PlayerMovement playerMovement;
     private int moving;
-    private Animator anim;
+    private Animator[] animators;
     private Dash dash;
+
     void Start()
     {
-        anim = GetComponentInChildren<Animator>();
+        animators = GetComponentsInChildren<Animator>();
         playerMovement = GetComponent<PlayerMovement>();
         dash = GetComponent<Dash>();
     }
@@ -18,8 +19,11 @@ public class PlayerAnimation : MonoBehaviour
     void Update()
     {
         moving = playerMovement.moving;
-        anim.SetInteger("moving", moving);
-        anim.SetBool("isDashing",dash.isDashing);
-        anim.SetBool("isRunning",playerMovement.isRunning);
+        foreach (Animator anim in animators)
+        {
+            anim.SetInteger("moving", moving);
+            anim.SetBool("isDashing", dash.isDashing);
+            anim.SetBool("isRunning", playerMovement.isRunning);
+        }
     }
 }
