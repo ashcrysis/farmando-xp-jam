@@ -86,7 +86,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void Jump()
     {
-        if (Input.GetKeyDown(KeyCode.UpArrow) && !GetComponent<Dash>().isDashing && canJump)
+        if (Input.GetKeyDown(KeyCode.UpArrow) && canJump)
         {
             if (IsGrounded() || canCoyoteJump)
             {

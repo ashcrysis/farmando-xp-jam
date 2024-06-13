@@ -83,6 +83,7 @@ public class Dash : MonoBehaviour
     private IEnumerator DashCoroutine()
     {
         StartCoroutine(StartInvincibility());
+        StartCoroutine(IncreaseJumpPower());
         canDash = false;
         stamina.Actions(1);
         isDashing = true;
@@ -97,7 +98,6 @@ public class Dash : MonoBehaviour
             rb.velocity = new Vector2(rb.velocity.x-dashingPower/2,rb.velocity.y);
         }
         isDashing = false;
-        StartCoroutine(IncreaseJumpPower());
         yield return new WaitForSeconds(dashingCooldown);
         canPlayDashAudio = true;
         canDash = true;
