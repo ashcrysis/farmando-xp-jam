@@ -25086,7 +25086,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d27733fc1575584f98917334c3c298b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fallingSource: {fileID: 47032456}
+  fallingSource: {fileID: 1355360105}
 --- !u!70 &1355360104
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -25119,8 +25119,8 @@ CapsuleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.31052274, y: -2.093705}
-  m_Size: {x: 1.9902757, y: 5.25077}
+  m_Offset: {x: -0.6507916, y: -2.093705}
+  m_Size: {x: 2.6708138, y: 5.25077}
   m_Direction: 0
 --- !u!82 &1355360105
 AudioSource:
