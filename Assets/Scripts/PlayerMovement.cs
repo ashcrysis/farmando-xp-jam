@@ -168,7 +168,7 @@ public class PlayerMovement : MonoBehaviour
             if (slopeAngle > 0 && slopeAngle < 90)
             {
                 float direction = hit.normal.x > 0 ? 1 : -1;
-                float rotationSpeed = 0.8f; // Adjust the rotation speed factor as needed
+                float rotationSpeed = 1f; 
                 float targetRotation = direction * -slopeAngle;
                 float smoothRotation = Mathf.LerpAngle(transform.rotation.eulerAngles.z, targetRotation, Time.deltaTime * rotationSpeed);
                 transform.rotation = Quaternion.Euler(0, 0, smoothRotation);
