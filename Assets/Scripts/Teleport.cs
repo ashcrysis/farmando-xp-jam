@@ -30,7 +30,8 @@ public class Teleport : MonoBehaviour
         GameObject.FindGameObjectWithTag("Player").GetComponentInChildren<Animator>().SetInteger("moving", 0);
         GameObject.FindGameObjectWithTag("Player").GetComponentInChildren<Animator>().SetBool("isDashing", false);
         GameObject.FindGameObjectWithTag("Player").GetComponentInChildren<Animator>().SetBool("isRunning", false);
-
+        GameObject.FindGameObjectWithTag("Player").GetComponent<AudioController>().DisableAllAudio();
+        GameObject.FindGameObjectWithTag("Player").GetComponent<AudioController>().enabled = false;
         StartCoroutine(FadeAndTeleport());
         yield return new WaitForSeconds(recognitionDelay);
         canRecognizeKey = true; 
@@ -60,6 +61,7 @@ public class Teleport : MonoBehaviour
         GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>().enabled = true;
         GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerAnimation>().enabled = true;
         GameObject.FindGameObjectWithTag("Player").GetComponent<Dash>().enabled = true;
+        GameObject.FindGameObjectWithTag("Player").GetComponent<AudioController>().enabled = true;
         
     }
 
