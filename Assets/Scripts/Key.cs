@@ -19,6 +19,7 @@ public class Key : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.C) && GetComponent<Interavel>().canInteract && !GameObject.FindGameObjectWithTag("Player").GetComponent<DeathCounter>().isDying && !hasCollectedKey)
         {
             hasCollectedKey = true;
+            GetComponent<SpriteRenderer>().enabled = false;
             StartCoroutine(DelayedSetKey());
         }
     }
