@@ -10,7 +10,7 @@ public class DealDamage : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("Player") || other.CompareTag("enemy"))
         {
             isColliding = true;
             collidingObject = other;
@@ -19,7 +19,7 @@ public class DealDamage : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D other)
     {
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("Player") || other.CompareTag("enemy"))
         {
             isColliding = false;
             collidingObject = null;
@@ -28,10 +28,23 @@ public class DealDamage : MonoBehaviour
 
     private void Update()
     {
-        if (isColliding && collidingObject != null && !collidingObject.gameObject.GetComponent<Dash>().invincible)
+        if (isColliding && collidingObject != null)
         {
-           GameObject.FindGameObjectWithTag("Player").GetComponent<DeathCounter>().Die();
+            if (collidingObject.CompareTag("Player"))
+            {
+                if (!collidingObject.gameObject.GetComponent<Dash>().invincible)
+                {
+                    GameObject.FindGameObjectWithTag("Player").GetComponent<DeathCounter>().Die();
+                }
+            }
+
+            if (gameObject.name == "SDamage")
+            {
+                if (collidingObject.CompareTag("enemy"))
+                {
+                    Destroy(collidingObject.gameObject);
+                }
+            }
         }
     }
-
 }
