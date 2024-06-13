@@ -1,58 +1,64 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class DialoguePlayer : MonoBehaviour
 {
-    [SerializeField] public GameObject dialogo;
     private bool touching = false;
-    public bool resetLineIndex = false;
+    private int interactionCount = 0;
     public bool isPlaying;
+    public bool resetLineIndex = false;
+
+    public GameObject[] dialogueObjects;
+
     void Update()
     {
-      isPlaying = IsDialogueActive();
-         if (GetComponentInChildren<Interavel>().canInteract){
-       if (Input.GetKeyDown(KeyCode.C) && !isPlaying && !GameObject.FindGameObjectWithTag("Player").GetComponent<DeathCounter>().isDying)
+        isPlaying = IsDialogueActive();
+        if (GetComponentInChildren<Interavel>().canInteract)
+        {
+            if (Input.GetKeyDown(KeyCode.C) && !isPlaying && !GameObject.FindGameObjectWithTag("Player").GetComponent<DeathCounter>().isDying)
             {
-              
-              if (dialogo.GetComponent<dialogue>() != null){
-                 if (dialogo.GetComponent<dialogue>().index ==  dialogo.GetComponent<dialogue>().lines.Length-1){
-                      resetLineIndex = true;
-                    }
-                    dialogo.SetActive(true);
-                }else{
-                    if (dialogo.GetComponent<dialogue_with_portrait>().index ==  dialogo.GetComponent<dialogue_with_portrait>().lines.Length-1){
-                      resetLineIndex = true;
-                    }
-                    dialogo.SetActive(true);
-                }
-        }
+                interactionCount++;
+
+                ActivateDialogues(interactionCount);
+
+            }
         }
     }
 
-
-  void OnCollisionEnter2D(Collision2D col)
-  {
-
-        if (col.gameObject.CompareTag("Player"))
+    void ActivateDialogues(int count)
+    {
+        foreach (GameObject obj in dialogueObjects)
         {
-               touching = true;
-  }
-}
-
-  void OnCollisionExit2D(Collision2D col)
-  {
-
-        if (col.gameObject.CompareTag("Player"))
-        {
-               touching = false;
+            obj.SetActive(false);
         }
 
-}
+        if (count <= dialogueObjects.Length)
+        {
+            dialogueObjects[count - 1].SetActive(true);
+        }
+        else
+        {
+            dialogueObjects[dialogueObjects.Length - 1].SetActive(true);
+        }
+    }
 
-  bool IsDialogueActive()
+    void OnCollisionEnter2D(Collision2D col)
     {
-        GameObject[] dialogueObjects = GameObject.FindGameObjectsWithTag("dialogue");
+        if (col.gameObject.CompareTag("Player"))
+        {
+            touching = true;
+        }
+    }
+
+    void OnCollisionExit2D(Collision2D col)
+    {
+        if (col.gameObject.CompareTag("Player"))
+        {
+            touching = false;
+        }
+    }
+
+    bool IsDialogueActive()
+    {
         foreach (GameObject obj in dialogueObjects)
         {
             if (obj.activeInHierarchy)

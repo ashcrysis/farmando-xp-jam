@@ -2355,9 +2355,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02649614973860349bae5a35d036d7aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogo: {fileID: 1067097995}
-  resetLineIndex: 0
   isPlaying: 0
+  resetLineIndex: 0
+  dialogueObjects:
+  - {fileID: 1067097995}
 --- !u!114 &101129653
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3101,9 +3102,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02649614973860349bae5a35d036d7aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogo: {fileID: 893332187}
-  resetLineIndex: 0
   isPlaying: 0
+  resetLineIndex: 0
+  dialogueObjects:
+  - {fileID: 893332187}
 --- !u!1 &135197988
 GameObject:
   m_ObjectHideFlags: 0
@@ -5250,9 +5252,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02649614973860349bae5a35d036d7aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogo: {fileID: 893332187}
-  resetLineIndex: 0
   isPlaying: 0
+  resetLineIndex: 0
+  dialogueObjects:
+  - {fileID: 893332187}
 --- !u!1 &248787645
 GameObject:
   m_ObjectHideFlags: 0
@@ -17965,9 +17968,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02649614973860349bae5a35d036d7aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogo: {fileID: 240388537}
-  resetLineIndex: 0
   isPlaying: 0
+  resetLineIndex: 0
+  dialogueObjects:
+  - {fileID: 240388537}
 --- !u!1 &891297915
 GameObject:
   m_ObjectHideFlags: 0
@@ -103952,9 +103956,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02649614973860349bae5a35d036d7aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogo: {fileID: 543577577}
-  resetLineIndex: 0
   isPlaying: 0
+  resetLineIndex: 0
+  dialogueObjects: []
 --- !u!1 &1957046769
 GameObject:
   m_ObjectHideFlags: 0
@@ -106575,9 +106579,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02649614973860349bae5a35d036d7aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogo: {fileID: 893332187}
-  resetLineIndex: 0
   isPlaying: 0
+  resetLineIndex: 0
+  dialogueObjects:
+  - {fileID: 893332187}
 --- !u!1 &2092179508
 GameObject:
   m_ObjectHideFlags: 0
