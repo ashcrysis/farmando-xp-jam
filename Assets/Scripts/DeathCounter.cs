@@ -30,14 +30,15 @@ public class DeathCounter : MonoBehaviour
         isDying = true;
         gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(gameObject.GetComponent<Rigidbody2D>().velocity.x, -10f);
         GetComponent<PlayerMovement>().enabled = false;
-        GetComponent<PlayerAnimation>().enabled = false;
         GetComponent<Dash>().enabled = false;
         GameObject.FindGameObjectWithTag("Player").GetComponentInChildren<Animator>().SetBool("dead",true);
+        GetComponent<PlayerAnimation>().enabled = false;
         GameObject.FindGameObjectWithTag("Player").GetComponentInChildren<CapsuleCollider2D>().size = new Vector2(GameObject.FindGameObjectWithTag("Player").GetComponentInChildren<CapsuleCollider2D>().size.x,1.390677f);
         GameObject.FindGameObjectWithTag("Player").GetComponentInChildren<Animator>().SetInteger("moving",0);
         GameObject.FindGameObjectWithTag("Player").GetComponentInChildren<Animator>().SetBool("isDashing",false);
         GameObject.FindGameObjectWithTag("Player").GetComponentInChildren<Animator>().SetBool("isRunning",false);
         GameObject.FindGameObjectWithTag("Player").GetComponent<DashTrail>().SetEnabled(false);
+        GameObject.FindGameObjectWithTag("Player").GetComponentsInChildren<SpriteRenderer>()[1].enabled = false;
 
         isFading = true;
         float elapsedTime = 0f;
