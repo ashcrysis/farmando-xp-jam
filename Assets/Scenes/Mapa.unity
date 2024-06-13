@@ -2094,7 +2094,7 @@ GameObject:
   - component: {fileID: 78234824}
   - component: {fileID: 78234823}
   m_Layer: 0
-  m_Name: Damage
+  m_Name: SDamage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5997,7 +5997,7 @@ GameObject:
   - component: {fileID: 284773416}
   - component: {fileID: 284773415}
   m_Layer: 0
-  m_Name: Damage
+  m_Name: SDamage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6829,7 +6829,7 @@ GameObject:
   - component: {fileID: 331218208}
   - component: {fileID: 331218207}
   m_Layer: 0
-  m_Name: Damage
+  m_Name: SDamage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12150,7 +12150,7 @@ GameObject:
   - component: {fileID: 635072993}
   - component: {fileID: 635072992}
   m_Layer: 0
-  m_Name: Damage
+  m_Name: SDamage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -13918,7 +13918,7 @@ GameObject:
   - component: {fileID: 701555979}
   - component: {fileID: 701555978}
   m_Layer: 0
-  m_Name: Damage
+  m_Name: SDamage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
