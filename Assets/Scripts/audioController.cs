@@ -80,6 +80,16 @@ public class AudioController : MonoBehaviour
             isWalkingAudioPlaying = false;
             isRunningAudioPlaying = false;
         }
+        if (!playerMovement.IsGrounded())
+        {
+        runAudio.Stop();
+        walkAudio.Stop();
+        idleBreathingAudio.Stop();
+        
+        isWalkingAudioPlaying = false;
+        isRunningAudioPlaying = false;
+        isIdleBreathingPlaying = false;
+        }
     }
       public void DisableAllAudio()
     {
