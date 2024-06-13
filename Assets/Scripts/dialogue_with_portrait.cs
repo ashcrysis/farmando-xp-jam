@@ -52,6 +52,9 @@ public class dialogue_with_portrait : MonoBehaviour
             GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerAnimation>().enabled = false;
             GameObject.FindGameObjectWithTag("Player").GetComponent<Dash>().enabled = false;
             GameObject.FindGameObjectWithTag("Player").GetComponentInChildren<Animator>().SetInteger("moving",0);
+            GameObject.FindGameObjectWithTag("Player").GetComponentsInChildren<Animator>()[1].SetInteger("moving",0);
+            GameObject.FindGameObjectWithTag("Player").GetComponentsInChildren<Animator>()[1].SetBool("isDashing",false);
+            GameObject.FindGameObjectWithTag("Player").GetComponentsInChildren<Animator>()[1].SetBool("isRunning",false);
             GameObject.FindGameObjectWithTag("Player").GetComponentInChildren<Animator>().SetBool("isDashing",false);
             GameObject.FindGameObjectWithTag("Player").GetComponentInChildren<Animator>().SetBool("isRunning",false);
             GameObject.FindGameObjectWithTag("Player").GetComponent<AudioController>().DisableAllAudio();
@@ -59,7 +62,8 @@ public class dialogue_with_portrait : MonoBehaviour
             for (int i = 0; i < enemies.Length; i++)
             {
                 enemies[i].GetComponent<EnemyController>().enabled =  false;
-                enemies[i].GetComponentInChildren<Animator>().enabled =  false;
+                enemies[i].GetComponentsInChildren<Animator>()[0].enabled =  false;
+                enemies[i].GetComponentsInChildren<Animator>()[1].enabled =  false;
             }
 
         }
@@ -196,6 +200,7 @@ void ButtonClick(){
             {
                 enemies[i].GetComponent<EnemyController>().enabled =  true;
                 enemies[i].GetComponentInChildren<Animator>().enabled =  true;
+                enemies[i].GetComponentsInChildren<Animator>()[1].enabled =  true;
             }
     }
 }

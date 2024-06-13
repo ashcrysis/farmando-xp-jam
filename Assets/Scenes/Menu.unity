@@ -1471,8 +1471,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Musicas e efeitos Sonoros:\nFelipe Almino\n\nProgramacao: \nAshen Martins\nLucas
-    Franca\n\nArte: \nDave de Oliveira\nLucas Franca\nJulia Vitoria"
+  m_text: "Musicas e efeitos Sonoros:\nFelipe Almino\n\nProgramacao: \nAshen Martins\n\nArte:
+    \nDave de Oliveira\nLucas Franca\nJulia Vitoria"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: db4350f64d044c04b80900a790e59de0, type: 2}
   m_sharedMaterial: {fileID: -7894251362077209807, guid: 77049bacf6a9c784b87f184f2e2db8a4, type: 2}

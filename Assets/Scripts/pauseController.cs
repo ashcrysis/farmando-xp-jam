@@ -39,6 +39,7 @@ public class pauseController : MonoBehaviour
                 player.GetComponent<PlayerAnimation>().enabled = false;
                 player.GetComponent<Dash>().enabled = false;
                 player.GetComponentInChildren<Animator>().enabled = false;
+                player.GetComponentsInChildren<Animator>()[1].enabled = false;
                 player.GetComponent<AudioController>().DisableAllAudio();
                 player.GetComponentInChildren<IdleWatcher>().enabled = false;
                 player.GetComponentInChildren<IfritAutoDialogue>().enabled = false;
@@ -48,6 +49,7 @@ public class pauseController : MonoBehaviour
             {
                 enemy.GetComponent<EnemyController>().enabled = false;
                 enemy.GetComponentInChildren<Animator>().enabled = false;
+                enemy.GetComponentsInChildren<Animator>()[1].enabled = false;
             }
         }
         else
@@ -68,12 +70,14 @@ public class pauseController : MonoBehaviour
                 player.GetComponent<Rigidbody2D>().simulated = true;
                 player.GetComponent<Rigidbody2D>().velocity = storedVelocity;
                 player.GetComponentInChildren<Animator>().enabled = true;
+                player.GetComponentsInChildren<Animator>()[1].enabled = true;
             }
 
             foreach (var enemy in enemies)
             {
                 enemy.GetComponent<EnemyController>().enabled = true;
                 enemy.GetComponentInChildren<Animator>().enabled = true;
+                enemy.GetComponentsInChildren<Animator>()[1].enabled = true;
             }
         }
     }
