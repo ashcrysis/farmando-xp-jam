@@ -15,7 +15,10 @@ public class Teleport : MonoBehaviour
     {
         if (GetComponent<Interavel>().canInteract && Input.GetKeyDown(KeyCode.C) && canRecognizeKey)
         {
-            StartCoroutine(RecognizeKeyWithDelay());
+            if (!IsDialogueActive())
+            {
+                StartCoroutine(RecognizeKeyWithDelay());
+            }
         }
     }
 
@@ -82,5 +85,17 @@ public class Teleport : MonoBehaviour
         Color finalColor = fadeImage.color;
         finalColor.a = targetAlpha;
         fadeImage.color = finalColor;
+    }
+    bool IsDialogueActive()
+    {
+        GameObject[] dialogueObjects = GameObject.FindGameObjectsWithTag("dialogue");
+        foreach (GameObject obj in dialogueObjects)
+        {
+            if (obj.activeInHierarchy)
+            {
+                return true;
+            }
+        }
+        return false;
     }
 }
