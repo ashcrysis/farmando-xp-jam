@@ -59,6 +59,7 @@ public class dialogue_with_portrait : MonoBehaviour
             for (int i = 0; i < enemies.Length; i++)
             {
                 enemies[i].GetComponent<EnemyController>().enabled =  false;
+                enemies[i].GetComponentInChildren<Animator>().enabled =  false;
             }
 
         }
@@ -194,6 +195,7 @@ void ButtonClick(){
             for (int i = 0; i < enemies.Length; i++)
             {
                 enemies[i].GetComponent<EnemyController>().enabled =  true;
+                enemies[i].GetComponentInChildren<Animator>().enabled =  true;
             }
     }
 }

@@ -19,7 +19,15 @@ public class AudioController : MonoBehaviour
         var playerMovement = GetComponent<PlayerMovement>();
         var isMoving = playerMovement.moving == 1;
         var isRunning = playerMovement.isRunning;
-
+        var isDashing = GetComponent<Dash>().isDashing;
+        if (isDashing)
+        {
+            walkAudio.Stop();
+            runAudio.Stop();
+            isWalkingAudioPlaying = false;
+            isRunningAudioPlaying = false;
+            return;
+        }
         if (onlyPlayDeathOnce && GetComponent<DeathCounter>().isDying)
         {
             deathSound.Play();
