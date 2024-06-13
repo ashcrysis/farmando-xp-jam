@@ -246,6 +246,7 @@ public class PlayerMovement : MonoBehaviour
         {
             isFacingRight = !isFacingRight;
             GetComponentInChildren<SpriteRenderer>().flipX = !isFacingRight;
+            GetComponentsInChildren<SpriteRenderer>()[1].flipX = isFacingRight;
         }
     }
 
