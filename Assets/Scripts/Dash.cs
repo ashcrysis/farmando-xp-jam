@@ -60,7 +60,10 @@ public class Dash : MonoBehaviour
         if (stamina.stamina < stamina.staminaDashValue  ){
             return;
         }
-
+        if (!player.IsGrounded())
+        {
+            invincible = false;
+        }
         if (Input.GetKeyDown(KeyCode.X) && ableDash() && canDash && !isWalled)
         {
             if (canPlayDashAudio)
