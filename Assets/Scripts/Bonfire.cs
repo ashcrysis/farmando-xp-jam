@@ -38,11 +38,12 @@ public class Bonfire : MonoBehaviour
                         bonfireIDs.Add(ID);
                         PlayerPrefs.SetString("BonfireIDs", string.Join(",", bonfireIDs));
 
-                        GameObject.FindGameObjectWithTag("Timer").GetComponent<CountdownTimer>().timeRemaining += 30f;
+                        GameObject.FindGameObjectWithTag("Timer").GetComponent<CountdownTimer>().timeRemaining += 10f;
                     }
                 }
                 
                 saveManager.lastBonfireID = ID;
+                saveManager.endgame = PlayerPrefs.GetInt("endgame") == 1 ? true:false;
                 saveManager.lastBonfirePosition = bonfirePoint.position;
                 saveManager.remainingTime = GameObject.FindGameObjectWithTag("Timer").GetComponent<CountdownTimer>().timeRemaining;
                 GameObject.FindGameObjectWithTag("Player").GetComponent<Stamina>().stamina = GameObject.FindGameObjectWithTag("Player").GetComponent<Stamina>().MaxStamina;

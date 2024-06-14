@@ -2880,11 +2880,11 @@ RectTransform:
   - {fileID: 2014389059}
   - {fileID: 646995581}
   - {fileID: 1211930395}
+  - {fileID: 1284476236}
+  - {fileID: 1392675160}
   - {fileID: 1225331346}
   - {fileID: 1368489217}
   - {fileID: 1225729525}
-  - {fileID: 1284476236}
-  - {fileID: 1392675160}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -19503,26 +19503,6 @@ Tilemap:
   m_GameObject: {fileID: 687024801}
   m_Enabled: 1
   m_Tiles:
-  - first: {x: 203, y: -23, z: 0}
-    second:
-      serializedVersion: 2
-      m_TileIndex: 0
-      m_TileSpriteIndex: 0
-      m_TileMatrixIndex: 0
-      m_TileColorIndex: 0
-      m_TileObjectToInstantiateIndex: 65535
-      dummyAlignment: 0
-      m_AllTileFlags: 1073741825
-  - first: {x: 203, y: -22, z: 0}
-    second:
-      serializedVersion: 2
-      m_TileIndex: 0
-      m_TileSpriteIndex: 0
-      m_TileMatrixIndex: 0
-      m_TileColorIndex: 0
-      m_TileObjectToInstantiateIndex: 65535
-      dummyAlignment: 0
-      m_AllTileFlags: 1073741825
   - first: {x: 158, y: -20, z: 0}
     second:
       serializedVersion: 2
@@ -19725,13 +19705,13 @@ Tilemap:
       m_AllTileFlags: 1073741825
   m_AnimatedTiles: {}
   m_TileAssetArray:
-  - m_RefCount: 22
+  - m_RefCount: 20
     m_Data: {fileID: 11400000, guid: 72cc1b2d4fb63b94a9bf037da7c8fb52, type: 2}
   m_TileSpriteArray:
-  - m_RefCount: 22
+  - m_RefCount: 20
     m_Data: {fileID: 21300000, guid: a6919aa29c67d784c99e5144e5583255, type: 3}
   m_TileMatrixArray:
-  - m_RefCount: 22
+  - m_RefCount: 20
     m_Data:
       e00: 1
       e01: 0
@@ -19750,7 +19730,7 @@ Tilemap:
       e32: 0
       e33: 1
   m_TileColorArray:
-  - m_RefCount: 22
+  - m_RefCount: 20
     m_Data: {r: 1, g: 1, b: 1, a: 1}
   m_TileObjectToInstantiateArray: []
   m_AnimationFrameRate: 1
@@ -31801,7 +31781,7 @@ MonoBehaviour:
   speakerNameComponent: {fileID: 1423879489}
   textComponent: {fileID: 823701220}
   lines:
-  - "Essa \xE9 Nox, a deusa da noitef"
+  - "Essa \xE9 Nox, a deusa da noite"
   speakers:
   - Ifrit
   oneSoundInXchars: 7
@@ -32593,7 +32573,7 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 7dc36fb854278fe40b3e167fef4892cb, type: 2}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
+  m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 0.36, y: 0.31}
@@ -36665,7 +36645,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bcd8405cdbc01ff4baaf83861ab4468b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  totalTime: 180
+  totalTime: 150
   timeRemaining: 0
   overAudio: {fileID: 1284476240}
   fadeImage: {fileID: 1225729526}
@@ -121434,7 +121414,7 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 7dc36fb854278fe40b3e167fef4892cb, type: 2}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
+  m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 0.36, y: 0.31}
@@ -122295,7 +122275,7 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 7dc36fb854278fe40b3e167fef4892cb, type: 2}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
+  m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 0.36, y: 0.31}
