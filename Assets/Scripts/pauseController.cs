@@ -38,6 +38,8 @@ public class pauseController : MonoBehaviour
                 player.GetComponent<Rigidbody2D>().velocity = new Vector2(0, player.GetComponent<Rigidbody2D>().velocity.y);
                 player.GetComponent<PlayerAnimation>().enabled = false;
                 player.GetComponent<Dash>().enabled = false;
+                player.GetComponent<AudioController>().DisableAllAudio();
+                player.GetComponent<AudioController>().enabled = false;
                 player.GetComponentInChildren<Animator>().enabled = false;
                 player.GetComponentsInChildren<Animator>()[1].enabled = false;
                 player.GetComponent<AudioController>().DisableAllAudio();
@@ -71,6 +73,7 @@ public class pauseController : MonoBehaviour
                 player.GetComponent<Rigidbody2D>().velocity = storedVelocity;
                 player.GetComponentInChildren<Animator>().enabled = true;
                 player.GetComponentsInChildren<Animator>()[1].enabled = true;
+                player.GetComponent<AudioController>().enabled = true;
             }
 
             foreach (var enemy in enemies)

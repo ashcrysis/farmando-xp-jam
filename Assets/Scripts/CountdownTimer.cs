@@ -38,11 +38,10 @@ public class CountdownTimer : MonoBehaviour
 
 }
 
-        int hours = (int)(timeRemaining / 3600);
         int minutes = (int)((timeRemaining % 3600) / 60);
         int seconds = (int)(timeRemaining % 60);
 
-        string timerString = string.Format("{0:00}:{1:00}:{2:00}", hours, minutes, seconds);
+        string timerString = string.Format("{1:00}:{2:00}", minutes, seconds);
 
         GetComponent<TMP_Text>().text = timerString;
     }
