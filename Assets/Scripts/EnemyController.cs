@@ -43,6 +43,7 @@ public class EnemyController : MonoBehaviour
         if ((foundPlayer || distanceToPlayer < 1 ) && !GameObject.FindGameObjectWithTag("Player").GetComponent<DeathCounter>().isDying)
         {
             MoveTowards(player.transform.position);
+
             followingPlayer = true;
         }
         else
