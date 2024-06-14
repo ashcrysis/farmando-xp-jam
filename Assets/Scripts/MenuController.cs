@@ -43,7 +43,7 @@ public class MenuController : MonoBehaviour
     {
         if (PlayerPrefs.HasKey("LastBonfireID"))
         {
-            SceneManager.LoadScene(1);
+            StartCoroutine(FadeAndLoadScene(1));
         }
     }
     public void switchView()
@@ -59,7 +59,7 @@ public class MenuController : MonoBehaviour
             buttonsHolder.SetActive(true);
         }
     }
-   IEnumerator FadeAndLoadScene(int sceneIndex)
+   IEnumerator FadeAndLoadCutscene(int sceneIndex)
     {
         fadeImage.SetActive(true);
         float elapsedTime = 0f;
@@ -76,5 +76,23 @@ public class MenuController : MonoBehaviour
         color.a = 1f;
         fadeImage.GetComponent<Image>().color = color;
         StartCutscene.SetActive(true);
+    }
+    IEnumerator FadeAndLoadScene(int sceneIndex)
+    {
+        fadeImage.SetActive(true);
+        float elapsedTime = 0f;
+        Color color = fadeImage.GetComponent<Image>().color;
+
+        while (elapsedTime < fadeDuration)
+        {
+            elapsedTime += Time.deltaTime;
+            color.a = Mathf.Clamp01(elapsedTime / fadeDuration);
+            fadeImage.GetComponent<Image>().color = color;
+            yield return null;
+        }
+
+        color.a = 1f;
+        fadeImage.GetComponent<Image>().color = color;
+        SceneManager.LoadScene(sceneIndex);
     }
 }
