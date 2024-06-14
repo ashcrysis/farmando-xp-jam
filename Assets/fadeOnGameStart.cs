@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class fadeOnGameStart : MonoBehaviour
 {
     public float fadeDuration = 1.0f;
-    void Start()
+    void Awake()
     {
         if (!PlayerPrefs.HasKey("gameStarted")){
         StartCoroutine(FadeImage(0f));    
