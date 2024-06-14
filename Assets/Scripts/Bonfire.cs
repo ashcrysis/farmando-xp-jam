@@ -20,7 +20,7 @@ public class Bonfire : MonoBehaviour
  void Update()
     {
        
-            if (GetComponent<Interavel>().canInteract && Input.GetKeyDown(KeyCode.C) && GetComponentInParent<DialoguePlayer>().isPlaying)
+            if (GetComponent<Interavel>().canInteract && Input.GetKeyDown(KeyCode.C) && GetComponentInParent<DialoguePlayerRandom>().isPlaying)
             {
                 if (!PlayerPrefs.HasKey("BonfireIDs"))
                 {
@@ -38,7 +38,6 @@ public class Bonfire : MonoBehaviour
                         bonfireIDs.Add(ID);
                         PlayerPrefs.SetString("BonfireIDs", string.Join(",", bonfireIDs));
 
-                        // Increment timeRemaining by 30 seconds
                         GameObject.FindGameObjectWithTag("Timer").GetComponent<CountdownTimer>().timeRemaining += 30f;
                     }
                 }

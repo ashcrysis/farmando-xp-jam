@@ -14,7 +14,7 @@ public class CountdownTimer : MonoBehaviour
     void Start()
     {
         
-          if (PlayerPrefs.HasKey("remainingTime"))
+        if (PlayerPrefs.HasKey("remainingTime"))
         {
             timeRemaining = PlayerPrefs.GetFloat("remainingTime");
         }
