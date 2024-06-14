@@ -36,7 +36,7 @@ void Update()
        
         float timeRemaining = GameObject.FindGameObjectWithTag("Timer").GetComponent<CountdownTimer>().timeRemaining;
         
-        if (Mathf.Approximately(timeRemaining, 75) || Mathf.Abs(timeRemaining - 75) <= tolerance)
+        if (Mathf.Approximately(timeRemaining, 60) || Mathf.Abs(timeRemaining - 60) <= tolerance)
         {
             if (!timeDialogos[0].activeSelf && !dialogShown && !GameObject.FindGameObjectWithTag("Player").GetComponent<DeathCounter>().isDying)
             {

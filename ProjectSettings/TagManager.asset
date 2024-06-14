@@ -50,6 +50,9 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: bakground
+    uniqueID: 1451389007
+    locked: 0
   - name: DashTrail
     uniqueID: 3299911361
     locked: 0
