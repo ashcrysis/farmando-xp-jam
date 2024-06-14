@@ -36,9 +36,9 @@ void Update()
        
         float timeRemaining = GameObject.FindGameObjectWithTag("Timer").GetComponent<CountdownTimer>().timeRemaining;
         
-        if (Mathf.Approximately(timeRemaining, 90) || Mathf.Abs(timeRemaining - 90) <= tolerance)
+        if (Mathf.Approximately(timeRemaining, 75) || Mathf.Abs(timeRemaining - 75) <= tolerance)
         {
-            if (!timeDialogos[0].activeSelf && !dialogShown)
+            if (!timeDialogos[0].activeSelf && !dialogShown && !GameObject.FindGameObjectWithTag("Player").GetComponent<DeathCounter>().isDying)
             {
                 GameObject.FindGameObjectWithTag("Player").GetComponent<DashTrail>().SetEnabled(false);
                 GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>().enabled = false;
