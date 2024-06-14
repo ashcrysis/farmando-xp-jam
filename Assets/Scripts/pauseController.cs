@@ -45,6 +45,8 @@ public class pauseController : MonoBehaviour
                 player.GetComponent<AudioController>().DisableAllAudio();
                 player.GetComponentInChildren<IdleWatcher>().enabled = false;
                 player.GetComponentInChildren<IfritAutoDialogue>().enabled = false;
+                GameObject.FindGameObjectWithTag("Player").GetComponentInChildren<Animator>().SetBool("reset",true);
+                GameObject.FindGameObjectWithTag("Player").GetComponentsInChildren<Animator>()[1].SetBool("reset",true);
             }
 
             foreach (var enemy in enemies)
@@ -74,6 +76,8 @@ public class pauseController : MonoBehaviour
                 player.GetComponentInChildren<Animator>().enabled = true;
                 player.GetComponentsInChildren<Animator>()[1].enabled = true;
                 player.GetComponent<AudioController>().enabled = true;
+                GameObject.FindGameObjectWithTag("Player").GetComponentInChildren<Animator>().SetBool("reset",false);
+                GameObject.FindGameObjectWithTag("Player").GetComponentsInChildren<Animator>()[1].SetBool("reset",false);
             }
 
             foreach (var enemy in enemies)

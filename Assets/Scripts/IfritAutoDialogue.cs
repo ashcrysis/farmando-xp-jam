@@ -37,6 +37,7 @@ void Start()
         if (!PlayerPrefs.HasKey("Dialogue_" + index))
         {
             dialogos[index].SetActive(true);
+           /* 
             GameObject.FindGameObjectWithTag("Player").GetComponent<DashTrail>().SetEnabled(false);
             GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>().enabled = false;
             GameObject.FindGameObjectWithTag("Player").GetComponent<Rigidbody2D>().velocity = new Vector2(0,GameObject.FindGameObjectWithTag("Player").GetComponent<Rigidbody2D>().velocity.y);
@@ -50,8 +51,11 @@ void Start()
             GameObject.FindGameObjectWithTag("Player").GetComponentsInChildren<Animator>()[1].SetBool("isRunning",false);
             GameObject.FindGameObjectWithTag("Player").GetComponentInChildren<Animator>().SetBool("isJumping",false);
             GameObject.FindGameObjectWithTag("Player").GetComponentInChildren<Animator>().SetBool("isFalling",false);
-             GameObject.FindGameObjectWithTag("Player").GetComponentsInChildren<Animator>()[1].SetBool("isJumping",false);
+            GameObject.FindGameObjectWithTag("Player").GetComponentsInChildren<Animator>()[1].SetBool("isJumping",false);
             GameObject.FindGameObjectWithTag("Player").GetComponentsInChildren<Animator>()[1].SetBool("isFalling",false);
+            GameObject.FindGameObjectWithTag("Player").GetComponentInChildren<Animator>().SetBool("reset",true);
+            GameObject.FindGameObjectWithTag("Player").GetComponentsInChildren<Animator>()[0].SetBool("reset",true);
+            */
             PlayerPrefs.SetInt("Dialogue_" + index, 1);
         }
     }

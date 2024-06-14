@@ -59,6 +59,8 @@ public class dialogue_with_portrait : MonoBehaviour
             GameObject.FindGameObjectWithTag("Player").GetComponentsInChildren<Animator>()[1].SetBool("isRunning",false);
             GameObject.FindGameObjectWithTag("Player").GetComponentInChildren<Animator>().SetBool("isDashing",false);
             GameObject.FindGameObjectWithTag("Player").GetComponentInChildren<Animator>().SetBool("isRunning",false);
+            GameObject.FindGameObjectWithTag("Player").GetComponentInChildren<Animator>().SetBool("reset",true);
+            GameObject.FindGameObjectWithTag("Player").GetComponentsInChildren<Animator>()[1].SetBool("reset",true);
             GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerAnimation>().enabled = false;
             GameObject.FindGameObjectWithTag("Player").GetComponent<Dash>().enabled = false;
             GameObject.FindGameObjectWithTag("Player").GetComponent<AudioController>().DisableAllAudio();
@@ -199,6 +201,8 @@ void ButtonClick(){
         GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>().enabled = true;
         GameObject.FindGameObjectWithTag("Player").GetComponent<Dash>().enabled = true;
         GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerAnimation>().enabled = true;
+        GameObject.FindGameObjectWithTag("Player").GetComponentInChildren<Animator>().SetBool("reset",false);
+        GameObject.FindGameObjectWithTag("Player").GetComponentsInChildren<Animator>()[1].SetBool("reset",false);
         var enemies = GameObject.FindGameObjectsWithTag("enemy");
             for (int i = 0; i < enemies.Length; i++)
             {

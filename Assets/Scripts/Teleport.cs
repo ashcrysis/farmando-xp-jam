@@ -42,6 +42,8 @@ public class Teleport : MonoBehaviour
         GameObject.FindGameObjectWithTag("Player").GetComponentInChildren<Animator>().SetBool("isFalling",false);
         GameObject.FindGameObjectWithTag("Player").GetComponentsInChildren<Animator>()[1].SetBool("isJumping",false);
         GameObject.FindGameObjectWithTag("Player").GetComponentsInChildren<Animator>()[1].SetBool("isFalling",false);
+        GameObject.FindGameObjectWithTag("Player").GetComponentInChildren<Animator>().SetBool("reset",true);
+        GameObject.FindGameObjectWithTag("Player").GetComponentsInChildren<Animator>()[1].SetBool("reset",true);
         StartCoroutine(FadeAndTeleport());
         yield return new WaitForSeconds(recognitionDelay);
         canRecognizeKey = true; 
@@ -72,7 +74,8 @@ public class Teleport : MonoBehaviour
         GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerAnimation>().enabled = true;
         GameObject.FindGameObjectWithTag("Player").GetComponent<Dash>().enabled = true;
         GameObject.FindGameObjectWithTag("Player").GetComponent<AudioController>().enabled = true;
-        
+        GameObject.FindGameObjectWithTag("Player").GetComponentInChildren<Animator>().SetBool("reset",false);
+        GameObject.FindGameObjectWithTag("Player").GetComponentsInChildren<Animator>()[1].SetBool("reset",false);
     }
 
     IEnumerator FadeImage(float targetAlpha)

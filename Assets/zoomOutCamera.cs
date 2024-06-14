@@ -25,10 +25,7 @@ public class ZoomOutCamera : MonoBehaviour
         {
             Debug.LogError("Fade Image reference is not set.");
         }
-        else
-        {
-            fadeImage.gameObject.SetActive(false); 
-        }
+   
 
         originalPPU = pixelPerfectCamera.assetsPPU;
     }
@@ -53,7 +50,6 @@ public class ZoomOutCamera : MonoBehaviour
     {
         isFading = true;
 
-        fadeImage.gameObject.SetActive(true);
         yield return new WaitForEndOfFrame();
 
         // Fade to 1f opacity
@@ -96,9 +92,6 @@ public class ZoomOutCamera : MonoBehaviour
         finalColor.a = targetAlpha;
         fadeImage.color = finalColor;
 
-        if (targetAlpha == 0f)
-        {
-            fadeImage.gameObject.SetActive(false);
-        }
+    
     }
 }
