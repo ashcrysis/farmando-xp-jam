@@ -319,7 +319,7 @@ MonoBehaviour:
   speakers:
   - Ifrit
   oneSoundInXchars: 7
-  textSpeed: 0.01
+  textSpeed: 0.001
   index: 0
   portraits:
   - {fileID: 21300000, guid: d3291a31e4c695144972fe0a2b1c3bc5, type: 3}
@@ -610,7 +610,7 @@ MonoBehaviour:
   speakers:
   - Ifrit
   oneSoundInXchars: 7
-  textSpeed: 0.01
+  textSpeed: 0.001
   index: 0
   portraits:
   - {fileID: 21300000, guid: d3291a31e4c695144972fe0a2b1c3bc5, type: 3}
@@ -1090,7 +1090,7 @@ MonoBehaviour:
   speakers:
   - Ifrit
   oneSoundInXchars: 7
-  textSpeed: 0.01
+  textSpeed: 0.001
   index: 0
   portraits:
   - {fileID: 21300000, guid: 3ef682a771739bc40917ba1f03759fb1, type: 3}
@@ -2166,7 +2166,7 @@ MonoBehaviour:
   speakers:
   - Ifrit
   oneSoundInXchars: 7
-  textSpeed: 0.01
+  textSpeed: 0.001
   index: 0
   portraits:
   - {fileID: 21300000, guid: 3ef682a771739bc40917ba1f03759fb1, type: 3}
@@ -2472,7 +2472,7 @@ MonoBehaviour:
   - Ifrit
   - Ifrit
   oneSoundInXchars: 7
-  textSpeed: 0.01
+  textSpeed: 0.001
   index: 0
   portraits:
   - {fileID: 21300000, guid: d3291a31e4c695144972fe0a2b1c3bc5, type: 3}
@@ -2799,7 +2799,7 @@ MonoBehaviour:
   speakers:
   - Ifrit
   oneSoundInXchars: 7
-  textSpeed: 0.01
+  textSpeed: 0.001
   index: 0
   portraits:
   - {fileID: 21300000, guid: d3291a31e4c695144972fe0a2b1c3bc5, type: 3}
@@ -3306,7 +3306,7 @@ MonoBehaviour:
   speakers:
   - Ifrit
   oneSoundInXchars: 7
-  textSpeed: 0.01
+  textSpeed: 0.001
   index: 0
   portraits:
   - {fileID: 21300000, guid: d3291a31e4c695144972fe0a2b1c3bc5, type: 3}
@@ -4698,7 +4698,7 @@ MonoBehaviour:
   speakers:
   - Ifrit
   oneSoundInXchars: 7
-  textSpeed: 0.01
+  textSpeed: 0.001
   index: 0
   portraits:
   - {fileID: 21300000, guid: d3291a31e4c695144972fe0a2b1c3bc5, type: 3}
@@ -5424,7 +5424,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 8
   moving: 0
-  canCoyoteJump: 0
+  jump: 0
   jumpDelay: 0.2
   stamina: {fileID: 6484435987616975539}
   isRunning: 0
@@ -7138,7 +7138,7 @@ MonoBehaviour:
   speakers:
   - Ifrit
   oneSoundInXchars: 7
-  textSpeed: 0.01
+  textSpeed: 0.001
   index: 0
   portraits:
   - {fileID: 21300000, guid: 040641be551f8b842b91a140c8aad1a1, type: 3}

@@ -5,10 +5,10 @@ using UnityEngine;
 public class Stamina : MonoBehaviour
 {
     public float stamina;
-    public float MaxStamina = 100;
+    public float MaxStamina = 500;
     public float staminaLossBase = 10;
-    public float staminaDashValue = 20;
-    public float staminaRunValue = 12;
+    public float staminaDashValue = 15;
+    public float staminaRunValue = 0.001f;
     public float staminaJumpValue = 15;
     public PlayerMovement playerMovement;
 
@@ -27,7 +27,7 @@ void Update(){
 
             case 0: // Corrida
                 if (stamina > 0){
-                    stamina -= staminaRunValue ;
+                    stamina -= staminaRunValue * Time.deltaTime;
                 }
             break;
 
@@ -41,10 +41,10 @@ void Update(){
                 if (stamina < MaxStamina && !dash.isDashing){
                     if (!playerMovement.isRunning){
                     if (playerMovement.moving == 0){
-                        stamina += 8 * Time.fixedDeltaTime;
+                        stamina += 2 ;
                     }
                      if (playerMovement.moving == 1){
-                        stamina += 2 * Time.fixedDeltaTime;
+                        stamina += 1;
                     }
                 }
                 }

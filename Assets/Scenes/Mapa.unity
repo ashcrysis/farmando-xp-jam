@@ -157,7 +157,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   starterPosition: {fileID: 1461107259}
   endPosition: {fileID: 107715829}
-  elevatorSpeed: 3
+  elevatorSpeed: 5
   destiny: {fileID: 0}
 --- !u!50 &6656802
 Rigidbody2D:
@@ -3961,7 +3961,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: -1
+  m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 2feab4df66f1e6d4791bbcce72f1ed8e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -4168,7 +4168,7 @@ Transform:
   m_GameObject: {fileID: 156084597}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: 0.24175286, w: 0.97033787}
-  m_LocalPosition: {x: 422.24, y: 64.16, z: 0}
+  m_LocalPosition: {x: 421.15, y: 63.63, z: 0}
   m_LocalScale: {x: 21.319344, y: 9.318173, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5418,7 +5418,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   starterPosition: {fileID: 789424039}
   endPosition: {fileID: 1926136792}
-  elevatorSpeed: 3
+  elevatorSpeed: 5
   destiny: {fileID: 0}
 --- !u!1 &205072290
 GameObject:
@@ -6194,7 +6194,7 @@ MonoBehaviour:
   - Ifrit
   - Ifrit
   oneSoundInXchars: 7
-  textSpeed: 0.01
+  textSpeed: 0.001
   index: 0
   portraits:
   - {fileID: 21300000, guid: 3ef682a771739bc40917ba1f03759fb1, type: 3}
@@ -7267,11 +7267,12 @@ Transform:
   m_GameObject: {fileID: 273203102}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 36.42, y: 8.5, z: 0}
+  m_LocalPosition: {x: 31.01, y: 8.5, z: 0}
   m_LocalScale: {x: 8, y: 8, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 918565968}
+  - {fileID: 989352443}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &276575960
@@ -7819,7 +7820,7 @@ MonoBehaviour:
   - Ifrit
   - 
   oneSoundInXchars: 7
-  textSpeed: 0.01
+  textSpeed: 0.001
   index: 0
   portraits:
   - {fileID: 21300000, guid: 3ef682a771739bc40917ba1f03759fb1, type: 3}
@@ -9457,7 +9458,7 @@ Transform:
   m_GameObject: {fileID: 378422144}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 31.35, y: -0.75, z: 0}
+  m_LocalPosition: {x: 28.33, y: -0.75, z: 0}
   m_LocalScale: {x: 3, y: 3, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -10536,7 +10537,7 @@ Transform:
   m_GameObject: {fileID: 462221248}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 166.56, y: 25.45, z: 0}
+  m_LocalPosition: {x: 163.67, y: 25.45, z: 0}
   m_LocalScale: {x: 17.369352, y: 3.0387, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -12122,7 +12123,7 @@ MonoBehaviour:
   - Ifrit
   - Ifrit
   oneSoundInXchars: 7
-  textSpeed: 0.01
+  textSpeed: 0.001
   index: 0
   portraits:
   - {fileID: 21300000, guid: a6095fb4dd3b8c04d93904453516a23d, type: 3}
@@ -15035,7 +15036,7 @@ MonoBehaviour:
   - Ifrit
   - Ifrit
   oneSoundInXchars: 7
-  textSpeed: 0.01
+  textSpeed: 0.001
   index: 0
   portraits:
   - {fileID: 21300000, guid: 040641be551f8b842b91a140c8aad1a1, type: 3}
@@ -15749,8 +15750,8 @@ Transform:
   m_GameObject: {fileID: 666807444}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 477.2399, y: 68.47, z: 0}
-  m_LocalScale: {x: 45.75637, y: 8.214401, z: 1}
+  m_LocalPosition: {x: 477.8317, y: 66.8659, z: 0}
+  m_LocalScale: {x: 46.940956, y: 11.422946, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 496998545}
@@ -16060,7 +16061,7 @@ MonoBehaviour:
   speakers:
   - Ifrit
   oneSoundInXchars: 7
-  textSpeed: 0.01
+  textSpeed: 0.001
   index: 0
   portraits:
   - {fileID: 21300000, guid: 3ef682a771739bc40917ba1f03759fb1, type: 3}
@@ -18967,7 +18968,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   starterPosition: {fileID: 50309249}
   endPosition: {fileID: 462221249}
-  elevatorSpeed: 3
+  elevatorSpeed: 5
   destiny: {fileID: 0}
 --- !u!50 &790784762
 Rigidbody2D:
@@ -21428,7 +21429,7 @@ MonoBehaviour:
   speakers:
   - Ifrit
   oneSoundInXchars: 7
-  textSpeed: 0.01
+  textSpeed: 0.001
   index: 0
   portraits:
   - {fileID: 21300000, guid: 3ef682a771739bc40917ba1f03759fb1, type: 3}
@@ -21607,7 +21608,7 @@ Transform:
   m_GameObject: {fileID: 894437475}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 438.1299, y: 68.22, z: 0}
+  m_LocalPosition: {x: 438.14, y: 68.07, z: 0}
   m_LocalScale: {x: 19.50778, y: 9.318173, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -22167,7 +22168,7 @@ MonoBehaviour:
   - Ifrit
   - Ifrit
   oneSoundInXchars: 7
-  textSpeed: 0.01
+  textSpeed: 0.001
   index: 0
   portraits:
   - {fileID: 21300000, guid: 3ef682a771739bc40917ba1f03759fb1, type: 3}
@@ -22390,7 +22391,7 @@ MonoBehaviour:
   speakers:
   - Ifrit
   oneSoundInXchars: 7
-  textSpeed: 0.01
+  textSpeed: 0.001
   index: 0
   portraits:
   - {fileID: 21300000, guid: 3ef682a771739bc40917ba1f03759fb1, type: 3}
@@ -23977,6 +23978,90 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
+--- !u!1 &989352442
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 989352443}
+  - component: {fileID: 989352444}
+  m_Layer: 0
+  m_Name: rolarestalactite (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &989352443
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 989352442}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: 0.9812238, w: 0.19287276}
+  m_LocalPosition: {x: -0.432, y: -2.29, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 273203104}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 157.759}
+--- !u!212 &989352444
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 989352442}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 21300000, guid: 947ad4f862c508d47a72481dec20c086, type: 3}
+  m_Color: {r: 0, g: 0, b: 0, a: 0.70980394}
+  m_FlipX: 1
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 1.46, y: 2.26}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 1
   m_SpriteSortPoint: 0
 --- !u!1 &999590112
 GameObject:
@@ -25922,7 +26007,7 @@ MonoBehaviour:
   - Ifrit
   - Ifrit
   oneSoundInXchars: 7
-  textSpeed: 0.01
+  textSpeed: 0.001
   index: 0
   portraits:
   - {fileID: 21300000, guid: 3ef682a771739bc40917ba1f03759fb1, type: 3}
@@ -27269,7 +27354,7 @@ MonoBehaviour:
   - Ifrit
   - Ifrit
   oneSoundInXchars: 7
-  textSpeed: 0.01
+  textSpeed: 0.001
   index: 0
   portraits:
   - {fileID: 21300000, guid: 3ef682a771739bc40917ba1f03759fb1, type: 3}
@@ -28718,7 +28803,7 @@ MonoBehaviour:
   - Ifrit
   - Ifrit
   oneSoundInXchars: 7
-  textSpeed: 0.01
+  textSpeed: 0.001
   index: 0
   portraits:
   - {fileID: 21300000, guid: 040641be551f8b842b91a140c8aad1a1, type: 3}
@@ -28959,7 +29044,7 @@ GameObject:
   - component: {fileID: 1225729526}
   m_Layer: 5
   m_Name: timeOverCanva
-  m_TagString: deathcanva
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -34755,14 +34840,14 @@ RectTransform:
   m_GameObject: {fileID: 1511022469}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2.625, y: 0.1125, z: 1}
+  m_LocalScale: {x: 2.625, y: 0.30093747, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1629331282}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 4.29, y: -0.604}
+  m_AnchoredPosition: {x: 4.29, y: -1.516}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!331 &1511022471
@@ -104495,7 +104580,7 @@ MonoBehaviour:
   - Ifrit
   - Ifrit
   oneSoundInXchars: 7
-  textSpeed: 0.01
+  textSpeed: 0.001
   index: 0
   portraits:
   - {fileID: 21300000, guid: 3ef682a771739bc40917ba1f03759fb1, type: 3}
@@ -114196,7 +114281,7 @@ Transform:
   m_GameObject: {fileID: 2081973006}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 25.4, y: -1.93, z: 0}
+  m_LocalPosition: {x: 19.990002, y: -1.93, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
