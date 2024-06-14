@@ -22,7 +22,7 @@ public class PlayerMovement : MonoBehaviour
     private Animator anim;
     private float coyoteTime = 0.15f;
     private float coyoteTimer = 0f;
-    private bool isJumping = false;
+    public bool isJumping = false;
     public bool jump = false;
     private bool canJump = true;
     public float jumpDelay = 0.2f;
@@ -35,6 +35,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private Transform wallCheckRight;
     [SerializeField] private Transform wallCheckLeft;
     public float slopeAngle;
+    public bool isFalling = false;
     private void Start()
     {
         Initialize();
@@ -61,6 +62,14 @@ public class PlayerMovement : MonoBehaviour
             {
              jump = true;   
             }
+        }
+        if (!IsGrounded() && rb.velocity.y < 0)
+        {
+            isFalling = true;
+        }
+        else
+        {
+            isFalling = false;
         }
     }
 
@@ -95,16 +104,15 @@ public class PlayerMovement : MonoBehaviour
 
     private void Jump()
     {
-      
       if (jump){
                 if (stamina.stamina < stamina.staminaJumpValue)
                 {
                     return;
                 }
+                isJumping = true;
                 stamina.Actions(3);
                 justLanded = false;
                 rb.velocity = new Vector2(rb.velocity.x, jumpingPower);
-                isJumping = true;
                 StartCoroutine(ResetCoyoteJumpAfterDelay(coyoteTime));
                 canJump = false;
                 StartCoroutine(JumpDelay(jumpDelay));

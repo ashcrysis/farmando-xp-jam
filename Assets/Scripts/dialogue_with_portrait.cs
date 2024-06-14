@@ -49,14 +49,18 @@ public class dialogue_with_portrait : MonoBehaviour
             GameObject.FindGameObjectWithTag("Player").GetComponent<DashTrail>().SetEnabled(false);
             GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>().enabled = false;
             GameObject.FindGameObjectWithTag("Player").GetComponent<Rigidbody2D>().velocity = new Vector2(0,GameObject.FindGameObjectWithTag("Player").GetComponent<Rigidbody2D>().velocity.y);
-            GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerAnimation>().enabled = false;
-            GameObject.FindGameObjectWithTag("Player").GetComponent<Dash>().enabled = false;
+            GameObject.FindGameObjectWithTag("Player").GetComponentInChildren<Animator>().SetBool("isJumping",false);
+            GameObject.FindGameObjectWithTag("Player").GetComponentInChildren<Animator>().SetBool("isFalling",false);
+            GameObject.FindGameObjectWithTag("Player").GetComponentsInChildren<Animator>()[1].SetBool("isJumping",false);
+            GameObject.FindGameObjectWithTag("Player").GetComponentsInChildren<Animator>()[1].SetBool("isFalling",false);
             GameObject.FindGameObjectWithTag("Player").GetComponentInChildren<Animator>().SetInteger("moving",0);
             GameObject.FindGameObjectWithTag("Player").GetComponentsInChildren<Animator>()[1].SetInteger("moving",0);
             GameObject.FindGameObjectWithTag("Player").GetComponentsInChildren<Animator>()[1].SetBool("isDashing",false);
             GameObject.FindGameObjectWithTag("Player").GetComponentsInChildren<Animator>()[1].SetBool("isRunning",false);
             GameObject.FindGameObjectWithTag("Player").GetComponentInChildren<Animator>().SetBool("isDashing",false);
             GameObject.FindGameObjectWithTag("Player").GetComponentInChildren<Animator>().SetBool("isRunning",false);
+            GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerAnimation>().enabled = false;
+            GameObject.FindGameObjectWithTag("Player").GetComponent<Dash>().enabled = false;
             GameObject.FindGameObjectWithTag("Player").GetComponent<AudioController>().DisableAllAudio();
             var enemies = GameObject.FindGameObjectsWithTag("enemy");
             for (int i = 0; i < enemies.Length; i++)

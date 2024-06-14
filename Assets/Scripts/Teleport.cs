@@ -38,6 +38,10 @@ public class Teleport : MonoBehaviour
         GameObject.FindGameObjectWithTag("Player").GetComponentsInChildren<Animator>()[1].SetBool("isRunning", false);
         GameObject.FindGameObjectWithTag("Player").GetComponent<AudioController>().DisableAllAudio();
         GameObject.FindGameObjectWithTag("Player").GetComponent<AudioController>().enabled = false;
+        GameObject.FindGameObjectWithTag("Player").GetComponentInChildren<Animator>().SetBool("isJumping",false);
+        GameObject.FindGameObjectWithTag("Player").GetComponentInChildren<Animator>().SetBool("isFalling",false);
+        GameObject.FindGameObjectWithTag("Player").GetComponentsInChildren<Animator>()[1].SetBool("isJumping",false);
+        GameObject.FindGameObjectWithTag("Player").GetComponentsInChildren<Animator>()[1].SetBool("isFalling",false);
         StartCoroutine(FadeAndTeleport());
         yield return new WaitForSeconds(recognitionDelay);
         canRecognizeKey = true; 

@@ -24,6 +24,9 @@ public class PlayerAnimation : MonoBehaviour
             anim.SetInteger("moving", moving);
             anim.SetBool("isDashing", dash.isDashing);
             anim.SetBool("isRunning", playerMovement.isRunning);
+            anim.SetBool("isJumping", playerMovement.jump);
+            anim.SetBool("isFalling", playerMovement.isFalling);
+            
         }
     }
 }
