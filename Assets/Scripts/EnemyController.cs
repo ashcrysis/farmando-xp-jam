@@ -16,6 +16,8 @@ public class EnemyController : MonoBehaviour
     private bool followingPlayer = false;
     private bool playerSpawned = false;
     private bool hasRun = false;
+    [SerializeField] private Transform groundCheck;
+    [SerializeField] private LayerMask groundLayer;
 
     void Start()
     {
@@ -39,7 +41,9 @@ public class EnemyController : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (playerSpawned){
+        if (playerSpawned)
+        {
+        if (IsGrounded()){
         if ((foundPlayer || distanceToPlayer < 1 ) && !GameObject.FindGameObjectWithTag("Player").GetComponent<DeathCounter>().isDying)
         {
             MoveTowards(player.transform.position);
@@ -53,7 +57,11 @@ public class EnemyController : MonoBehaviour
         }
         }
     }
-
+    }
+    public bool IsGrounded()
+        {
+            return Physics2D.OverlapCircle(groundCheck.position, 0.1f, groundLayer);
+        }
     void Patrol()
     {
         if (!foundPlayer){
@@ -91,6 +99,7 @@ public class EnemyController : MonoBehaviour
         if (direction != 0)
         {
             transform.localScale = new Vector3(Mathf.Abs(transform.localScale.x) * direction, transform.localScale.y, transform.localScale.z);
+
         }
     }
 
