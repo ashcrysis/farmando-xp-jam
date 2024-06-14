@@ -25,7 +25,8 @@ public class callElevator : MonoBehaviour
 
        
         if (Input.GetKeyDown(KeyCode.C) && canInteract && !GameObject.FindGameObjectWithTag("Player").GetComponent<DeathCounter>().isDying && !IsDialogueActive())
-        {
+        {   
+            GetComponentInChildren<Animator>().SetBool("puxo",true);
             float threshold = 1f;
             if (Vector2.Distance(elevator.transform.position, elevatorStartPosition.position) < threshold)
             {
@@ -43,6 +44,7 @@ public class callElevator : MonoBehaviour
     private IEnumerator elevatorChange(float delay, Transform destiny){
         Elevator elevatorComponent = elevator.GetComponent<Elevator>();
         yield return new WaitForSeconds(delay);
+        GetComponentInChildren<Animator>().SetBool("puxo",false);
         elevatorComponent.destiny = destiny;
     }
     public void SetBotao(bool situation)

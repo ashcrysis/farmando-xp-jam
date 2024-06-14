@@ -22,7 +22,7 @@ public class Gate : MonoBehaviour
         if (PlayerPrefs.GetInt("hasKey") == 1  && GetComponent<Interavel>().canInteract && GameObject.FindGameObjectWithTag("Player").GetComponent<DeathCounter>().isDying == false && Input.GetKeyDown(KeyCode.C) && !hasRest )
         {
             isOpen = true;
-            GameObject.FindGameObjectWithTag("itemManager").GetComponent<ItensManager>().isWithKey = false;
+            GameObject.FindGameObjectWithTag("itemManager").GetComponent<ItemsManager>().isWithKey = false;
         }   
         if (PlayerPrefs.GetInt("endgame") == 1 && !hasRest)
         {

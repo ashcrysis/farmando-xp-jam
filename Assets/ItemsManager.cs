@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ItensManager : MonoBehaviour
+public class ItemsManager : MonoBehaviour
 {
     public GameObject keyImage;
     public GameObject maskImage;
