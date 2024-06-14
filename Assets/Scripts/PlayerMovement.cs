@@ -12,6 +12,7 @@ public class PlayerMovement : MonoBehaviour
     private float origSpeed;
     public float acceleration = 2f;
     public float fallMultiplier = 1.5f;
+    public float slopeMultiplier = 35f;
     public ParticleSystem JumpParticle;
     public ParticleSystem LandParticle;
     [SerializeField] private Rigidbody2D rb;
@@ -183,7 +184,7 @@ public class PlayerMovement : MonoBehaviour
                 float smoothRotation = Mathf.LerpAngle(transform.rotation.eulerAngles.z, targetRotation, Time.deltaTime * rotationSpeed);
                 transform.rotation = Quaternion.Euler(0, 0, smoothRotation);
                 onSlope = true;
-                speed = origSpeed * (1f + slopeAngle / 35f);
+                speed = origSpeed * (1f + slopeAngle / slopeMultiplier);
 
             }
             else

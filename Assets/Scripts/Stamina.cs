@@ -5,11 +5,11 @@ using UnityEngine;
 public class Stamina : MonoBehaviour
 {
     public float stamina;
-    public float MaxStamina = 500;
+    public float MaxStamina = 100;
     public float staminaLossBase = 10;
-    public float staminaDashValue = 15;
+    public float staminaDashValue = 10;
     public float staminaRunValue = 0.001f;
-    public float staminaJumpValue = 15;
+    public float staminaJumpValue = 25;
     public PlayerMovement playerMovement;
 
     public Dash dash;
