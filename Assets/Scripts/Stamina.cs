@@ -8,7 +8,7 @@ public class Stamina : MonoBehaviour
     public float MaxStamina = 100;
     public float staminaLossBase = 10;
     public float staminaDashValue = 20;
-    public float staminaRunValue = 10;
+    public float staminaRunValue = 12;
     public float staminaJumpValue = 15;
     public PlayerMovement playerMovement;
 
@@ -27,7 +27,7 @@ void Update(){
 
             case 0: // Corrida
                 if (stamina > 0){
-                    stamina -= staminaRunValue  * Time.fixedDeltaTime;
+                    stamina -= staminaRunValue ;
                 }
             break;
 
