@@ -26,7 +26,7 @@ public class MenuController : MonoBehaviour
     {
         if (hasClicked && !doOnce)
         {
-            StartCoroutine(FadeAndLoadScene(1));
+            StartCoroutine(FadeAndLoadCutscene(1));
             doOnce = true;
         }
             if (animationOver && !doOnce2)
