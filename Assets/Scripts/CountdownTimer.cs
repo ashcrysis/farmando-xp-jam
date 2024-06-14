@@ -2,11 +2,15 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using UnityEngine.SceneManagement;
+using System.Collections;
 public class CountdownTimer : MonoBehaviour
 {
     public float totalTime = 300f;
     public float timeRemaining;
-
+    public AudioSource overAudio;
+    private bool playOnce = false;
+    public Image fadeImage;
+    public float fadeDuration = 1.0f;
     void Start()
     {
         
@@ -27,10 +31,13 @@ public class CountdownTimer : MonoBehaviour
         if (timeRemaining < 0)
         {
             timeRemaining = 0;
-            SceneManager.LoadScene(0);    
+            if (!playOnce){
+            playOnce = true;
+            StartCoroutine(whiteToMenu(1f));
+            }
+
 }
 
-        // Calculate hours, minutes, and seconds
         int hours = (int)(timeRemaining / 3600);
         int minutes = (int)((timeRemaining % 3600) / 60);
         int seconds = (int)(timeRemaining % 60);
@@ -38,5 +45,22 @@ public class CountdownTimer : MonoBehaviour
         string timerString = string.Format("{0:00}:{1:00}:{2:00}", hours, minutes, seconds);
 
         GetComponent<TMP_Text>().text = timerString;
+    }
+    private IEnumerator whiteToMenu(float delay)
+    {
+        overAudio.Play();
+
+        float elapsedTime = 0f;
+        Color color = fadeImage.color;
+
+        while (elapsedTime < fadeDuration)
+        {
+            elapsedTime += Time.deltaTime;
+            color.a = Mathf.Clamp01(elapsedTime / fadeDuration);
+            fadeImage.color = color;
+            yield return null;
+        }
+        yield return new WaitForSeconds(delay);
+        SceneManager.LoadScene(0);
     }
 }

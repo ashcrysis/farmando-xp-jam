@@ -12,6 +12,7 @@ TagManager:
   - starterdialogue
   - menuButtons
   - pause
+  - itemManager
   layers:
   - Default
   - TransparentFX
