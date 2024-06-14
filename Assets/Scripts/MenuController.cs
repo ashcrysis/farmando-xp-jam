@@ -16,6 +16,8 @@ public class MenuController : MonoBehaviour
     private bool hasClicked = false;
     private bool doOnce = false;
     private bool doOnce2 = false;
+    private bool canJumpCutscene = false;
+    public GameObject jumpCutscene;
     public void NewGame()
     {
         hasClicked = true;
@@ -24,16 +26,24 @@ public class MenuController : MonoBehaviour
     }
     void Update()
     {
+        jumpCutscene.SetActive(canJumpCutscene);
+
         if (hasClicked && !doOnce)
         {
             StartCoroutine(FadeAndLoadCutscene(1));
             doOnce = true;
         }
-        if (Input.GetKeyDown(KeyCode.Escape) && !doOnce2)
+        if (Input.GetKeyDown(KeyCode.X) && !doOnce2 && canJumpCutscene)
         {
-             SceneManager.LoadScene(1);
+            SceneManager.LoadScene(1);
             doOnce2 = true;
         }
+
+        if (Input.GetKeyDown(KeyCode.X) )
+        {
+           canJumpCutscene = true;
+        }
+        
             if (animationOver && !doOnce2)
             {
                 SceneManager.LoadScene(1);
