@@ -29,6 +29,11 @@ public class MenuController : MonoBehaviour
             StartCoroutine(FadeAndLoadCutscene(1));
             doOnce = true;
         }
+        if (Input.GetKeyDown(KeyCode.Escape) && !doOnce2)
+        {
+             SceneManager.LoadScene(1);
+            doOnce2 = true;
+        }
             if (animationOver && !doOnce2)
             {
                 SceneManager.LoadScene(1);
