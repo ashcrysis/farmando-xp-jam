@@ -47,8 +47,8 @@ public class Dash : MonoBehaviour
         if (isDashing)
         {
             GetComponent<DashTrail>().SetEnabled(true);
-            playerCollider.size = new Vector2(playerCollider.size.x,1f);
-            playerCollider.offset = new Vector2(playerCollider.offset.x, (float)-0.49);
+            playerCollider.size = new Vector2(playerCollider.size.x,(float)-0.1664922);
+            playerCollider.offset = new Vector2(playerCollider.offset.x, (float)-0.2);
         }
         else
         {
@@ -81,7 +81,7 @@ public class Dash : MonoBehaviour
         return Physics2D.OverlapCircle(dashCheck.position, 0.2f, groundLayer);
     }
     bool checkIsWalled(){
-        return Physics2D.OverlapCircle(wallBottomLeft.position, 0.5f, groundLayer) || Physics2D.OverlapCircle(wallBottomRight.position, 0.5f, groundLayer) || Physics2D.OverlapCircle(wallTopRight.position, 0.5f, groundLayer) || Physics2D.OverlapCircle(wallTopLeft.position, 0.5f, groundLayer);
+        return Physics2D.OverlapCircle(wallBottomLeft.position, 0.2f, groundLayer) || Physics2D.OverlapCircle(wallBottomRight.position, 0.2f, groundLayer) || Physics2D.OverlapCircle(wallTopRight.position, 0.2f, groundLayer) || Physics2D.OverlapCircle(wallTopLeft.position, 0.2f, groundLayer);
     }
     private IEnumerator DashCoroutine()
     {

@@ -30,7 +30,7 @@ public class DashTrailObject : MonoBehaviour
             mTimeDisplayed += Time.deltaTime;
 
             mRenderer.color = Color.Lerp (mStartColor, mEndColor, mTimeDisplayed / mDisplayTime);
-            mRenderer.gameObject.transform.localScale = new Vector2(3,3);
+            mRenderer.gameObject.transform.localScale = new Vector2(1,1);
             mRenderer.flipX = GameObject.FindGameObjectWithTag("Player").GetComponentInChildren<SpriteRenderer>().flipX;
             if (mTimeDisplayed >= mDisplayTime)
             {

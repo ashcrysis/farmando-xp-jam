@@ -71,7 +71,9 @@ public class PlayerMovement : MonoBehaviour
         }
         if (!IsGrounded() && rb.velocity.y < 0)
         {
+            isJumping = false;
             isFalling = true;
+
         }
         else
         {
@@ -104,9 +106,8 @@ public class PlayerMovement : MonoBehaviour
         {
             if (!justLanded)
             {
-                // LandParticle.Play();
+                // LandPartiisJumping =cle.Play();
                 justLanded = true;
-                isJumping = false; // Reset isJumping here
             }
         }
     }
@@ -122,7 +123,6 @@ public class PlayerMovement : MonoBehaviour
             StartCoroutine(ResetCoyoteJumpAfterDelay(coyoteTime));
             canJump = false;
             StartCoroutine(JumpDelay(jumpDelay));
-            // Removed: isJumping = false;
             jump = false;
         }
     }
@@ -220,7 +220,6 @@ public class PlayerMovement : MonoBehaviour
         if (IsGrounded())
         {
             coyoteTimer = coyoteTime;
-            isJumping = false;
             hasLaunched = false;
         }
         else if (coyoteTimer > 0)
