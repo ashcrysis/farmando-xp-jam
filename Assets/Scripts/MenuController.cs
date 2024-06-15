@@ -22,6 +22,10 @@ public class MenuController : MonoBehaviour
     {
         hasClicked = true;
         PlayerPrefs.DeleteAll();
+        if (GameObject.FindGameObjectWithTag("menuManager").GetComponent<AudioSource>())
+        {
+            GameObject.FindGameObjectWithTag("menuManager").GetComponent<AudioSource>().Stop();
+        }
         
     }
     void Update()

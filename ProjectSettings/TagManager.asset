@@ -13,6 +13,7 @@ TagManager:
   - menuButtons
   - pause
   - itemManager
+  - menuManager
   layers:
   - Default
   - TransparentFX

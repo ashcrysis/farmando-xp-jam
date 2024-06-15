@@ -26,6 +26,7 @@ public class PlayerAnimation : MonoBehaviour
             anim.SetBool("isRunning", playerMovement.isRunning);
             anim.SetBool("isJumping", playerMovement.jump);
             anim.SetBool("isFalling", playerMovement.isFalling);
+            anim.SetBool("isGrounded", playerMovement.IsGrounded());
             
         }
     }

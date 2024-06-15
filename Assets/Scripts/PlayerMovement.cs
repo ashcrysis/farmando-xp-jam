@@ -56,6 +56,7 @@ public class PlayerMovement : MonoBehaviour
         Flip();
         animatorHandler();
         UpdateLandingState();
+        if (stamina.stamina > stamina.staminaDashValue){
         if (Input.GetKeyDown(KeyCode.UpArrow) && canJump)
         {
             if (IsGrounded())
@@ -63,6 +64,7 @@ public class PlayerMovement : MonoBehaviour
              jump = true;   
             }
         }
+    }
         if (!IsGrounded() && rb.velocity.y < 0)
         {
             isFalling = true;
@@ -105,10 +107,6 @@ public class PlayerMovement : MonoBehaviour
     private void Jump()
     {
       if (jump){
-                if (stamina.stamina < stamina.staminaJumpValue)
-                {
-                    return;
-                }
                 isJumping = true;
                 stamina.Actions(3);
                 justLanded = false;
