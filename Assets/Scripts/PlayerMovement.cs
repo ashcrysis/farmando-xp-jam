@@ -36,7 +36,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private Transform wallCheckLeft;
     public float slopeAngle;
     public bool isFalling = false;
-    
+
     private void Start()
     {
         Initialize();
@@ -48,7 +48,7 @@ public class PlayerMovement : MonoBehaviour
     {
         origSpeed = speed;
         rb = GetComponent<Rigidbody2D>();
-        anim = GetComponent<Animator>();
+        anim = GetComponentsInChildren<Animator>()[0];
         GameObject.FindGameObjectWithTag("MainCamera").transform.position = gameObject.transform.position;
     }
 
@@ -57,16 +57,18 @@ public class PlayerMovement : MonoBehaviour
         HandleInput();
         Flip();
         animatorHandler();
+        UpdateAnimator(); // Added this line
         UpdateLandingState();
-        if (stamina.stamina > stamina.staminaDashValue){
-        if (Input.GetKeyDown(KeyCode.UpArrow) && canJump)
+        if (stamina.stamina > stamina.staminaDashValue)
         {
-            if (IsGrounded())
+            if (Input.GetKeyDown(KeyCode.UpArrow) && canJump)
             {
-             jump = true;   
+                if (IsGrounded())
+                {
+                    jump = true;
+                }
             }
         }
-    }
         if (!IsGrounded() && rb.velocity.y < 0)
         {
             isFalling = true;
@@ -83,8 +85,9 @@ public class PlayerMovement : MonoBehaviour
         moving = Mathf.Abs(horizontal) > 0 ? 1 : 0;
         if (IsGrounded())
         {
-            if (!isRunning && !Input.GetKey(KeyCode.Z)){
-            stamina.Actions(2);
+            if (!isRunning && !Input.GetKey(KeyCode.Z))
+            {
+                stamina.Actions(2);
             }
         }
         AdjustSpeed();
@@ -94,6 +97,7 @@ public class PlayerMovement : MonoBehaviour
     {
         return Physics2D.OverlapCircle(wallCheckLeft.position, 0.1f, groundLayer) || Physics2D.OverlapCircle(wallCheckRight.position, 0.1f, groundLayer);
     }
+
     private void UpdateLandingState()
     {
         if (IsGrounded() && rb.velocity.y <= 0)
@@ -102,34 +106,35 @@ public class PlayerMovement : MonoBehaviour
             {
                 // LandParticle.Play();
                 justLanded = true;
+                isJumping = false; // Reset isJumping here
             }
         }
     }
 
     private void Jump()
     {
-      if (jump){
-                isJumping = true;
-                stamina.Actions(3);
-                justLanded = false;
-                rb.velocity = new Vector2(rb.velocity.x, jumpingPower);
-                StartCoroutine(ResetCoyoteJumpAfterDelay(coyoteTime));
-                canJump = false;
-                StartCoroutine(JumpDelay(jumpDelay));
-                isJumping = false;
-                jump = false;
-           } 
-        
+        if (jump)
+        {
+            isJumping = true;
+            stamina.Actions(3);
+            justLanded = false;
+            rb.velocity = new Vector2(rb.velocity.x, jumpingPower);
+            StartCoroutine(ResetCoyoteJumpAfterDelay(coyoteTime));
+            canJump = false;
+            StartCoroutine(JumpDelay(jumpDelay));
+            // Removed: isJumping = false;
+            jump = false;
+        }
     }
 
     private void AdjustSpeed()
     {
-
-        if (Input.GetKey(KeyCode.Z) && moving != 0 && stamina.stamina > ( stamina.staminaRunValue) && IsGrounded()){
+        if (Input.GetKey(KeyCode.Z) && moving != 0 && stamina.stamina > stamina.staminaRunValue && IsGrounded())
+        {
             isRunning = true;
             if (onSlope && IsGrounded())
             {
-            speed = speedVeloc + (4f + slopeAngle/35f);
+                speed = speedVeloc + (4f + slopeAngle / 35f);
             }
             else
             {
@@ -137,18 +142,18 @@ public class PlayerMovement : MonoBehaviour
             }
             stamina.Actions(0);
         }
-        else{
+        else
+        {
             isRunning = false;
             if (!onSlope)
             {
                 speed = origSpeed;
             }
         }
-        if (moving == 0 && !GetComponent<Dash>().isDashing){
-            rb.velocity = new Vector2(0,rb.velocity.y);
+        if (moving == 0 && !GetComponent<Dash>().isDashing)
+        {
+            rb.velocity = new Vector2(0, rb.velocity.y);
         }
-
-
     }
 
     private void UpdateAnimator()
@@ -162,7 +167,6 @@ public class PlayerMovement : MonoBehaviour
     {
         MovePlayer();
         Jump();
-
     }
 
     private void MovePlayer()
@@ -175,41 +179,41 @@ public class PlayerMovement : MonoBehaviour
         HandleGroundedState();
         HandleSlopeAdjustment();
     }
+
     private void HandleSlopeAdjustment()
     {
-    if (IsGrounded())
-    {
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, -Vector2.up, Mathf.Infinity, groundLayer);
-        if (hit.collider != null)
+        if (IsGrounded())
         {
-            slopeAngle = Vector2.Angle(hit.normal, Vector2.up);
-
-            if (slopeAngle > 0 && slopeAngle < 90)
+            RaycastHit2D hit = Physics2D.Raycast(transform.position, -Vector2.up, Mathf.Infinity, groundLayer);
+            if (hit.collider != null)
             {
-                float direction = hit.normal.x > 0 ? 1 : -1;
-                float rotationSpeed = 1f; 
-                float targetRotation = direction * -slopeAngle;
-                float smoothRotation = Mathf.LerpAngle(transform.rotation.eulerAngles.z, targetRotation, Time.deltaTime * rotationSpeed);
-                transform.rotation = Quaternion.Euler(0, 0, smoothRotation);
-                onSlope = true;
-                speed = origSpeed * (1f + slopeAngle / slopeMultiplier);
+                slopeAngle = Vector2.Angle(hit.normal, Vector2.up);
 
-            }
-            else
-            {
-                onSlope = false;
-                float resetRotationSpeed = 3f;
-                transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.identity, Time.deltaTime * resetRotationSpeed);
+                if (slopeAngle > 0 && slopeAngle < 90)
+                {
+                    float direction = hit.normal.x > 0 ? 1 : -1;
+                    float rotationSpeed = 1f;
+                    float targetRotation = direction * -slopeAngle;
+                    float smoothRotation = Mathf.LerpAngle(transform.rotation.eulerAngles.z, targetRotation, Time.deltaTime * rotationSpeed);
+                    transform.rotation = Quaternion.Euler(0, 0, smoothRotation);
+                    onSlope = true;
+                    speed = origSpeed * (1f + slopeAngle / slopeMultiplier);
+                }
+                else
+                {
+                    onSlope = false;
+                    float resetRotationSpeed = 3f;
+                    transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.identity, Time.deltaTime * resetRotationSpeed);
+                }
             }
         }
+        else
+        {
+            // Smoothly reset rotation if not grounded
+            float resetRotationSpeed = 3f; // Adjust the reset rotation speed factor as needed
+            transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.identity, Time.deltaTime * resetRotationSpeed);
+        }
     }
-    else
-    {
-        // Smoothly reset rotation if not grounded
-        float resetRotationSpeed = 3f; // Adjust the reset rotation speed factor as needed
-        transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.identity, Time.deltaTime * resetRotationSpeed);
-    }
-}
 
     private void HandleGroundedState()
     {
@@ -223,18 +227,15 @@ public class PlayerMovement : MonoBehaviour
         {
             coyoteTimer -= Time.fixedDeltaTime;
         }
-  
     }
 
     private void animatorHandler()
     {
-        if (isJumping)
+        anim.SetBool("isJumping", isJumping);
+        if (isJumping && !hasLaunched)
         {
-            if (!hasLaunched)
-            {
-                // JumpParticle.Play();
-                hasLaunched = true;
-            }
+            // JumpParticle.Play();
+            hasLaunched = true;
         }
     }
 
@@ -247,7 +248,8 @@ public class PlayerMovement : MonoBehaviour
     {
         yield return new WaitForSeconds(delay);
     }
-     private IEnumerator JumpDelay(float delay)
+
+    private IEnumerator JumpDelay(float delay)
     {
         yield return new WaitForSeconds(delay);
         canJump = true;
