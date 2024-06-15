@@ -90,8 +90,7 @@ public class DeusaNoite : MonoBehaviour
         
         StartCoroutine(FadeImage(fadeText));
 
-        yield return new WaitForSeconds(fadeDuration);
-
+        yield return new WaitForSeconds(5f);
         SceneManager.LoadScene(sceneIndex);
     }
     

@@ -60,7 +60,7 @@ public class CountdownTimer : MonoBehaviour
             fadeImage.color = color;
             yield return null;
         }
-        yield return new WaitForSeconds(delay);
+        yield return new WaitForSeconds(5f);
         SceneManager.LoadScene(0);
     }
 }
