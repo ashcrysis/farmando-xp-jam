@@ -32,15 +32,16 @@ public class PlayerAnimation : MonoBehaviour
             anim.SetBool("isFalling", playerMovement.isFalling);
             anim.SetBool("isGrounded", playerMovement.IsGrounded());
         }
+        
         if (playerMovement.jump && playJumpOnce)
         {
             jumpAudio.Play();
             playJumpOnce = false;
         }
         
-            if (playerMovement.canJump && playerMovement.IsGrounded())
-            {
-                playJumpOnce = true;
-            }
+        if (playerMovement.canJump && playerMovement.IsGrounded())
+        {
+            playJumpOnce = true;
+        }
     }
 }
