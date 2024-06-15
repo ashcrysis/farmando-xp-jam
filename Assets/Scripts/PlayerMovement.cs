@@ -24,11 +24,11 @@ public class PlayerMovement : MonoBehaviour
     private float coyoteTimer = 0f;
     public bool isJumping = false;
     public bool jump = false;
-    private bool canJump = true;
+    public bool canJump = true;
     public float jumpDelay = 0.2f;
     private bool hasLaunched = false;
 
-    private bool justLanded = false;
+    public bool justLanded = false;
     public Stamina stamina;
     public bool isRunning = false;
     public bool onSlope;
@@ -36,9 +36,11 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private Transform wallCheckLeft;
     public float slopeAngle;
     public bool isFalling = false;
+    
     private void Start()
     {
         Initialize();
+
         Application.targetFrameRate = 30;
     }
 

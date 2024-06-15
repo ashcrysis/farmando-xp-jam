@@ -26,9 +26,14 @@ public class ItemsManager : MonoBehaviour
         {
             keyImage.SetActive(PlayerPrefs.GetInt("hasKey") == 1);
         }
-
+        if (PlayerPrefs.HasKey("finished"))
+        {
         maskImage.SetActive(PlayerPrefs.GetInt("endgame") == 1);
-
+        }
+        if (PlayerPrefs.GetInt("finished") == 1)
+        {
+        maskImage.SetActive(false);
+        }
         if (PlayerPrefs.GetInt("endgame") == 1 || !isWithKey)
         {
             keyImage.SetActive(false);

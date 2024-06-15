@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class PlayerAnimation : MonoBehaviour
 {
@@ -8,6 +9,9 @@ public class PlayerAnimation : MonoBehaviour
     private int moving;
     private Animator[] animators;
     private Dash dash;
+    private bool playJumpOnce = true;
+    private bool playLandOnce = true;
+    public AudioSource jumpAudio;
 
     void Start()
     {
@@ -27,7 +31,16 @@ public class PlayerAnimation : MonoBehaviour
             anim.SetBool("isJumping", playerMovement.jump);
             anim.SetBool("isFalling", playerMovement.isFalling);
             anim.SetBool("isGrounded", playerMovement.IsGrounded());
-            
         }
+        if (playerMovement.jump && playJumpOnce)
+        {
+            jumpAudio.Play();
+            playJumpOnce = false;
+        }
+        
+            if (playerMovement.canJump && playerMovement.IsGrounded())
+            {
+                playJumpOnce = true;
+            }
     }
 }

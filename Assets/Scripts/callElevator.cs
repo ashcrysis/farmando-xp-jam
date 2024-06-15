@@ -10,6 +10,8 @@ public class callElevator : MonoBehaviour
     private Transform elevatorStartPosition;
     private Transform elevatorEndPosition;
     [SerializeField] private GameObject botao;
+    public AudioSource leverAudio;
+    private bool leverAudioOnce = false;
 
     void Start()
     {
@@ -27,6 +29,11 @@ public class callElevator : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.C) && canInteract && !GameObject.FindGameObjectWithTag("Player").GetComponent<DeathCounter>().isDying && !IsDialogueActive())
         {   
             GetComponentInChildren<Animator>().SetBool("puxo",true);
+            if (!leverAudioOnce)
+            {
+                leverAudio.Play();
+                leverAudioOnce = true;
+            }
             float threshold = 1f;
             if (Vector2.Distance(elevator.transform.position, elevatorStartPosition.position) < threshold)
             {
@@ -46,6 +53,7 @@ public class callElevator : MonoBehaviour
         yield return new WaitForSeconds(delay);
         GetComponentInChildren<Animator>().SetBool("puxo",false);
         elevatorComponent.destiny = destiny;
+        leverAudioOnce = false;
     }
     public void SetBotao(bool situation)
     {
