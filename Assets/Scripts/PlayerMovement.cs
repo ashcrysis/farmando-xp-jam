@@ -79,6 +79,10 @@ public class PlayerMovement : MonoBehaviour
         {
             isFalling = false;
         }
+        if (IsGrounded() && isJumping)
+        {
+            isJumping = false;
+        }
     }
 
     private void HandleInput()
@@ -240,7 +244,7 @@ public class PlayerMovement : MonoBehaviour
 
     public bool IsGrounded()
     {
-        return Physics2D.OverlapCircle(groundCheck.position, 0.1f, groundLayer);
+        return Physics2D.OverlapCircle(groundCheck.position, 0.05f, groundLayer);
     }
 
     private IEnumerator ResetCoyoteJumpAfterDelay(float delay)
