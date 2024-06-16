@@ -121,7 +121,6 @@ public class PlayerMovement : MonoBehaviour
             StartCoroutine(ResetCoyoteJumpAfterDelay(coyoteTime));
             canJump = false;
             StartCoroutine(JumpDelay(jumpDelay));
-            // Removed: isJumping = false;
             jump = false;
         }
     }
@@ -153,7 +152,9 @@ public class PlayerMovement : MonoBehaviour
         {
             rb.velocity = new Vector2(0, rb.velocity.y);
         }
-
+        if (isFalling){
+            isJumping = false;
+            }
     }
 
     private void UpdateAnimator()
@@ -220,7 +221,7 @@ public class PlayerMovement : MonoBehaviour
         if (IsGrounded())
         {
             coyoteTimer = coyoteTime;
-            isJumping = false;
+
             hasLaunched = false;
         }
         else if (coyoteTimer > 0)
