@@ -98,7 +98,7 @@ public class Dash : MonoBehaviour
             rb.velocity = new Vector2(0f,rb.velocity.y);
         }
         else{
-            rb.velocity = new Vector2(rb.velocity.x-dashingPower/2,rb.velocity.y);
+            rb.velocity = new Vector2(rb.velocity.x-(dashingPower * dir)/2,rb.velocity.y);
         }
         isDashing = false;
         yield return new WaitForSeconds(dashingCooldown);
@@ -108,7 +108,7 @@ public class Dash : MonoBehaviour
    private IEnumerator IncreaseJumpPower()
     {
         float originalJumpPower = player.jumpingPower; // Assume the PlayerMovement class has a jumpPower field
-        player.jumpingPower += 5f;
+        player.jumpingPower += 0.5f;
         yield return new WaitForSeconds(0.4f);
         player.jumpingPower = originalJumpPower;
     }

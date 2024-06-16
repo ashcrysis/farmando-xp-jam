@@ -106,7 +106,6 @@ public class PlayerMovement : MonoBehaviour
             {
                 // LandParticle.Play();
                 justLanded = true;
-                isJumping = false; // Reset isJumping here
             }
         }
     }
@@ -154,6 +153,7 @@ public class PlayerMovement : MonoBehaviour
         {
             rb.velocity = new Vector2(0, rb.velocity.y);
         }
+
     }
 
     private void UpdateAnimator()
