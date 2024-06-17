@@ -57,7 +57,6 @@ public class PlayerMovement : MonoBehaviour
         HandleInput();
         Flip();
         animatorHandler();
-        UpdateAnimator(); // Added this line
         UpdateLandingState();
         if (stamina.stamina > stamina.staminaDashValue)
         {
@@ -66,6 +65,7 @@ public class PlayerMovement : MonoBehaviour
                 if (IsGrounded())
                 {
                     jump = true;
+                    
                 }
             }
         }
@@ -154,15 +154,10 @@ public class PlayerMovement : MonoBehaviour
         }
         if (isFalling){
             isJumping = false;
-            }
+        }
     }
 
-    private void UpdateAnimator()
-    {
-        anim.SetFloat("speed", speed);
-        anim.SetFloat("isFacingRight", isFacingRight ? 1f : 0f);
-        anim.SetInteger("isMoving", moving);
-    }
+
 
     private void FixedUpdate()
     {

@@ -108,7 +108,7 @@ public class Dash : MonoBehaviour
    private IEnumerator IncreaseJumpPower()
     {
         float originalJumpPower = player.jumpingPower; // Assume the PlayerMovement class has a jumpPower field
-        player.jumpingPower += 0.5f;
+        player.jumpingPower += 5f;
         yield return new WaitForSeconds(0.4f);
         player.jumpingPower = originalJumpPower;
     }
