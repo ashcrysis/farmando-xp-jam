@@ -40,7 +40,6 @@ public class PlayerMovement : MonoBehaviour
     private void Start()
     {
         Initialize();
-
         Application.targetFrameRate = 30;
     }
 
@@ -60,13 +59,9 @@ public class PlayerMovement : MonoBehaviour
         UpdateLandingState();
         if (stamina.stamina > stamina.staminaDashValue)
         {
-            if (Input.GetKeyDown(KeyCode.UpArrow) && canJump)
+            if (Input.GetKeyDown(KeyCode.UpArrow) && canJump && IsGrounded())
             {
-                if (IsGrounded())
-                {
-                    jump = true;
-                    
-                }
+                jump = true;
             }
         }
         if (!IsGrounded() && rb.velocity.y < 0)
@@ -106,6 +101,7 @@ public class PlayerMovement : MonoBehaviour
             {
                 // LandParticle.Play();
                 justLanded = true;
+                isJumping = false;  // Reset isJumping when grounded
             }
         }
     }
@@ -152,12 +148,11 @@ public class PlayerMovement : MonoBehaviour
         {
             rb.velocity = new Vector2(0, rb.velocity.y);
         }
-        if (isFalling){
+        if (isFalling)
+        {
             isJumping = false;
         }
     }
-
-
 
     private void FixedUpdate()
     {
@@ -216,7 +211,6 @@ public class PlayerMovement : MonoBehaviour
         if (IsGrounded())
         {
             coyoteTimer = coyoteTime;
-
             hasLaunched = false;
         }
         else if (coyoteTimer > 0)
