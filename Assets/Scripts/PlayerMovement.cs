@@ -40,7 +40,6 @@ public class PlayerMovement : MonoBehaviour
     private void Start()
     {
         Initialize();
-
         Application.targetFrameRate = 30;
     }
 
@@ -57,31 +56,21 @@ public class PlayerMovement : MonoBehaviour
         HandleInput();
         Flip();
         animatorHandler();
-        UpdateAnimator(); // Added this line
         UpdateLandingState();
         if (stamina.stamina > stamina.staminaDashValue)
         {
-            if (Input.GetKeyDown(KeyCode.UpArrow) && canJump)
+            if (Input.GetKeyDown(KeyCode.UpArrow) && canJump && IsGrounded())
             {
-                if (IsGrounded())
-                {
-                    jump = true;
-                }
+                jump = true;
             }
         }
         if (!IsGrounded() && rb.velocity.y < 0)
         {
-            isJumping = false;
             isFalling = true;
-
         }
         else
         {
             isFalling = false;
-        }
-        if (IsGrounded() && isJumping)
-        {
-            isJumping = false;
         }
     }
 
@@ -110,8 +99,9 @@ public class PlayerMovement : MonoBehaviour
         {
             if (!justLanded)
             {
-                // LandPartiisJumping =cle.Play();
+                // LandParticle.Play();
                 justLanded = true;
+                isJumping = false;  // Reset isJumping when grounded
             }
         }
     }
@@ -158,13 +148,10 @@ public class PlayerMovement : MonoBehaviour
         {
             rb.velocity = new Vector2(0, rb.velocity.y);
         }
-    }
-
-    private void UpdateAnimator()
-    {
-        anim.SetFloat("speed", speed);
-        anim.SetFloat("isFacingRight", isFacingRight ? 1f : 0f);
-        anim.SetInteger("isMoving", moving);
+        if (isFalling)
+        {
+            isJumping = false;
+        }
     }
 
     private void FixedUpdate()
@@ -244,7 +231,7 @@ public class PlayerMovement : MonoBehaviour
 
     public bool IsGrounded()
     {
-        return Physics2D.OverlapCircle(groundCheck.position, 0.05f, groundLayer);
+        return Physics2D.OverlapCircle(groundCheck.position, 0.1f, groundLayer);
     }
 
     private IEnumerator ResetCoyoteJumpAfterDelay(float delay)
