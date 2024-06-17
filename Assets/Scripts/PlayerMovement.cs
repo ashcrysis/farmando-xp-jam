@@ -11,6 +11,7 @@ public class PlayerMovement : MonoBehaviour
     public bool isFacingRight = true;
     private float origSpeed;
     public float acceleration = 2f;
+    public AudioSource landAudio;
     public float fallMultiplier = 1.5f;
     public float slopeMultiplier = 35f;
     public ParticleSystem JumpParticle;
@@ -36,6 +37,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private Transform wallCheckLeft;
     public float slopeAngle;
     public bool isFalling = false;
+    public bool accessJump = false;
 
     private void Start()
     {
@@ -70,8 +72,12 @@ public class PlayerMovement : MonoBehaviour
         }
         else
         {
+            if (isFalling == true && IsGrounded()){
+                landAudio.Play();
+            }
             isFalling = false;
         }
+        accessJump = jump;
     }
 
     private void HandleInput()
